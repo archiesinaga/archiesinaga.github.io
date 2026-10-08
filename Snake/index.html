@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prehistoric Snake | Archie's Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header class="game-header">
+      <div class="brand-row">
+        <a href="../" class="back-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          Back to Portfolio
+        </a>
+        <h1 class="game-title">SNAKE</h1>
+      </div>
+      <div class="scores-row">
+        <div class="score-box">
+          <div class="score-title">SCORE</div>
+          <div class="score-value" id="score">0</div>
+        </div>
+        <div class="score-box">
+          <div class="score-title">HIGH SCORE</div>
+          <div class="score-value" id="high-score">0</div>
+        </div>
+        <button class="btn-restart" id="start-btn">Start Game</button>
+      </div>
+    </header>
+
+    <div class="canvas-wrapper">
+      <canvas id="snake-canvas" width="400" height="400"></canvas>
+      <div id="game-overlay" class="game-overlay">
+        <h2 id="overlay-msg">Press Start to Play</h2>
+        <p>Use Arrow Keys or D-Pad controls</p>
+      </div>
+    </div>
+
+    <!-- Mobile D-Pad -->
+    <div class="mobile-dpad">
+      <button class="dpad-btn up" id="dpad-up">▲</button>
+      <div class="dpad-mid">
+        <button class="dpad-btn left" id="dpad-left">◀</button>
+        <button class="dpad-btn right" id="dpad-right">▶</button>
+      </div>
+      <button class="dpad-btn down" id="dpad-down">▼</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

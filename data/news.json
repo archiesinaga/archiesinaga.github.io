@@ -1,0 +1,42 @@
+[
+  {
+    "id": "news-1",
+    "type": "Academic Milestone",
+    "platform": "Universitas Sriwijaya",
+    "date": "Jul 2026",
+    "title": "Thesis Completed: Bacterial Image Classification with ConvNeXt & ResNet-50",
+    "summary": "Completed undergraduate degree in Informatics Engineering with a 3.92 / 4.00 GPA (Cum Laude). Thesis evaluated deep learning architectures on the benchmark DIBaS microscopic dataset for rapid pathogen classification.",
+    "tags": ["DeepLearning", "ComputerVision", "ConvNeXt", "CumLaude"],
+    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "news-2",
+    "type": "Engineering Dispatch",
+    "platform": "Gonsters AI R&D",
+    "date": "Jun 2026",
+    "title": "Octagon Digital Twin: Deploying Hybrid RAG for Live Telemetry",
+    "summary": "Implemented a dual Hot/Cold path retrieval architecture querying 120+ machine sensor streams under 200ms latency, achieving 95% accuracy and zero hallucinations across 9+ industrial benchmark categories.",
+    "tags": ["GenerativeAI", "HybridRAG", "AgenticAI", "DigitalTwin"],
+    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "news-3",
+    "type": "Competition Honor",
+    "platform": "Bitlabs Academy / MSIB",
+    "date": "Jan 2025",
+    "title": "Awarded Third Best Presentation Team at Bitlabs Data Analytics Final Paper",
+    "summary": "Honored as the 3rd Best Presentation Team across the national MSIB Batch 7 cohort for presenting our data-driven commercial analytics and customer transaction insights.",
+    "tags": ["DataAnalytics", "Tableau", "Python", "Award"],
+    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "news-4",
+    "type": "Production Release",
+    "platform": "Alpha Omega Learning Center",
+    "date": "Dec 2024",
+    "title": "ALC Learning LMS Platform Live for 600+ Students",
+    "summary": "Successfully deployed the web LMS portal managing student assessment modules, daily exercises, and real-time grade tracking for over 600 enrolled students.",
+    "tags": ["WebDevelopment", "ExpressJS", "PostgreSQL", "LMS"],
+    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+  }
+]

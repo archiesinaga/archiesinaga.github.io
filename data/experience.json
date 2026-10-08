@@ -1,0 +1,66 @@
+[
+  {
+    "id": "exp-gonsters",
+    "role": "Generative AI Engineer",
+    "org": "Gonsters",
+    "location": "Indonesia",
+    "period": "2025 - Present",
+    "isCurrent": true,
+    "image": "image/exp-nexus.webp",
+    "summary": "R&D and deployment of 'Octagon', an agentic Digital Twin assistant for live industrial telemetry monitoring, predictive maintenance, and autonomous root cause analysis.",
+    "tags": ["Hybrid RAG", "Agentic AI", "Redis", "Nginx", "LLM", "Docker"],
+    "metrics": [
+      { "label": "Retrieval Latency", "val": "-40%", "desc": "Hybrid RAG (Hot/Cold path) querying 120+ live telemetry points" },
+      { "label": "Benchmark Accuracy", "val": "95%", "desc": "Proprietary 'TOON' formatting with zero hallucinations across 9+ industrial benchmarks" },
+      { "label": "System Latency", "val": "< 200ms", "desc": "Redis/Nginx caching with 100% schema consistency via automated smoke tests" }
+    ]
+  },
+  {
+    "id": "exp-alc",
+    "role": "Data Analyst, Web Developer & Social Media Specialist",
+    "org": "Alpha Omega Learning Center (ALC)",
+    "location": "Palembang, Indonesia",
+    "period": "2024 - Present",
+    "isCurrent": true,
+    "image": "image/exp-synapse.webp",
+    "summary": "Building LMS web platform for 600+ students, co-developed financial cash flow anomaly audit tool, and analyzed engagement data to grow registrations.",
+    "tags": ["JavaScript", "Express.js", "PostgreSQL", "Data Analytics", "Financial Forensics", "LMS"],
+    "metrics": [
+      { "label": "Fraud / Loss Detected", "val": "IDR 19M", "desc": "Co-developed cash flow program detecting fraud/losses over 9 months" },
+      { "label": "Enrollment Growth", "val": "+120", "desc": "Increased student registrations in 3 months via analytics-backed content" },
+      { "label": "Scale Monitored", "val": "600+", "desc": "Built LMS tracking daily student grades, modules, and exercises" }
+    ]
+  },
+  {
+    "id": "exp-spf",
+    "role": "IT Intern",
+    "org": "PT Sumatera Prima Fiberboard",
+    "location": "Indralaya, Indonesia",
+    "period": "2025-06 - 2025-08",
+    "isCurrent": false,
+    "image": "image/exp-bioscan.webp",
+    "summary": "Developed a real-time truck route tracking system across checkpoints and co-developed digital approval workflows connecting 8 manufacturing divisions.",
+    "tags": ["Web Development", "Logistics Tracking", "Workflow Automation", "API Integration"],
+    "metrics": [
+      { "label": "Approval Turnaround", "val": "2-3 Days", "desc": "Reduced document approval cycle from ~1 week across 8 corporate divisions" },
+      { "label": "Trucks Monitored", "val": "10-20/Day", "desc": "Monitored vehicles across 4 checkpoints to improve logistics visibility" },
+      { "label": "Divisions Connected", "val": "8 Divisions", "desc": "Centralized cross-divisional authorization and memo verification" }
+    ]
+  },
+  {
+    "id": "exp-bitlabs",
+    "role": "Data Analytics for Business Cohort Participant",
+    "org": "Bitlabs Academy (MSIB Batch 7)",
+    "location": "Indonesia",
+    "period": "2024-09 - 2025-01",
+    "isCurrent": false,
+    "image": "image/exp-lab.webp",
+    "summary": "Completed a national talent development program in data analytics, collaborating in multidisciplinary teams to solve real business challenges using data-driven methodologies.",
+    "tags": ["Python", "SQL", "Tableau", "Pandas", "EDA", "Business Intelligence"],
+    "metrics": [
+      { "label": "Paper Presentation", "val": "Top 3", "desc": "Awarded Third Best Presentation Team for final analytics research paper" },
+      { "label": "Dataset Analyzed", "val": "10K+ Rows", "desc": "Cleaned, modeled, and visualized multi-dimensional business datasets" },
+      { "label": "Program Evaluation", "val": "Certified", "desc": "Graduated MSIB Batch 7 Data Analytics with top honors" }
+    ]
+  }
+]

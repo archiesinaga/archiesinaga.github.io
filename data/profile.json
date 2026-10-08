@@ -1,0 +1,78 @@
+{
+  "name": "Archie P. H. Sinaga",
+  "nickname": "Archie",
+  "avatar": "image/avatar.jpeg",
+  "motto": "Building intelligent systems that bridge AI/ML, data analytics, and real-world business impact.",
+  "headline_role": "Informatics Engineering Graduate | AI/ML, Data Analytics & Web Development",
+  "location": "Palembang, Indonesia",
+  "country": "Indonesia",
+  "region": "South Sumatra",
+  "timezone": "WIB (UTC+7)",
+  "status_badge": "Available for Opportunities",
+  "about_text": "Informatics Engineering graduate from Sriwijaya University (GPA 3.92/4.00) with hands-on experience in website development, data analytics, machine learning, generative AI, and process automation through internships, academic work, and professional projects. Collaborates well in cross-functional teams and applies analytical and technical skills to solve real-world problems with business impact.",
+  "target_roles": [
+    "AI Engineer",
+    "Machine Learning Engineer",
+    "Data Analyst",
+    "Web Developer",
+    "Banking / Finance Technology (ODP)"
+  ],
+  "interests": [
+    "Artificial Intelligence",
+    "Data Analytics",
+    "Web Development",
+    "Finance & Stocks",
+    "Process Automation",
+    "Graphic Design"
+  ],
+  "stats": [
+    {
+      "value": "600+",
+      "label": "Students Served via LMS",
+      "target": 600,
+      "suffix": "+"
+    },
+    {
+      "value": "95%",
+      "label": "GenAI Response Accuracy",
+      "target": 95,
+      "suffix": "%"
+    },
+    {
+      "value": "19M",
+      "label": "IDR Fraud Losses Detected",
+      "target": 19,
+      "suffix": "M"
+    },
+    {
+      "value": "4+",
+      "label": "Engineering & Data Roles",
+      "target": 4,
+      "suffix": "+"
+    }
+  ],
+  "socials": [
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/archie-ph-sinaga/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com",
+      "icon": "github"
+    },
+    {
+      "name": "Resume / CV",
+      "url": "#contact",
+      "icon": "file-text"
+    }
+  ],
+  "contact": {
+    "email": "archiesinaga9@gmail.com",
+    "phone": "+6281250233529",
+    "location": "Palembang, South Sumatra, Indonesia",
+    "responseTime": "< 24 Hours",
+    "availability": "Open for AI/ML, Data Analyst & Software Roles"
+  }
+}

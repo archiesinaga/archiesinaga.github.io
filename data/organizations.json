@@ -1,0 +1,18 @@
+[
+  {
+    "id": "org-bem",
+    "name": "Student Executive Board (BEM), Universitas Sriwijaya",
+    "role": "Daily Management Board Staff",
+    "period": "Feb 2024 - Feb 2025",
+    "badge": "Leadership & Management",
+    "description": "Core committee member organizing the Faculty of Computer Science Mobile Legends tournament (32 teams, 170 participants) and the Rector's Cup faculty selection process (~400 student participants)."
+  },
+  {
+    "id": "org-isport",
+    "name": "Isport Unsri (Faculty Sports Organization)",
+    "role": "Head of Division Staff",
+    "period": "Mar 2023 - Mar 2024",
+    "badge": "Division Head",
+    "description": "Initiated and organized the annual FASILKOM Games covering futsal, chess, volleyball, and basketball with ~150 active student athletes and faculty participants."
+  }
+]

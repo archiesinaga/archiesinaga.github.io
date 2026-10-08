@@ -1,0 +1,68 @@
+[
+  {
+    "id": "cert-1",
+    "title": "Data Analysis | SQL, Tableau, Power BI & Excel",
+    "issuer": "Real Projects Certification",
+    "category": "Data & Analytics",
+    "date": "Apr 2026",
+    "credentialId": "DA-STPE-2026",
+    "skills": ["SQL", "Tableau", "Power BI", "Excel", "Data Modeling"],
+    "summary": "Comprehensive certification across SQL relational database querying, interactive BI dashboarding, and spreadsheet financial modeling.",
+    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-2",
+    "title": "Duolingo English Test (Score: 125)",
+    "issuer": "Duolingo",
+    "category": "Language Proficiency",
+    "date": "Jul 2026",
+    "credentialId": "DET-125-PROF",
+    "skills": ["Professional Working English", "Technical Writing", "Presentation"],
+    "summary": "Scored 125 on the official Duolingo English Test, validating professional working proficiency in verbal and written communication.",
+    "url": "https://englishtest.duolingo.com"
+  },
+  {
+    "id": "cert-3",
+    "title": "Adobe Illustrator Certified Professional",
+    "issuer": "MyEduSolve",
+    "category": "Design & Media",
+    "date": "Oct 2025",
+    "credentialId": "MES-AI-202510",
+    "skills": ["Adobe Illustrator", "Vector Graphics", "UI Design", "Branding Assets"],
+    "summary": "Industry certification verifying proficiency in vector graphics creation, layout design, typography, and visual assets production.",
+    "url": "https://myedusolve.com"
+  },
+  {
+    "id": "cert-4",
+    "title": "Data Analytics for Business (MSIB Batch 7)",
+    "issuer": "Bitlabs Academy / Kemendikbudristek",
+    "category": "Data & Analytics",
+    "date": "Dec 2024",
+    "credentialId": "BL-MSIB7-DAB",
+    "skills": ["Python", "SQL", "Tableau", "Business Analytics", "EDA"],
+    "summary": "Certified completion of national MSIB program with practical business data analysis, ETL pipelines, and storytelling.",
+    "url": "https://bitlabs.id"
+  },
+  {
+    "id": "cert-5",
+    "title": "Third Best Presentation Team — Data Analytics Paper",
+    "issuer": "Bitlabs Academy",
+    "category": "Honors & Awards",
+    "date": "Jan 2025",
+    "credentialId": "AWARD-BL-TOP3",
+    "skills": ["Analytical Storytelling", "Business Modeling", "Executive Deck"],
+    "summary": "Awarded 3rd place nationally for team presentation and research paper evaluating commercial transactional analytics.",
+    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-6",
+    "title": "Finalist, UI/UX Design Competition",
+    "issuer": "Technology Euphoria 2024",
+    "category": "Honors & Awards",
+    "date": "Nov 2024",
+    "credentialId": "TECH-EUPHORIA-2024",
+    "skills": ["Figma", "UI/UX Architecture", "Prototyping", "Design Thinking"],
+    "summary": "Selected as national finalist in the annual technology design competition for innovative user-centric product interfaces.",
+    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+  }
+]

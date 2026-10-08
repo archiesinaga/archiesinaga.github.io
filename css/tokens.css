@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Design Tokens & CSS Variables
+   Dark/Light Theme and Global System
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Default Dark Mode (Deep Prehistoric Navy & Amber) */
+  --bg-main: #0b111e;
+  --bg-secondary: #0f172a;
+  --bg-elevated: #141f36;
+  --bg-elevated-hover: #1c2b4a;
+  --bg-glass: rgba(15, 23, 42, 0.75);
+  --bg-input: #0d1527;
+
+  --surface-border: rgba(255, 255, 255, 0.09);
+  --surface-border-hover: rgba(249, 115, 22, 0.45);
+  --surface-border-subtle: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-inverse: #0b111e;
+
+  /* Brand Accents */
+  --accent-primary: #f97316;      /* Amber / Orange */
+  --accent-primary-hover: #ea580c;
+  --accent-glow: rgba(249, 115, 22, 0.25);
+  --accent-secondary: #38bdf8;    /* Pale Cyan */
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-danger: #ef4444;
+
+  /* Typography */
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Shapes & Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 0 25px rgba(249, 115, 22, 0.3);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --container-max: 1200px;
+  --navbar-height: 72px;
+}
+
+[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-elevated: #ffffff;
+  --bg-elevated-hover: #f8fafc;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-input: #f1f5f9;
+
+  --surface-border: rgba(15, 23, 42, 0.08);
+  --surface-border-hover: rgba(234, 88, 12, 0.5);
+  --surface-border-subtle: rgba(15, 23, 42, 0.04);
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  --accent-primary: #ea580c;
+  --accent-primary-hover: #c2410c;
+  --accent-glow: rgba(234, 88, 12, 0.2);
+  --accent-secondary: #0284c7;
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 36px -6px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 0 25px rgba(234, 88, 12, 0.2);
+}

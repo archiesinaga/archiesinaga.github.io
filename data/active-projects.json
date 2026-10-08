@@ -1,0 +1,62 @@
+[
+  {
+    "id": "truck-tracking",
+    "title": "Real-Time Truck Tracking System",
+    "subtitle": "Fleet Route Visibility & Multi-Checkpoint Logistics Automation",
+    "status": "Deployed & Operating",
+    "badge_type": "primary",
+    "description": "A real-time dispatch and transport tracking platform developed at PT Sumatera Prima Fiberboard. Monitors 10-20 transport trucks daily across 4 industrial checkpoints to improve operational visibility and eliminate haulage bottlenecks.",
+    "highlights": [
+      "Monitored 10-20 trucks daily across 4 factory checkpoints in real time, logging timestamps and gate turnaround.",
+      "Built with a 2-3 person engineering team, providing logistics managers with live dispatch dashboards."
+    ],
+    "tech": ["JavaScript", "REST APIs", "PostgreSQL", "Leaflet", "Node.js"],
+    "metrics": [
+      { "value": "10-20", "label": "Daily Trucks Monitored" },
+      { "value": "4", "label": "Logistics Checkpoints" }
+    ],
+    "code_snippet": "// Checkpoint dispatch status verification and transit logger\nexport async function logCheckpointTransit(truckId, checkpointId, driverInfo) {\n  const transitTime = new Date().toISOString();\n  const query = `\n    INSERT INTO truck_dispatch_logs (truck_id, checkpoint_id, driver_name, status, logged_at)\n    VALUES ($1, $2, $3, 'VERIFIED', $4) RETURNING log_id;\n  `;\n  const result = await db.query(query, [truckId, checkpointId, driverInfo.name, transitTime]);\n  return { success: true, logId: result.rows[0].log_id, timestamp: transitTime };\n}",
+    "demo_url": "https://linkedin.com/in/archie-ph-sinaga/",
+    "github_url": "https://github.com"
+  },
+  {
+    "id": "alc-lms",
+    "title": "ALC Learning — Learning Management System",
+    "subtitle": "Academic Assessment Engine & Daily Student Grade Tracking",
+    "status": "Live in Production",
+    "badge_type": "primary",
+    "description": "A high-capacity web-based Learning Management System deployed for Alpha Omega Learning Center supporting 600+ students with academic assessments, daily exercises, and learning modules.",
+    "highlights": [
+      "Scaled to monitor daily student grades, assignments, and learning modules for 600+ enrolled students.",
+      "Co-developed accompanying cash flow auditing program that detected IDR 19M in discrepancies over 9 months."
+    ],
+    "tech": ["JavaScript", "Express.js", "PostgreSQL", "MySQL", "Node.js"],
+    "metrics": [
+      { "value": "600+", "label": "Students Served" },
+      { "value": "IDR 19M", "label": "Discrepancy Found" }
+    ],
+    "code_snippet": "// Financial cash flow discrepancy reconciliation audit module\nexport async function auditCashFlowLedger(startDate, endDate) {\n  const transactions = await db.query(\n    'SELECT * FROM cashflow_ledger WHERE date BETWEEN $1 AND $2 ORDER BY timestamp ASC',\n    [startDate, endDate]\n  );\n  const anomalies = transactions.rows.filter(tx => {\n    const expectedHash = computeLedgerHash(tx.amount, tx.category, tx.timestamp);\n    return tx.verification_hash !== expectedHash || tx.amount <= 0;\n  });\n  return { flaggedCount: anomalies.length, auditedTotal: transactions.rowCount };\n}",
+    "demo_url": "https://linkedin.com/in/archie-ph-sinaga/",
+    "github_url": "https://github.com"
+  },
+  {
+    "id": "dagangan-analysis",
+    "title": "PT. Dagangan Karya Indonesia Analysis Project",
+    "subtitle": "Commercial Retail Analytics, EDA & Transactional Storytelling",
+    "status": "Award-Winning Paper",
+    "badge_type": "accent",
+    "description": "Comprehensive commercial business analytics and exploratory data analysis project evaluating sales distribution, retail patterns, and customer purchase behaviors for PT. Dagangan Karya Indonesia.",
+    "highlights": [
+      "Collaborated in a multidisciplinary team to clean, model, and visualize commercial transaction datasets using Python and Tableau.",
+      "Co-authored final analytics paper and executive presentation deck; awarded Third Best Presentation Team in MSIB Batch 7."
+    ],
+    "tech": ["Python", "Pandas", "SQL", "Tableau", "EDA", "Data Analytics"],
+    "metrics": [
+      { "value": "Top 3", "label": "National Presentation Award" },
+      { "value": "10K+", "label": "Rows Modeled & Cleansed" }
+    ],
+    "code_snippet": "# Transactional cohort analysis and basket metric aggregation\ndef analyze_retail_cohorts(df: pd.DataFrame) -> pd.DataFrame:\n    df['transaction_date'] = pd.to_datetime(df['date'])\n    cohort_summary = df.groupby(['hub_region', 'product_category']).agg(\n        total_gmv=('amount', 'sum'),\n        active_buyers=('customer_id', 'nunique'),\n        avg_basket_size=('quantity', 'mean')\n    ).reset_index()\n    cohort_summary['growth_pct'] = cohort_summary['total_gmv'].pct_change() * 100\n    return cohort_summary",
+    "demo_url": "https://linkedin.com/in/archie-ph-sinaga/",
+    "github_url": "https://github.com"
+  }
+]

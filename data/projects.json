@@ -1,0 +1,35 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Real-Time Truck Tracking System",
+    "summary": "Real-time dispatch and truck route tracking platform monitoring 10-20 transport units daily across 4 industrial checkpoints.",
+    "type": "tech",
+    "domain": "full-stack",
+    "topics": ["logistics", "tracking", "enterprise"],
+    "tech": ["JavaScript", "REST APIs", "PostgreSQL", "Leaflet", "Node.js"],
+    "url": "https://linkedin.com/in/archie-ph-sinaga/",
+    "details": "Engineered at PT Sumatera Prima Fiberboard with a 2-3 person team to enhance physical logistics visibility across factory gates, track 10-20 trucks daily across 4 checkpoints, and eliminate transport haulage bottlenecks."
+  },
+  {
+    "id": "proj-2",
+    "title": "ALC Learning — Learning Management System",
+    "summary": "Full-stack Learning Management System supporting academic assessments, daily exercises, and grade tracking for 600+ active students.",
+    "type": "tech",
+    "domain": "full-stack",
+    "topics": ["web-app", "lms", "education"],
+    "tech": ["JavaScript", "Express.js", "PostgreSQL", "Node.js", "MySQL"],
+    "url": "https://linkedin.com/in/archie-ph-sinaga/",
+    "details": "Deployed in production at Alpha Omega Learning Center with role-based access control, grade book analytics, and modular exercise distribution for over 600 students. Accompanied by a financial cash flow program detecting IDR 19M in audit discrepancies."
+  },
+  {
+    "id": "proj-3",
+    "title": "PT. Dagangan Karya Indonesia Analysis Project",
+    "summary": "Commercial retail data analytics, customer cohort modeling, and business intelligence reporting for PT. Dagangan Karya Indonesia.",
+    "type": "tech",
+    "domain": "data-science",
+    "topics": ["data-analytics", "business-intelligence", "eda"],
+    "tech": ["Python", "Pandas", "SQL", "Tableau", "EDA"],
+    "url": "https://linkedin.com/in/archie-ph-sinaga/",
+    "details": "Conducted end-to-end commercial transactional analytics, exploratory data cleansing, and Tableau KPI dashboards evaluating rural retail distribution for PT. Dagangan Karya Indonesia; co-authored research paper awarded Third Best Presentation Team at Bitlabs MSIB Batch 7."
+  }
+]

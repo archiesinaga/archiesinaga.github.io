@@ -1,0 +1,147 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0b111e;
+  color: #f8fafc;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 440px;
+}
+
+.game-header {
+  margin-bottom: 1.5rem;
+}
+
+.brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.back-link {
+  color: #f97316;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 0.8;
+}
+
+.game-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f97316;
+  line-height: 1;
+}
+
+.scores-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.score-box {
+  flex: 1;
+  background: #141f36;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+}
+
+.score-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+
+.score-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+}
+
+.btn-restart {
+  background: #f97316;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-restart:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+.game-instructions {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.grid-board {
+  background: #141f36;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.grid-cell {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  transition: all 0.15s ease-in-out;
+  user-select: none;
+}
+
+/* Distinct tile colors */
+.tile-2 { background: #1e293b; color: #f8fafc; }
+.tile-4 { background: #334155; color: #f8fafc; }
+.tile-8 { background: #c2410c; color: white; }
+.tile-16 { background: #ea580c; color: white; }
+.tile-32 { background: #f97316; color: white; }
+.tile-64 { background: #fb923c; color: white; }
+.tile-128 { background: #eab308; color: #1e1b4b; font-size: 1.4rem; box-shadow: 0 0 10px #eab308; }
+.tile-256 { background: #facc15; color: #1e1b4b; font-size: 1.4rem; box-shadow: 0 0 15px #facc15; }
+.tile-512 { background: #38bdf8; color: #0f172a; font-size: 1.4rem; box-shadow: 0 0 20px #38bdf8; }
+.tile-1024 { background: #818cf8; color: white; font-size: 1.2rem; box-shadow: 0 0 25px #818cf8; }
+.tile-2048 { background: #ec4899; color: white; font-size: 1.2rem; box-shadow: 0 0 30px #ec4899; }

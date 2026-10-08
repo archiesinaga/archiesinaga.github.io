@@ -1,0 +1,16 @@
+[
+  {
+    "id": "edu-1",
+    "institution": "Universitas Sriwijaya",
+    "degree": "Bachelor's Degree in Informatics Engineering",
+    "major": "Machine Learning and AI",
+    "period": "2022 - 2026",
+    "grade": "GPA: 3.92 / 4.00 (Cum Laude)",
+    "thesis": "Bacterial microscopic image classification by morphology, structure, and staining using deep learning (ConvNeXt & ResNet-50) on the DIBaS dataset.",
+    "highlights": [
+      "Developed an IoT-based Smart Farming system; placed Top 3 among 25-40 competing teams",
+      "Built an expert system for oil palm disease identification through research and interviews with agricultural specialists",
+      "Specialized coursework in Machine Learning, Computer Vision, Data Mining, and Distributed Software Systems"
+    ]
+  }
+]

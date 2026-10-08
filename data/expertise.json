@@ -1,0 +1,106 @@
+[
+  {
+    "id": "gen-ai-agents",
+    "title": "Generative AI & Agentic Systems",
+    "icon": "bot",
+    "summary": "Building production Hybrid RAG architectures, agentic Digital Twins, and autonomous triage pipelines.",
+    "capabilities": [
+      "Hybrid RAG (Hot/Cold path) over high-frequency live telemetry",
+      "Proprietary structured prompt formatting ('TOON') for 95% accuracy",
+      "Autonomous agent workflows triggered by system alerts and machine alarms",
+      "Low-latency caching with Redis and Nginx reverse proxies (< 200ms)"
+    ],
+    "stack": ["Hybrid RAG", "Agentic AI", "Redis", "Nginx", "Python", "LLMs", "Docker"]
+  },
+  {
+    "id": "ai-ml",
+    "title": "Machine Learning & Computer Vision",
+    "icon": "cpu",
+    "summary": "Designing deep neural classifiers and convolutional architectures for microscopic and visual analysis.",
+    "capabilities": [
+      "Convolutional Neural Networks with ConvNeXt & ResNet-50",
+      "Transfer learning for biological pathogen and microscopic classification",
+      "Model evaluation, confusion matrix analysis, and hyperparameter tuning",
+      "Lightweight model serving with FastAPI and TensorFlow inference"
+    ],
+    "stack": ["Python", "TensorFlow", "ConvNeXt", "ResNet-50", "Scikit-Learn", "FastAPI"]
+  },
+  {
+    "id": "data-science",
+    "title": "Data Analytics & Business Intelligence",
+    "icon": "bar-chart-3",
+    "summary": "Extracting commercial insights, building executive BI dashboards, and performing forensic financial analysis.",
+    "capabilities": [
+      "Interactive dashboard development with Tableau, Power BI & Looker Studio",
+      "Forensic cash flow auditing detecting financial anomalies and leaks",
+      "Exploratory Data Analysis (EDA) on 10,000+ row commercial datasets",
+      "Relational SQL data extraction, aggregation, and performance KPIs"
+    ],
+    "stack": ["Tableau", "Power BI", "Looker Studio", "SQL", "Python", "Pandas", "Excel"]
+  },
+  {
+    "id": "fullstack",
+    "title": "Full-Stack Web Development",
+    "icon": "code-2",
+    "summary": "Engineering robust web applications, responsive client portals, and modular backend REST APIs.",
+    "capabilities": [
+      "Learning Management Systems (LMS) serving 600+ students concurrently",
+      "RESTful API architecture using Express.js and Node.js",
+      "Relational schema design with PostgreSQL and MySQL",
+      "Responsive vanilla web interfaces with micro-interactions and fast load times"
+    ],
+    "stack": ["JavaScript", "Express.js", "Node.js", "PostgreSQL", "MySQL", "HTML5", "CSS3"]
+  },
+  {
+    "id": "process-automation",
+    "title": "Process Automation & Logistics",
+    "icon": "cloud",
+    "summary": "Digitizing enterprise workflows, multi-division approvals, and physical logistics tracking.",
+    "capabilities": [
+      "Real-time truck dispatch and route tracking across checkpoints",
+      "Multi-tier digital document approval unifying 8 corporate divisions",
+      "Approval turnaround optimization reducing cycle times from 1 week to 2-3 days",
+      "Operational log audit trails and administrative management"
+    ],
+    "stack": ["JavaScript", "REST APIs", "PostgreSQL", "Workflow Automation", "Leaflet"]
+  },
+  {
+    "id": "expert-systems",
+    "title": "Expert Systems & Decision Support",
+    "icon": "message-square-text",
+    "summary": "Synthesizing domain specialist knowledge into mathematical multi-criteria decision systems.",
+    "capabilities": [
+      "Simple Additive Weighting (SAW) multi-attribute diagnostic scoring",
+      "Interviews and knowledge engineering with agricultural domain experts",
+      "Tree pathology identification (Leaf Spot, Ganoderma, Stem Rot)",
+      "Transparent diagnostic explanations for non-technical field operators"
+    ],
+    "stack": ["Python", "JavaScript", "SAW Method", "Knowledge Engineering"]
+  },
+  {
+    "id": "iot-hardware",
+    "title": "IoT & Smart Agricultural Systems",
+    "icon": "bot",
+    "summary": "Integrating embedded sensor rigs, environmental microclimate monitoring, and automated irrigation.",
+    "capabilities": [
+      "Microcontroller programming with ESP32 & Arduino",
+      "Soil moisture, temperature, and environmental telemetry sensing",
+      "Wireless telemetry streaming with MQTT and alert triggers",
+      "Award-winning smart farming architecture (Top 3 in competition)"
+    ],
+    "stack": ["C++", "Python", "ESP32", "Arduino", "MQTT", "Sensors"]
+  },
+  {
+    "id": "ui-ux-design",
+    "title": "UI/UX & Visual Graphic Design",
+    "icon": "scan-face",
+    "summary": "Crafting polished brand identities, intuitive user interfaces, and high-impact visual media.",
+    "capabilities": [
+      "Adobe Illustrator certified vector composition and iconography",
+      "Interactive UI/UX prototyping in Figma (Technology Euphoria Finalist)",
+      "Marketing and social media content creation driving student enrollment",
+      "Accessible design systems with dark/light mode and harmonious palettes"
+    ],
+    "stack": ["Adobe Illustrator", "Affinity Designer", "Figma", "Canva", "CSS3 Tokens"]
+  }
+]

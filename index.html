@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archie P. H. Sinaga — Informatics Engineering Graduate | AI/ML, Data Analytics & Web Development</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Personal portfolio of Archie P. H. Sinaga — Informatics Engineering Graduate from Sriwijaya University (GPA 3.92/4.00) specializing in AI/ML, Generative AI & Hybrid RAG, Data Analytics, and Web Development.">
+  <meta name="keywords"
+    content="Archie P. H. Sinaga, AI Engineer, Machine Learning, Data Analyst, Web Developer, Generative AI, RAG, Sriwijaya University, Palembang, Indonesia">
+  <meta name="author" content="Archie P. H. Sinaga">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://linkedin.com/in/archie-ph-sinaga/">
+  <meta property="og:title" content="Archie P. H. Sinaga — AI/ML, Data Analytics & Web Development">
+  <meta property="og:description"
+    content="Explore engineering projects, Generative AI digital twins, microscopic computer vision, and verified data analytics milestones.">
+  <meta property="og:image" content="image/avatar.jpeg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Archie P. H. Sinaga — AI/ML, Data Analytics & Web Development">
+  <meta name="twitter:description"
+    content="Explore engineering projects, Generative AI digital twins, microscopic computer vision, and verified data analytics milestones.">
+  <meta name="twitter:image" content="image/avatar.jpeg">
+
+  <!-- Google Fonts Preload & Import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Archie P. H. Sinaga",
+    "jobTitle": "Informatics Engineering Graduate | AI/ML, Data Analytics & Web Development",
+    "description": "Informatics Engineering graduate from Sriwijaya University (GPA 3.92/4.00) with hands-on experience in website development, data analytics, machine learning, generative AI, and process automation.",
+    "alumniOf": "Universitas Sriwijaya",
+    "url": "https://linkedin.com/in/archie-ph-sinaga/",
+    "sameAs": [
+      "https://linkedin.com/in/archie-ph-sinaga/",
+      "https://github.com"
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Generative AI",
+      "Hybrid RAG",
+      "Data Analytics",
+      "Web Development",
+      "Computer Vision"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar" id="main-navbar">
+    <div class="container navbar-container">
+      <a href="#home" class="nav-brand" aria-label="Archie P. H. Sinaga Home">
+        <div class="brand-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <span id="brand-name">Archie</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#news" class="nav-link">News</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+
+          <!-- More Dropdown (Mini-Games) -->
+          <li class="nav-item-dropdown">
+            <span class="nav-link dropdown-toggle" role="button" tabindex="0">
+              Arcade
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+            <div class="dropdown-menu">
+              <a href="2048/" class="dropdown-item">
+                <span>🎮</span> 2048 Puzzle
+              </a>
+              <a href="Snake/" class="dropdown-item">
+                <span>🐍</span> Retro Snake
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Action Items: Socials, Theme Toggle, Mobile Button -->
+      <div class="nav-actions">
+        <div id="nav-socials" class="d-flex" style="gap: 0.4rem;">
+          <!-- Dynamically populated from profile.json -->
+        </div>
+
+        <button class="btn btn-icon" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <!-- Populated by theme.js -->
+        </button>
+
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open mobile navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section id="home" class="hero-section">
+      <!-- Decorative Moon and Ambient Elements -->
+      <div class="hero-backdrop-moon"></div>
+      <div class="hero-speech-bubble">Explore My Portfolio! 🚀</div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-greeting">
+            <span class="badge badge-accent">Hello World</span>
+            <span>👋 Welcome to my portfolio</span>
+          </div>
+          <h1 class="hero-name" id="hero-name">I'm Archie P. H. Sinaga</h1>
+          <div class="hero-role" id="hero-role">Informatics Engineering Graduate | AI/ML, Data Analytics & Web Development</div>
+          <p class="hero-motto" id="hero-motto">
+            Building intelligent systems that bridge AI/ML, data analytics, and real-world business impact.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#portfolio" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Explore Projects
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              Let's Connect
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-avatar-wrapper">
+          <div class="hero-avatar-frame" id="hero-avatar-frame">
+            <img src="image/avatar.jpeg" alt="Archie P. H. Sinaga Profile Avatar" class="hero-avatar-img">
+          </div>
+          <div class="hero-badge-floating">
+            <span class="badge badge-live"></span>
+            <span>Available for Hire</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Intro + Stats + Marquee -->
+    <section id="stats" class="stats-section">
+      <div class="container">
+        <div class="stats-grid" id="stats-grid-container">
+          <!-- Dynamically populated from profile.json -->
+        </div>
+
+        <!-- Infinite Logo / Tech Marquee -->
+        <div class="marquee-container" aria-hidden="true">
+          <div class="marquee-track">
+            <span class="marquee-item">⚡ ConvNeXt & ResNet-50 Microscopic AI</span>
+            <span class="marquee-item">🤖 Hybrid RAG & Agentic Digital Twins</span>
+            <span class="marquee-item">📊 Tableau, Power BI & Looker Studio</span>
+            <span class="marquee-item">🌐 Full-Stack LMS & Express.js APIs</span>
+            <span class="marquee-item">🔍 Financial Fraud & Forensic Cash Flow</span>
+            <span class="marquee-item">🌾 IoT Smart Farming Automation</span>
+            <span class="marquee-item">🎨 Adobe Illustrator Certified Design</span>
+            <span class="marquee-item">🎓 Sriwijaya University (GPA 3.92)</span>
+            <!-- Repeat once for smooth loop -->
+            <span class="marquee-item">⚡ ConvNeXt & ResNet-50 Microscopic AI</span>
+            <span class="marquee-item">🤖 Hybrid RAG & Agentic Digital Twins</span>
+            <span class="marquee-item">📊 Tableau, Power BI & Looker Studio</span>
+            <span class="marquee-item">🌐 Full-Stack LMS & Express.js APIs</span>
+            <span class="marquee-item">🔍 Financial Fraud & Forensic Cash Flow</span>
+            <span class="marquee-item">🌾 IoT Smart Farming Automation</span>
+            <span class="marquee-item">🎨 Adobe Illustrator Certified Design</span>
+            <span class="marquee-item">🎓 Sriwijaya University (GPA 3.92)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. About Me & Areas of Expertise -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Bridging Theory & Production Systems</h2>
+          <p class="section-desc">Informatics Engineering graduate from Sriwijaya University specializing in AI, Data Analytics, and Web Systems.</p>
+        </div>
+
+        <div class="about-pitch-card">
+          <p>
+            Informatics Engineering graduate from Sriwijaya University (GPA 3.92/4.00) with hands-on experience in website development, data analytics, machine learning, generative AI, and process automation through internships, academic work, and professional projects. Collaborates well in cross-functional teams and applies analytical and technical skills to solve real-world problems with business impact.
+          </p>
+        </div>
+
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="section-tag">Core Domains</span>
+          <h2 class="section-title">Areas of Expertise</h2>
+          <p class="section-desc">Click on any card to view detailed capabilities and production tech stacks.</p>
+        </div>
+
+        <div class="expertise-grid" id="expertise-grid-container">
+          <!-- Populated from expertise.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Latest News & Activities -->
+    <section id="news" class="news-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">What's Happening</span>
+          <h2 class="section-title">Latest News & Active Systems</h2>
+          <p class="section-desc">Live research initiatives, deployment milestones, and recent technical publications.
+          </p>
+        </div>
+
+        <!-- Featured Active Projects Swiper Carousel -->
+        <div id="active-projects-container">
+          <!-- Populated by ActiveSystemsCarousel -->
+        </div>
+
+        <!-- Publication Feed Swiper -->
+        <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; text-align: center;">Recent Articles & Dispatches</h3>
+        <div id="news-feed-container">
+          <!-- Populated by NewsFeedCarousel -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Professional Experience -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Career Milestones</span>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-desc">Timeline of leadership, engineering roles, and quantifiable contributions.</p>
+        </div>
+
+        <div id="exp-carousel-container">
+          <!-- Populated by carousel.js from experience.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Activities & Skills -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Competencies & Impact</span>
+          <h2 class="section-title">Activities & Technical Stack</h2>
+          <p class="section-desc">Leadership involvement across communities alongside core technology proficiency.</p>
+        </div>
+
+        <div class="skills-dual-grid">
+          <!-- Left Column: Leadership & Organizations -->
+          <div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="color: var(--accent-primary);">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              Organizational Leadership
+            </h3>
+            <div class="org-list" id="org-list-container">
+              <!-- Populated from organizations.json -->
+            </div>
+          </div>
+
+          <!-- Right Column: Skills & Education & Certs -->
+          <div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="color: var(--accent-primary);">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+              Technical Ecosystem
+            </h3>
+            <div id="skills-categorized-container">
+              <!-- Populated from skills.json -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Portfolio & Projects -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Showcase</span>
+          <h2 class="section-title">Portfolio & Projects</h2>
+          <p class="section-desc">Interactive archive of engineering solutions, algorithms, and applications.</p>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid" id="projects-grid-container">
+          <!-- Populated by filters.js from projects.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Contact Section ("LET'S WORK TOGETHER") -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Let's Work Together</h2>
+          <p class="section-desc">Have an AI project, full-stack challenge, or research opportunity? Drop a message!</p>
+        </div>
+
+        <div class="contact-dual-grid">
+          <div class="contact-info-panel" id="contact-info-list">
+            <!-- Populated from profile.json -->
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="card">
+            <h3 style="margin-bottom: 1.25rem;">Send a Direct Dispatch</h3>
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name *</label>
+                <input type="text" id="contact-name" class="form-control" required placeholder="e.g. Jane Doe">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Your Email *</label>
+                <input type="email" id="contact-email" class="form-control" required placeholder="jane@example.com">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject *</label>
+                <input type="text" id="contact-subject" class="form-control" required
+                  placeholder="e.g. AI Collaboration or Hiring Inquiry">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message *</label>
+                <textarea id="contact-message" class="form-control" required
+                  placeholder="Tell me about your project, timeline, or thoughts..."></textarea>
+              </div>
+
+              <div id="contact-form-feedback"
+                style="display: none; padding: 0.75rem 1rem; border-radius: 8px; background: rgba(16, 185, 129, 0.15); color: var(--accent-success); border: 1px solid rgba(16, 185, 129, 0.3); margin-bottom: 1rem; font-size: 0.875rem;">
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-fossil-wrap">
+        <img src="image/fossil-emblem.jpg" alt="Prehistoric Ammonite Fossil Emblem" class="footer-fossil-img"
+          loading="lazy">
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="2048/">2048 Game</a>
+        <a href="Snake/">Snake Game</a>
+      </nav>
+
+      <p class="footer-copy">
+        © <span id="footer-year">2026</span> Archie P. H. Sinaga. Built with vanilla web standards & clean architecture.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Right Rail Section Indicator Dots -->
+  <nav class="section-nav-dots" aria-label="Section Navigation Dots">
+    <a href="#home" class="nav-dot active" data-target="home" aria-label="Go to Home section">
+      <span class="nav-dot-tooltip">Home</span>
+    </a>
+    <a href="#about" class="nav-dot" data-target="about" aria-label="Go to About section">
+      <span class="nav-dot-tooltip">About</span>
+    </a>
+    <a href="#news" class="nav-dot" data-target="news" aria-label="Go to News section">
+      <span class="nav-dot-tooltip">News</span>
+    </a>
+    <a href="#experience" class="nav-dot" data-target="experience" aria-label="Go to Experience section">
+      <span class="nav-dot-tooltip">Experience</span>
+    </a>
+    <a href="#skills" class="nav-dot" data-target="skills" aria-label="Go to Skills section">
+      <span class="nav-dot-tooltip">Skills</span>
+    </a>
+    <a href="#portfolio" class="nav-dot" data-target="portfolio" aria-label="Go to Portfolio section">
+      <span class="nav-dot-tooltip">Portfolio</span>
+    </a>
+    <a href="#contact" class="nav-dot" data-target="contact" aria-label="Go to Contact section">
+      <span class="nav-dot-tooltip">Contact</span>
+    </a>
+  </nav>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top-btn" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <!-- Generic Global Modal Component -->
+  <div class="modal-overlay" id="global-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="global-modal-title">Modal Title</h3>
+        <button class="modal-close-btn" id="global-modal-close-btn" aria-label="Close dialog">×</button>
+      </div>
+      <div class="modal-body" id="global-modal-body">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Chatbot Widget -->
+  <button class="chatbot-trigger" id="chatbot-trigger" aria-label="Chat with Archie's AI Assistant"
+    title="Chat with Archie's AI Assistant">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  </button>
+
+  <div class="chatbot-panel" id="chatbot-panel" role="dialog" aria-label="Archie AI Assistant" aria-hidden="true">
+    <div class="chatbot-header">
+      <div class="chatbot-header-info">
+        <div class="chatbot-avatar">AI</div>
+        <div>
+          <div style="font-weight: 700; font-size: 0.95rem;">Archie AI Assistant</div>
+          <div style="font-size: 0.725rem; color: var(--accent-success); display: flex; align-items: center; gap: 4px;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-success);"></span>
+            Online & Ready
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center" style="gap: 0.5rem;">
+        <select id="chatbot-lang-select"
+          style="background: var(--bg-elevated); color: var(--text-primary); border: 1px solid var(--surface-border); border-radius: 6px; font-size: 0.75rem; padding: 2px 4px;">
+          <option value="EN">EN</option>
+          <option value="ID">ID</option>
+          <option value="ZH">ZH</option>
+          <option value="AR">AR</option>
+          <option value="JA">JA</option>
+        </select>
+        <button id="chatbot-close-btn"
+          style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.25rem;">✕</button>
+      </div>
+    </div>
+
+    <div class="chatbot-messages" id="chatbot-messages">
+      <!-- Chat messages appended dynamically -->
+    </div>
+
+    <!-- Quick Prompt Chips -->
+    <div class="chat-chips">
+      <button class="chat-chip" data-query="What is Archie's primary tech stack?">Tech Stack</button>
+      <button class="chat-chip" data-query="What projects has Archie built?">Key Projects</button>
+      <button class="chat-chip" data-query="What is Archie's work experience?">Experience</button>
+      <button class="chat-chip" data-query="How can I contact or hire Archie?">Contact Info</button>
+    </div>
+
+    <div class="chatbot-input-bar">
+      <input type="text" id="chatbot-input" placeholder="Ask about projects, skills, background..."
+        aria-label="Type your message to the AI assistant">
+      <button class="btn btn-primary btn-sm" id="chatbot-send-btn" aria-label="Send message">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="22" y1="2" x2="11" y2="13" />
+          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Master JavaScript Application -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

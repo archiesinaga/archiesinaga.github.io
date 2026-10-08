@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Python",
+    "icon": "python",
+    "level": "Advanced",
+    "domain": "Core Language"
+  },
+  {
+    "name": "SQL",
+    "icon": "database",
+    "level": "Advanced",
+    "domain": "Database & Queries"
+  },
+  {
+    "name": "Machine Learning",
+    "icon": "cpu",
+    "level": "Advanced",
+    "domain": "AI & Deep Learning"
+  },
+  {
+    "name": "Generative AI & RAG",
+    "icon": "bot",
+    "level": "Advanced",
+    "domain": "Agentic AI Systems"
+  },
+  {
+    "name": "Data Analytics & Pandas",
+    "icon": "bar-chart-3",
+    "level": "Advanced",
+    "domain": "Analytics & Forensics"
+  },
+  {
+    "name": "Tableau & Power BI",
+    "icon": "pie-chart",
+    "level": "Advanced",
+    "domain": "Business Intelligence"
+  },
+  {
+    "name": "JavaScript & Express.js",
+    "icon": "code-2",
+    "level": "Proficient",
+    "domain": "Full-Stack Web APIs"
+  },
+  {
+    "name": "PostgreSQL & MySQL",
+    "icon": "server",
+    "level": "Proficient",
+    "domain": "Relational Storage"
+  }
+]
