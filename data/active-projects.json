@@ -17,7 +17,7 @@
     ],
     "code_snippet": "// Checkpoint dispatch status verification and transit logger\nexport async function logCheckpointTransit(truckId, checkpointId, driverInfo) {\n  const transitTime = new Date().toISOString();\n  const query = `\n    INSERT INTO truck_dispatch_logs (truck_id, checkpoint_id, driver_name, status, logged_at)\n    VALUES ($1, $2, $3, 'VERIFIED', $4) RETURNING log_id;\n  `;\n  const result = await db.query(query, [truckId, checkpointId, driverInfo.name, transitTime]);\n  return { success: true, logId: result.rows[0].log_id, timestamp: transitTime };\n}",
     "demo_url": "https://linkedin.com/in/archie-ph-sinaga/",
-    "github_url": "https://github.com"
+    "github_url": "https://github.com/archiesinaga"
   },
   {
     "id": "alc-lms",
@@ -37,7 +37,7 @@
     ],
     "code_snippet": "// Financial cash flow discrepancy reconciliation audit module\nexport async function auditCashFlowLedger(startDate, endDate) {\n  const transactions = await db.query(\n    'SELECT * FROM cashflow_ledger WHERE date BETWEEN $1 AND $2 ORDER BY timestamp ASC',\n    [startDate, endDate]\n  );\n  const anomalies = transactions.rows.filter(tx => {\n    const expectedHash = computeLedgerHash(tx.amount, tx.category, tx.timestamp);\n    return tx.verification_hash !== expectedHash || tx.amount <= 0;\n  });\n  return { flaggedCount: anomalies.length, auditedTotal: transactions.rowCount };\n}",
     "demo_url": "https://linkedin.com/in/archie-ph-sinaga/",
-    "github_url": "https://github.com"
+    "github_url": "https://github.com/archiesinaga"
   },
   {
     "id": "dagangan-analysis",
@@ -57,6 +57,6 @@
     ],
     "code_snippet": "# Transactional cohort analysis and basket metric aggregation\ndef analyze_retail_cohorts(df: pd.DataFrame) -> pd.DataFrame:\n    df['transaction_date'] = pd.to_datetime(df['date'])\n    cohort_summary = df.groupby(['hub_region', 'product_category']).agg(\n        total_gmv=('amount', 'sum'),\n        active_buyers=('customer_id', 'nunique'),\n        avg_basket_size=('quantity', 'mean')\n    ).reset_index()\n    cohort_summary['growth_pct'] = cohort_summary['total_gmv'].pct_change() * 100\n    return cohort_summary",
     "demo_url": "https://linkedin.com/in/archie-ph-sinaga/",
-    "github_url": "https://github.com"
+    "github_url": "https://github.com/archiesinaga"
   }
 ]
