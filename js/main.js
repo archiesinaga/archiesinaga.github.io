@@ -18,6 +18,7 @@ import {
 import { ProjectFilterManager } from './filters.js';
 import { PortfolioChatbot } from './chatbot.js';
 import { initScrollEffects } from './reveal.js';
+import { initFx } from './fx.js';
 
 async function initPortfolio() {
   // 1. Theme initialization first (fast render)
@@ -84,41 +85,56 @@ async function initPortfolio() {
     });
 
     // 6. Contact Form Submission Handler
-    setupContactForm();
+    setupContactForm(profile.contact?.phone);
 
     // 7. Scroll reveal & animations
     initScrollEffects();
+
+    // 8. Futuristic interaction layer (typing line, spotlight, command palette)
+    initFx(profile);
 
   } catch (error) {
     console.error('Failed to load portfolio data:', error);
   }
 }
 
-function setupContactForm() {
+/**
+ * Contact form: opens a prefilled WhatsApp chat (wa.me) instead of pretending to send.
+ * @param {string} phone - international number from profile.json, e.g. "+6281250233529"
+ */
+function setupContactForm(phone) {
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('contact-form-feedback');
+  if (!form) return;
 
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+  const waNumber = (phone || '').replace(/\D/g, '');
 
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `Sending...`;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        form.reset();
+    if (!waNumber) {
+      showFeedback('Messaging is unavailable right now. Please use the email address on this page.');
+      return;
+    }
 
-        if (feedback) {
-          feedback.style.display = 'block';
-          feedback.textContent = 'Thank you! Your message has been sent successfully. Archie will respond within 24 hours.';
-          setTimeout(() => { feedback.style.display = 'none'; }, 6000);
-        }
-      }, 800);
-    });
+    const name = form.querySelector('#contact-name').value.trim();
+    const email = form.querySelector('#contact-email').value.trim();
+    const subject = form.querySelector('#contact-subject').value.trim();
+    const message = form.querySelector('#contact-message').value.trim();
+
+    const text = `Hi Archie, I'm ${name} (${email}).\n\n*${subject}*\n${message}`;
+    const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, '_blank', 'noopener');
+    form.reset();
+    showFeedback('Opening WhatsApp with your message ready to send. Archie usually replies within 24 hours.');
+  });
+
+  function showFeedback(msg) {
+    if (!feedback) return;
+    feedback.style.display = 'block';
+    feedback.textContent = msg;
+    setTimeout(() => { feedback.style.display = 'none'; }, 6000);
   }
 }
 

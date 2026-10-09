@@ -37,7 +37,7 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
   background-image: 
     radial-gradient(circle at 10% 20%, rgba(249, 115, 22, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 90% 60%, rgba(56, 189, 248, 0.03) 0%, transparent 45%),
+    radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.025) 0%, transparent 45%),
     radial-gradient(circle at 50% 90%, rgba(249, 115, 22, 0.03) 0%, transparent 50%);
 }
 
@@ -52,7 +52,7 @@ body::before {
   pointer-events: none;
   z-index: 0;
   opacity: 0.025;
-  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-image: radial-gradient(var(--text-muted) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 

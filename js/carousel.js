@@ -392,7 +392,7 @@ export class ExperienceCarousel {
       <div class="carousel-slide" data-slide-index="${index}">
         <div class="exp-card-large">
           <div class="exp-image-box">
-            <img src="${item.image}" alt="${item.role} at ${item.org}" loading="lazy" onerror="this.src='image/exp-nexus.webp'">
+            <img src="${item.image}" alt="${item.role} at ${item.org}" loading="lazy" onerror="this.src='image/exp-nexus.svg'">
             <div class="exp-image-overlay"></div>
           </div>
           <div class="exp-content">

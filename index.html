@@ -40,6 +40,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/futuristic.css">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -150,6 +151,11 @@
           </div>
           <h1 class="hero-name" id="hero-name">I'm Archie P. H. Sinaga</h1>
           <div class="hero-role" id="hero-role">Informatics Engineering Graduate | AI/ML, Data Analytics & Web Development</div>
+          <div class="hero-terminal" aria-label="Target roles">
+            <span class="prompt">$</span>
+            <span>whoami →</span>
+            <span id="typed-role">AI Engineer</span><span class="caret" aria-hidden="true"></span>
+          </div>
           <p class="hero-motto" id="hero-motto">
             Building intelligent systems that bridge AI/ML, data analytics, and real-world business impact.
           </p>
@@ -173,11 +179,12 @@
 
         <div class="hero-avatar-wrapper">
           <div class="hero-avatar-frame" id="hero-avatar-frame">
-            <img src="image/avatar.jpeg" alt="Archie P. H. Sinaga Profile Avatar" class="hero-avatar-img">
+            <img src="image/avatar.jpeg" alt="Archie P. H. Sinaga Profile Avatar" class="hero-avatar-img"
+              width="320" height="400" fetchpriority="high" decoding="async">
           </div>
           <div class="hero-badge-floating">
             <span class="badge badge-live"></span>
-            <span>Available for Hire</span>
+            <span>Open to opportunities</span>
           </div>
         </div>
       </div>
@@ -391,7 +398,7 @@
                   <line x1="22" y1="2" x2="11" y2="13" />
                   <polygon points="22 2 15 22 11 13 2 9 22 2" />
                 </svg>
-                Send Message
+                Send via WhatsApp
               </button>
             </form>
           </div>

@@ -6,7 +6,7 @@
     "location": "Indonesia",
     "period": "2025 - Present",
     "isCurrent": true,
-    "image": "image/exp-nexus.webp",
+    "image": "image/exp-nexus.svg",
     "summary": "R&D and deployment of 'Octagon', an agentic Digital Twin assistant for live industrial telemetry monitoring, predictive maintenance, and autonomous root cause analysis.",
     "tags": ["Hybrid RAG", "Agentic AI", "Redis", "Nginx", "LLM", "Docker"],
     "metrics": [
@@ -22,7 +22,7 @@
     "location": "Palembang, Indonesia",
     "period": "2024 - Present",
     "isCurrent": true,
-    "image": "image/exp-synapse.webp",
+    "image": "image/exp-synapse.svg",
     "summary": "Building LMS web platform for 600+ students, co-developed financial cash flow anomaly audit tool, and analyzed engagement data to grow registrations.",
     "tags": ["JavaScript", "Express.js", "PostgreSQL", "Data Analytics", "Financial Forensics", "LMS"],
     "metrics": [
@@ -38,7 +38,7 @@
     "location": "Indralaya, Indonesia",
     "period": "2025-06 - 2025-08",
     "isCurrent": false,
-    "image": "image/exp-bioscan.webp",
+    "image": "image/exp-bioscan.svg",
     "summary": "Developed a real-time truck route tracking system across checkpoints and co-developed digital approval workflows connecting 8 manufacturing divisions.",
     "tags": ["Web Development", "Logistics Tracking", "Workflow Automation", "API Integration"],
     "metrics": [
@@ -54,7 +54,7 @@
     "location": "Indonesia",
     "period": "2024-09 - 2025-01",
     "isCurrent": false,
-    "image": "image/exp-lab.webp",
+    "image": "image/exp-lab.svg",
     "summary": "Completed a national talent development program in data analytics, collaborating in multidisciplinary teams to solve real business challenges using data-driven methodologies.",
     "tags": ["Python", "SQL", "Tableau", "Pandas", "EDA", "Business Intelligence"],
     "metrics": [

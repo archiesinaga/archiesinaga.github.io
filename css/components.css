@@ -210,7 +210,7 @@
 }
 
 .code-body .keyword { color: #f43f5e; font-weight: 600; }
-.code-body .function { color: #38bdf8; }
+.code-body .function { color: #e4e4e7; }
 .code-body .string { color: #a3e635; }
 .code-body .comment { color: #64748b; font-style: italic; }
 .code-body .number { color: #fb923c; }
