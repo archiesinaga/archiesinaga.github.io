@@ -281,6 +281,8 @@ Explore the **Portfolio & Projects** section above to view all technical details
 📱 Phone / WhatsApp: **+6281250233529**
 📍 Location: Palembang, South Sumatra, Indonesia (WIB / UTC+7)
 🔗 LinkedIn: [linkedin.com/in/archie-ph-sinaga/](https://linkedin.com/in/archie-ph-sinaga/)
+💻 GitHub: [github.com/archiesinaga](https://github.com/archiesinaga)
+📄 CV: [View resume](https://drive.google.com/file/d/1w1jTxrX_CD_UAV4-eJioiVN-UIDiBswk/view?usp=drive_link)
 ⚡ Response time: Under 24 hours.
 He is open for AI Engineer, Machine Learning, Data Analyst, Web Developer, and Banking/Finance ODP opportunities!`;
     }
