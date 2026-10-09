@@ -29,14 +29,15 @@ export function renderProfile(profile) {
   }
 
   // Social Links in Navbar
-  const navSocialsContainer = document.getElementById('nav-socials');
-  if (navSocialsContainer && profile.socials) {
-    navSocialsContainer.innerHTML = profile.socials.map(s => `
+  const socialLinksHtml = (profile.socials || []).map(s => `
       <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="btn btn-icon btn-sm" aria-label="${s.name}" title="${s.name}">
         ${getSocialSvg(s.name)}
       </a>
     `).join('');
-  }
+  ['nav-socials', 'footer-socials'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = socialLinksHtml;
+  });
 
   // Contact Info Panel
   const contactInfoContainer = document.getElementById('contact-info-list');

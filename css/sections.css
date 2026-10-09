@@ -1211,6 +1211,21 @@
   }
 }
 
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+@media (max-width: 600px) {
+  /* Five icons no longer fit beside the logo; they live in the footer on phones. */
+  #nav-socials {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
