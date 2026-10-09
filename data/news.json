@@ -10,16 +10,6 @@
     "url": "https://linkedin.com/in/archie-ph-sinaga/"
   },
   {
-    "id": "news-2",
-    "type": "Engineering Dispatch",
-    "platform": "Gonsters AI R&D",
-    "date": "Jun 2026",
-    "title": "Octagon Digital Twin: Deploying Hybrid RAG for Live Telemetry",
-    "summary": "Implemented a dual Hot/Cold path retrieval architecture querying 120+ machine sensor streams under 200ms latency, achieving 95% accuracy and zero hallucinations across 9+ industrial benchmark categories.",
-    "tags": ["GenerativeAI", "HybridRAG", "AgenticAI", "DigitalTwin"],
-    "url": "https://linkedin.com/in/archie-ph-sinaga/"
-  },
-  {
     "id": "news-3",
     "type": "Competition Honor",
     "platform": "Bitlabs Academy / MSIB",

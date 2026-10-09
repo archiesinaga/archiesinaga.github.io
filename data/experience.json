@@ -1,21 +1,5 @@
 [
   {
-    "id": "exp-gonsters",
-    "role": "Generative AI Engineer",
-    "org": "Gonsters",
-    "location": "Indonesia",
-    "period": "2025 - Present",
-    "isCurrent": true,
-    "image": "image/exp-nexus.webp",
-    "summary": "R&D and deployment of 'Octagon', an agentic Digital Twin assistant for live industrial telemetry monitoring, predictive maintenance, and autonomous root cause analysis.",
-    "tags": ["Hybrid RAG", "Agentic AI", "Redis", "Nginx", "LLM", "Docker"],
-    "metrics": [
-      { "label": "Retrieval Latency", "val": "-40%", "desc": "Hybrid RAG (Hot/Cold path) querying 120+ live telemetry points" },
-      { "label": "Benchmark Accuracy", "val": "95%", "desc": "Proprietary 'TOON' formatting with zero hallucinations across 9+ industrial benchmarks" },
-      { "label": "System Latency", "val": "< 200ms", "desc": "Redis/Nginx caching with 100% schema consistency via automated smoke tests" }
-    ]
-  },
-  {
     "id": "exp-alc",
     "role": "Data Analyst, Web Developer & Social Media Specialist",
     "org": "Alpha Omega Learning Center (ALC)",
