@@ -5,7 +5,10 @@
     "issuer": "IBM",
     "category": "Data & Analytics",
     "date": "Oct 2026",
-    "skills": ["Data Build Tool (dbt)", "Data Refinement"],
+    "skills": [
+      "Data Build Tool (dbt)",
+      "Data Refinement"
+    ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
@@ -14,7 +17,10 @@
     "issuer": "IBM",
     "category": "Data & Analytics",
     "date": "Oct 2026",
-    "skills": ["Data Science", "Sustainable Development"],
+    "skills": [
+      "Data Science",
+      "Sustainable Development"
+    ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
@@ -23,7 +29,10 @@
     "issuer": "IBM",
     "category": "AI & Machine Learning",
     "date": "Oct 2026",
-    "skills": ["Generative AI", "IBM Granite"],
+    "skills": [
+      "Generative AI",
+      "IBM Granite"
+    ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
@@ -32,7 +41,10 @@
     "issuer": "IBM",
     "category": "AI & Machine Learning",
     "date": "Oct 2026",
-    "skills": ["Artificial Intelligence", "AI Ethics"],
+    "skills": [
+      "Artificial Intelligence",
+      "AI Ethics"
+    ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
@@ -41,7 +53,10 @@
     "issuer": "IBM",
     "category": "AI & Machine Learning",
     "date": "Oct 2026",
-    "skills": ["Problem Solving", "Pattern Recognition"],
+    "skills": [
+      "Problem Solving",
+      "Pattern Recognition"
+    ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
@@ -50,7 +65,10 @@
     "issuer": "IBM",
     "category": "Security",
     "date": "Sep 2026",
-    "skills": ["Cybersecurity", "Cryptography"],
+    "skills": [
+      "Cybersecurity",
+      "Cryptography"
+    ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
@@ -60,7 +78,10 @@
     "category": "Job Simulations",
     "date": "Oct 2026",
     "credentialId": "6ac752b040b981ecded7dc16",
-    "skills": ["Attention to Detail", "Data Privacy"],
+    "skills": [
+      "Attention to Detail",
+      "Data Privacy"
+    ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
@@ -70,7 +91,10 @@
     "category": "Job Simulations",
     "date": "Oct 2026",
     "credentialId": "6ac5014f4b1a13b126db70bf",
-    "skills": ["Finance", "Capital Markets"],
+    "skills": [
+      "Finance",
+      "Capital Markets"
+    ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
@@ -79,7 +103,11 @@
     "issuer": "MyEduSolve",
     "category": "Design & Media",
     "date": "Oct 2025",
-    "skills": ["Adobe Illustrator", "Vector Graphics", "Branding"],
+    "skills": [
+      "Adobe Illustrator",
+      "Vector Graphics",
+      "Branding"
+    ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
@@ -88,8 +116,13 @@
     "issuer": "Real Projects Certification",
     "category": "Data & Analytics",
     "date": "Apr 2026",
-    "skills": ["SQL", "Tableau", "Power BI", "Excel"],
-    "url": null
+    "skills": [
+      "SQL",
+      "Tableau",
+      "Power BI",
+      "Excel"
+    ],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
     "id": "cert-duolingo",
@@ -97,8 +130,10 @@
     "issuer": "Duolingo",
     "category": "Language",
     "date": "Jul 2026",
-    "skills": ["Professional Working English"],
-    "url": null
+    "skills": [
+      "Professional Working English"
+    ],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
     "id": "cert-msib-bitlabs",
@@ -106,7 +141,13 @@
     "issuer": "Bitlabs Academy / Kampus Merdeka",
     "category": "Data & Analytics",
     "date": "Dec 2024",
-    "skills": ["Python", "SQL", "Tableau", "Excel", "EDA"],
+    "skills": [
+      "Python",
+      "SQL",
+      "Tableau",
+      "Excel",
+      "EDA"
+    ],
     "url": "https://bitlabs.id"
   },
   {
@@ -115,7 +156,10 @@
     "issuer": "Bitlabs Academy",
     "category": "Honors & Awards",
     "date": "Dec 2024",
-    "skills": ["Analytical Storytelling", "Executive Presentation"],
+    "skills": [
+      "Analytical Storytelling",
+      "Executive Presentation"
+    ],
     "url": null
   },
   {
@@ -124,7 +168,11 @@
     "issuer": "Technology Euphoria 2024",
     "category": "Honors & Awards",
     "date": "Nov 2024",
-    "skills": ["Figma", "Prototyping", "Design Thinking"],
+    "skills": [
+      "Figma",
+      "Prototyping",
+      "Design Thinking"
+    ],
     "url": null
   },
   {
@@ -133,7 +181,11 @@
     "issuer": "Universitas Sriwijaya",
     "category": "Honors & Awards",
     "date": "",
-    "skills": ["ESP32", "Arduino", "Sensors"],
+    "skills": [
+      "ESP32",
+      "Arduino",
+      "Sensors"
+    ],
     "url": null
   }
 ]
