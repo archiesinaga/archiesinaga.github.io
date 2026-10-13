@@ -3,48 +3,48 @@
     "id": "exp-alc",
     "role": "Data Analyst, Web Developer & Social Media Specialist",
     "org": "Alpha Omega Learning Center (ALC)",
-    "location": "Palembang, Indonesia",
-    "period": "2024 - Present",
+    "location": "Palembang, Indonesia · Part-time",
+    "period": "Jul 2024 - Present",
     "isCurrent": true,
     "image": "image/exp-synapse.webp",
-    "summary": "Building LMS web platform for 600+ students, co-developed financial cash flow anomaly audit tool, and analyzed engagement data to grow registrations.",
-    "tags": ["JavaScript", "Express.js", "PostgreSQL", "Data Analytics", "Financial Forensics", "LMS"],
+    "summary": "Built and maintain the LMS tracking daily grades for ~600 students, co-developed a cash flow auditing tool, and used engagement data to grow enrolment through a 5–7x weekly posting schedule.",
+    "tags": ["JavaScript", "Express.js", "PostgreSQL", "Data Analytics", "LMS", "Content Strategy"],
     "metrics": [
-      { "label": "Fraud / Loss Detected", "val": "IDR 19M", "desc": "Co-developed cash flow program detecting fraud/losses over 9 months" },
-      { "label": "Enrollment Growth", "val": "+120", "desc": "Increased student registrations in 3 months via analytics-backed content" },
-      { "label": "Scale Monitored", "val": "600+", "desc": "Built LMS tracking daily student grades, modules, and exercises" }
+      { "label": "Enrolment Growth", "val": "+120", "desc": "New student registrations in 3 months from analytics-backed social content, team of 2–3" },
+      { "label": "Students Tracked", "val": "600+", "desc": "Daily grades, exercises and modules in the LMS, built with Express.js" },
+      { "label": "Discrepancies Found", "val": "IDR 19M", "desc": "Surfaced by a co-developed cash flow auditing program over 9 months" }
     ]
   },
   {
     "id": "exp-spf",
-    "role": "IT Intern",
-    "org": "PT Sumatera Prima Fiberboard",
-    "location": "Indralaya, Indonesia",
-    "period": "2025-06 - 2025-08",
+    "role": "Web Developer Intern",
+    "org": "PT Sumatera Prima Fibreboard",
+    "location": "Indralaya, Indonesia · On-site",
+    "period": "Jun 2025 - Aug 2025",
     "isCurrent": false,
     "image": "image/exp-bioscan.webp",
-    "summary": "Developed a real-time truck route tracking system across checkpoints and co-developed digital approval workflows connecting 8 manufacturing divisions.",
-    "tags": ["Web Development", "Logistics Tracking", "Workflow Automation", "API Integration"],
+    "summary": "Built a Digital Document Approval System in Next.js connecting 8 manufacturing divisions, and co-built a vehicle tracking app recording departure times, trip duration and stops across 4 checkpoints.",
+    "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "MongoDB", "Leaflet"],
     "metrics": [
-      { "label": "Approval Turnaround", "val": "2-3 Days", "desc": "Reduced document approval cycle from ~1 week across 8 corporate divisions" },
-      { "label": "Trucks Monitored", "val": "10-20/Day", "desc": "Monitored vehicles across 4 checkpoints to improve logistics visibility" },
-      { "label": "Divisions Connected", "val": "8 Divisions", "desc": "Centralized cross-divisional authorization and memo verification" }
+      { "label": "Approval Turnaround", "val": "2-3 Days", "desc": "Down from about 1 week, across 8 manufacturing divisions" },
+      { "label": "Trucks Monitored", "val": "10-20/Day", "desc": "Across 4 checkpoints, replacing estimates with real trip data" },
+      { "label": "Divisions Connected", "val": "8", "desc": "Administrators and managers on one approval workflow" }
     ]
   },
   {
     "id": "exp-bitlabs",
-    "role": "Data Analytics for Business Cohort Participant",
+    "role": "Data Analytics for Business — Independent Study",
     "org": "Bitlabs Academy (MSIB Batch 7)",
-    "location": "Indonesia",
-    "period": "2024-09 - 2025-01",
+    "location": "Online",
+    "period": "Aug 2024 - Dec 2024",
     "isCurrent": false,
     "image": "image/exp-lab.webp",
-    "summary": "Completed a national talent development program in data analytics, collaborating in multidisciplinary teams to solve real business challenges using data-driven methodologies.",
-    "tags": ["Python", "SQL", "Tableau", "Pandas", "EDA", "Business Intelligence"],
+    "summary": "Analysed 6 months of sales, visit and customer data from Dagangan, a rural-commerce startup, to decide which customers sales reps should visit, how often, and on which days.",
+    "tags": ["Python", "SQL", "PostgreSQL", "Tableau", "Excel", "EDA"],
     "metrics": [
-      { "label": "Paper Presentation", "val": "Top 3", "desc": "Awarded Third Best Presentation Team for final analytics research paper" },
-      { "label": "Dataset Analyzed", "val": "10K+ Rows", "desc": "Cleaned, modeled, and visualized multi-dimensional business datasets" },
-      { "label": "Program Evaluation", "val": "Certified", "desc": "Graduated MSIB Batch 7 Data Analytics with top honors" }
+      { "label": "Revenue Gap", "val": "~13x", "desc": "Revenue per customer, most-visited vs least-visited customers" },
+      { "label": "Travel Distance", "val": "-40%", "desc": "Shorter routes in test cases from the route recommendations" },
+      { "label": "Final Presentation", "val": "Top 3", "desc": "Third Best Presentation Team in the national cohort" }
     ]
   }
 ]

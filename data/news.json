@@ -1,32 +1,66 @@
 [
   {
-    "id": "news-1",
+    "id": "news-credit-risk",
+    "type": "Project Release",
+    "platform": "GitHub",
+    "date": "Oct 2026",
+    "title": "Credit Risk Model & Early Warning Dashboard Published",
+    "summary": "Open-sourced an end-to-end credit scoring model on 150,000 borrowers: calibrated probabilities, cost-based cut-offs that cut expected cost by 36.2%, A–E risk grades and SHAP explanations.",
+    "tags": [
+      "MachineLearning",
+      "CreditRisk",
+      "XGBoost",
+      "SHAP"
+    ],
+    "url": "https://github.com/archiesinaga/credit-risk-model",
+    "link_label": "View on GitHub"
+  },
+  {
+    "id": "news-ibm-certs",
+    "type": "Certification",
+    "platform": "IBM",
+    "date": "Oct 2026",
+    "title": "Six IBM Certifications in Data, AI and Cybersecurity",
+    "summary": "Completed IBM's Data Fundamentals, Data Analytics for Sustainability, Getting Started with Generative AI, AI Fundamentals, AI Literacy and Cybersecurity Fundamentals.",
+    "tags": [
+      "IBM",
+      "DataAnalytics",
+      "AI",
+      "Cybersecurity"
+    ],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/",
+    "link_label": "View on LinkedIn"
+  },
+  {
+    "id": "news-thesis",
     "type": "Academic Milestone",
     "platform": "Universitas Sriwijaya",
     "date": "Jul 2026",
     "title": "Thesis Completed: Bacterial Image Classification with ConvNeXt & ResNet-50",
-    "summary": "Completed undergraduate degree in Informatics Engineering with a 3.92 / 4.00 GPA (Cum Laude). Thesis evaluated deep learning architectures on the benchmark DIBaS microscopic dataset for rapid pathogen classification.",
-    "tags": ["DeepLearning", "ComputerVision", "ConvNeXt", "CumLaude"],
-    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+    "summary": "Graduated in Informatics Engineering with a 3.92 / 4.00 GPA (Cum Laude). The thesis compared two deep learning architectures on the DIBaS microscopy dataset across 33 bacterial species.",
+    "tags": [
+      "DeepLearning",
+      "ComputerVision",
+      "ConvNeXt",
+      "CumLaude"
+    ],
+    "url": "https://github.com/archiesinaga/bacteria-classification",
+    "link_label": "View on GitHub"
   },
   {
-    "id": "news-3",
+    "id": "news-bitlabs",
     "type": "Competition Honor",
-    "platform": "Bitlabs Academy / MSIB",
-    "date": "Jan 2025",
-    "title": "Awarded Third Best Presentation Team at Bitlabs Data Analytics Final Paper",
-    "summary": "Honored as the 3rd Best Presentation Team across the national MSIB Batch 7 cohort for presenting our data-driven commercial analytics and customer transaction insights.",
-    "tags": ["DataAnalytics", "Tableau", "Python", "Award"],
-    "url": "https://linkedin.com/in/archie-ph-sinaga/"
-  },
-  {
-    "id": "news-4",
-    "type": "Production Release",
-    "platform": "Alpha Omega Learning Center",
+    "platform": "Bitlabs Academy",
     "date": "Dec 2024",
-    "title": "ALC Learning LMS Platform Live for 600+ Students",
-    "summary": "Successfully deployed the web LMS portal managing student assessment modules, daily exercises, and real-time grade tracking for over 600 enrolled students.",
-    "tags": ["WebDevelopment", "ExpressJS", "PostgreSQL", "LMS"],
-    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+    "title": "Third Best Presentation Team, Bitlabs Data Analytics Final Paper",
+    "summary": "Recognised across the national MSIB Batch 7 cohort for sales-route recommendations to a rural-commerce startup: visit cadence, peak-day scheduling and routes up to 40% shorter.",
+    "tags": [
+      "DataAnalytics",
+      "Tableau",
+      "Python",
+      "Award"
+    ],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/",
+    "link_label": "View on LinkedIn"
   }
 ]

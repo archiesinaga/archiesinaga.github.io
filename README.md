@@ -1,6 +1,6 @@
 # Archie P. H. Sinaga — Interactive Developer Portfolio
 
-An interactive, single-page developer portfolio showcasing Archie P. H. Sinaga's achievements, education at Universitas Sriwijaya, work at Gonsters and ALC, and machine learning/data analytics projects.
+An interactive, single-page developer portfolio showcasing Archie P. H. Sinaga's achievements, education at Universitas Sriwijaya, work at Alpha Omega Learning Center and PT Sumatera Prima Fibreboard, and machine learning / data analytics projects — each linked to its GitHub repository.
 
 ---
 
@@ -18,11 +18,13 @@ An interactive, single-page developer portfolio showcasing Archie P. H. Sinaga's
 
 3. **Interactive Subsystems**:
    - **Areas of Expertise**: 8 interactive cards triggering detailed capability modals.
-   - **Active Projects & Code Sandbox**: Live project status, architecture code panels, and metrics.
+   - **Featured Projects**: Carousel with metrics and real code excerpts copied from each project's repository.
    - **Experience Timeline Carousel**: Multi-slide career carousel with keyboard controls, touch swipes, and quantified metrics popups.
-   - **Activities & Skills**: Organization leadership history, categorized technical stack grid, education, and verified credentials.
+   - **Activities & Skills**: Organization leadership history and core technical stack.
+   - **Education & Certifications**: Degree, thesis, and certifications grouped by category.
    - **Portfolio 3-Level Filter**: Cumulative (AND) filtering by Type (*Tech / Non-Tech*), Domain (*AI/ML, Data Science, Full-Stack, etc.*), and Topic sub-tags.
-   - **Archie AI Assistant (Chatbot)**: Floating portfolio assistant with multilingual support (EN, ID, ZH, AR, JA), quick chips, local knowledge base, and custom Groq/OpenAI/Gemini API key support.
+   - **Archie AI Assistant (Chatbot)**: Floating assistant whose answers are built from the same `/data` JSON the page renders, so it cannot drift out of sync. Built-in answers are English; an optional Groq API key enables other languages.
+   - **Contact Form**: Sends via [Formspree](https://formspree.io) when `contact.formEndpoint` is set in `data/profile.json`; otherwise opens the visitor's email app.
    - **Arcade Mini-Games**: Standalone playable versions of **2048** (`/2048/`) and **Retro Snake** (`/Snake/`).
 
 ---
@@ -44,7 +46,7 @@ An interactive, single-page developer portfolio showcasing Archie P. H. Sinaga's
 │   ├── filters.js           # 3-level cumulative project filter system
 │   ├── carousel.js          # Experience timeline carousel
 │   ├── modal.js             # Accessible modal dialog system
-│   ├── chatbot.js           # Floating AI assistant chatbot
+│   ├── chatbot.js           # Floating assistant, answers from /data JSON
 │   └── reveal.js            # IntersectionObserver, count-up stats, & spy
 ├── data/                    # Structured JSON content
 │   ├── profile.json
@@ -77,3 +79,11 @@ npx serve -l 8080 .
 ```
 
 Then open `http://localhost:8080` in your browser.
+
+---
+
+## ✏️ Updating Content
+
+- **Projects**: edit `data/projects.json`. Set `repo` to the GitHub URL (or `null` if there is no public code) and optional `demo`. Buttons are labelled by where they actually go.
+- **Featured carousel**: edit `data/active-projects.json`. Keep `code_snippet` copied from the real file named in `code_lang`.
+- **Contact form**: create a form at formspree.io and put its endpoint (`https://formspree.io/f/xxxxxxx`) in `data/profile.json` → `contact.formEndpoint`.

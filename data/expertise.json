@@ -1,106 +1,106 @@
 [
   {
-    "id": "gen-ai-agents",
-    "title": "Generative AI & Agentic Systems",
-    "icon": "bot",
-    "summary": "Building production Hybrid RAG architectures, agentic Digital Twins, and autonomous triage pipelines.",
+    "id": "credit-risk",
+    "title": "Credit Risk & Financial Analytics",
+    "icon": "bar-chart-3",
+    "summary": "Scoring borrowers, choosing cut-offs by business cost, and explaining every decision to a non-technical reviewer.",
     "capabilities": [
-      "Hybrid RAG (Hot/Cold path) over high-frequency live telemetry",
-      "Proprietary structured prompt formatting ('TOON') for 95% accuracy",
-      "Autonomous agent workflows triggered by system alerts and machine alarms",
-      "Low-latency caching with Redis and Nginx reverse proxies (< 200ms)"
+      "Probability-of-default models: logistic regression scorecards compared against XGBoost (0.854 vs 0.861 test AUC)",
+      "Probability calibration with isotonic regression so predicted risk matches observed default rates",
+      "Cost-based cut-off selection — flags 10.8% of borrowers and cuts expected cost by 36.2% versus approve-all",
+      "Per-borrower explanations with SHAP, and leakage-safe cleaning fitted on training data only"
     ],
-    "stack": ["Hybrid RAG", "Agentic AI", "Redis", "Nginx", "Python", "LLMs", "Docker"]
+    "stack": ["Python", "scikit-learn", "XGBoost", "SHAP", "Streamlit", "Pandas"]
   },
   {
     "id": "ai-ml",
     "title": "Machine Learning & Computer Vision",
     "icon": "cpu",
-    "summary": "Designing deep neural classifiers and convolutional architectures for microscopic and visual analysis.",
+    "summary": "Training and comparing convolutional classifiers for microscopic image analysis.",
     "capabilities": [
       "Convolutional Neural Networks with ConvNeXt & ResNet-50",
-      "Transfer learning for biological pathogen and microscopic classification",
+      "Transfer learning for 33-species bacterial image classification (DIBaS dataset)",
       "Model evaluation, confusion matrix analysis, and hyperparameter tuning",
-      "Lightweight model serving with FastAPI and TensorFlow inference"
+      "Serving predictions through a Streamlit web interface with a confidence floor"
     ],
-    "stack": ["Python", "TensorFlow", "ConvNeXt", "ResNet-50", "Scikit-Learn", "FastAPI"]
+    "stack": ["Python", "TensorFlow", "ConvNeXt", "ResNet-50", "Scikit-Learn", "Streamlit"]
   },
   {
     "id": "data-science",
     "title": "Data Analytics & Business Intelligence",
-    "icon": "bar-chart-3",
-    "summary": "Extracting commercial insights, building executive BI dashboards, and performing forensic financial analysis.",
+    "icon": "pie-chart",
+    "summary": "Turning sales and operational data into decisions a business can act on next week.",
     "capabilities": [
-      "Interactive dashboard development with Tableau, Power BI & Looker Studio",
-      "Forensic cash flow auditing detecting financial anomalies and leaks",
-      "Exploratory Data Analysis (EDA) on 10,000+ row commercial datasets",
-      "Relational SQL data extraction, aggregation, and performance KPIs"
+      "Six months of sales-visit data analysed to set visit cadence — top customers generated ~13x more revenue",
+      "Route recommendations cutting travel distance by up to 40% in test cases",
+      "Cash flow auditing that surfaced IDR 19M in discrepancies over 9 months",
+      "Dashboards in Tableau and Power BI backed by SQL extraction and aggregation"
     ],
-    "stack": ["Tableau", "Power BI", "Looker Studio", "SQL", "Python", "Pandas", "Excel"]
+    "stack": ["SQL", "PostgreSQL", "Python", "Pandas", "Tableau", "Power BI", "Excel"]
   },
   {
     "id": "fullstack",
     "title": "Full-Stack Web Development",
     "icon": "code-2",
-    "summary": "Engineering robust web applications, responsive client portals, and modular backend REST APIs.",
+    "summary": "Building internal tools that real staff use daily, from LMS platforms to approval workflows.",
     "capabilities": [
-      "Learning Management Systems (LMS) serving 600+ students concurrently",
-      "RESTful API architecture using Express.js and Node.js",
-      "Relational schema design with PostgreSQL and MySQL",
-      "Responsive vanilla web interfaces with micro-interactions and fast load times"
+      "Learning Management System tracking grades and exercises for ~600 students",
+      "REST APIs in Express.js and Next.js route handlers",
+      "Relational schemas with PostgreSQL, MySQL and Prisma; document storage with MongoDB",
+      "Auth and authorisation with NextAuth.js and Supabase row-level security"
     ],
-    "stack": ["JavaScript", "Express.js", "Node.js", "PostgreSQL", "MySQL", "HTML5", "CSS3"]
+    "stack": ["JavaScript", "TypeScript", "Next.js", "Express.js", "PostgreSQL", "Prisma", "Supabase"]
   },
   {
     "id": "process-automation",
     "title": "Process Automation & Logistics",
     "icon": "cloud",
-    "summary": "Digitizing enterprise workflows, multi-division approvals, and physical logistics tracking.",
+    "summary": "Digitising paper workflows and physical logistics in a manufacturing plant.",
     "capabilities": [
-      "Real-time truck dispatch and route tracking across checkpoints",
-      "Multi-tier digital document approval unifying 8 corporate divisions",
-      "Approval turnaround optimization reducing cycle times from 1 week to 2-3 days",
-      "Operational log audit trails and administrative management"
+      "Vehicle tracking across 4 checkpoints for 10–20 trucks per day",
+      "Digital document approval connecting 8 corporate divisions",
+      "Approval turnaround cut from ~1 week to 2–3 days",
+      "Role-gated approvals with a full audit trail of every decision"
     ],
-    "stack": ["JavaScript", "REST APIs", "PostgreSQL", "Workflow Automation", "Leaflet"]
+    "stack": ["Next.js", "MongoDB", "React Leaflet", "Prisma", "PostgreSQL", "Workflow Automation"]
   },
   {
     "id": "expert-systems",
     "title": "Expert Systems & Decision Support",
     "icon": "message-square-text",
-    "summary": "Synthesizing domain specialist knowledge into mathematical multi-criteria decision systems.",
+    "summary": "Encoding specialist knowledge into tools a non-expert can use in the field.",
     "capabilities": [
-      "Simple Additive Weighting (SAW) multi-attribute diagnostic scoring",
-      "Interviews and knowledge engineering with agricultural domain experts",
-      "Tree pathology identification (Leaf Spot, Ganoderma, Stem Rot)",
-      "Transparent diagnostic explanations for non-technical field operators"
+      "Knowledge engineering through interviews with agricultural specialists",
+      "Symptom-based diagnostic questionnaire for oil palm plant disease",
+      "Treatment recommendations written for field operators, not engineers",
+      "Object-detection model training (RF-DETR) for visual disease cues"
     ],
-    "stack": ["Python", "JavaScript", "SAW Method", "Knowledge Engineering"]
+    "stack": ["TypeScript", "Next.js", "Python", "RF-DETR", "Knowledge Engineering"]
   },
   {
     "id": "iot-hardware",
     "title": "IoT & Smart Agricultural Systems",
     "icon": "bot",
-    "summary": "Integrating embedded sensor rigs, environmental microclimate monitoring, and automated irrigation.",
+    "summary": "Sensor-driven environmental monitoring and automated irrigation.",
     "capabilities": [
       "Microcontroller programming with ESP32 & Arduino",
-      "Soil moisture, temperature, and environmental telemetry sensing",
-      "Wireless telemetry streaming with MQTT and alert triggers",
-      "Award-winning smart farming architecture (Top 3 in competition)"
+      "Soil moisture, temperature, and environmental sensing",
+      "Automated irrigation triggers from sensor thresholds",
+      "Smart farming system placed Top 3 among 25–40 competing teams"
     ],
-    "stack": ["C++", "Python", "ESP32", "Arduino", "MQTT", "Sensors"]
+    "stack": ["C++", "Python", "ESP32", "Arduino", "Sensors"]
   },
   {
     "id": "ui-ux-design",
     "title": "UI/UX & Visual Graphic Design",
     "icon": "scan-face",
-    "summary": "Crafting polished brand identities, intuitive user interfaces, and high-impact visual media.",
+    "summary": "Interfaces, brand assets and social content that people actually respond to.",
     "capabilities": [
       "Adobe Illustrator certified vector composition and iconography",
-      "Interactive UI/UX prototyping in Figma (Technology Euphoria Finalist)",
-      "Marketing and social media content creation driving student enrollment",
-      "Accessible design systems with dark/light mode and harmonious palettes"
+      "Interactive UI/UX prototyping in Figma (Technology Euphoria 2024 finalist)",
+      "Social media content that grew student enrolment by 120 in 3 months",
+      "Accessible design systems with dark/light mode"
     ],
-    "stack": ["Adobe Illustrator", "Affinity Designer", "Figma", "Canva", "CSS3 Tokens"]
+    "stack": ["Adobe Illustrator", "Figma", "Canva", "CSS"]
   }
 ]

@@ -64,12 +64,13 @@ export class PortfolioChatbot {
     if (this.langSelect) {
       this.langSelect.addEventListener('change', (e) => {
         this.currentLang = e.target.value;
+        // Built-in answers are English only; say so rather than imply full translation
         const langAck = {
           EN: "Language switched to English. How can I assist you with Archie's portfolio?",
-          ID: "Bahasa diubah ke Bahasa Indonesia. Ada yang bisa saya bantu terkait profil dan pengalaman Archie?",
-          ZH: "语言已切换为中文。有什么可以帮您了解 Archie 的？",
-          AR: "تم تغيير اللغة إلى العربية. كيف يمكنني مساعدتك بخصوص ملف Archie؟",
-          JA: "言語を日本語に切り替えました。Archie の経歴やスキルについて何かご質問はありますか？"
+          ID: "Bahasa diubah ke Bahasa Indonesia. Catatan: jawaban otomatis saya masih dalam bahasa Inggris.",
+          ZH: "语言已切换为中文。注意：自动回答目前仅提供英文。",
+          AR: "تم تغيير اللغة إلى العربية. ملاحظة: الإجابات التلقائية متوفرة بالإنجليزية فقط حاليًا.",
+          JA: "言語を日本語に切り替えました。注意：自動回答は現在英語のみです。"
         };
         this.appendBotMessage(langAck[this.currentLang] || langAck.EN);
       });
@@ -176,6 +177,7 @@ export class PortfolioChatbot {
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
       .replace(/`(.*?)`/g, '<code style="background:rgba(0,0,0,0.2);padding:2px 4px;border-radius:4px;">$1</code>')
+      .replace(/\[([^\]]+)\]\((https:\/\/[^)\s"]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--accent-primary);text-decoration:underline;">$1</a>')
       .replace(/\n/g, '<br/>');
   }
 
@@ -210,86 +212,86 @@ export class PortfolioChatbot {
       return await this.callExternalLLM(query, userApiKey);
     }
 
-    // High quality contextual local intelligence agent
     await new Promise(r => setTimeout(r, 500)); // natural typing delay
 
-    if (qLower.includes('tech stack') || qLower.includes('skills') || qLower.includes('language') || qLower.includes('tool')) {
-      return `Archie's core technical stack includes:
-• **Programming & Querying**: Python (Advanced), SQL (Advanced), JavaScript, R, HTML5/CSS3.
-• **AI & Machine Learning**: Machine Learning (Advanced), Generative AI, Hybrid RAG, Agentic AI, ConvNeXt, ResNet-50, TensorFlow, NLP.
-• **Data Analytics & BI**: Tableau (Advanced), Power BI, Looker Studio, Pandas, Advanced Excel.
-• **Backend & Web**: Express.js, Node.js, PostgreSQL, MySQL, Redis, Nginx, RESTful APIs.
-• **Design & Tools**: Adobe Illustrator (Certified), Affinity Designer/Canva, Figma, Git, Google Colab.`;
+    // Every answer below is built from the same /data JSON the page renders,
+    // so the assistant cannot drift out of sync with the visible portfolio.
+    const { profile = {}, projects = [], experience = [] } = this.context;
+    const has = (...words) => words.some(w => qLower.includes(w));
+
+    if (has('contact', 'hire', 'email', 'phone', 'reach', 'whatsapp', 'cv', 'resume')) {
+      const c = profile.contact || {};
+      const social = name => (profile.socials || []).find(s => s.name.toLowerCase().startsWith(name))?.url;
+      return `You can reach Archie directly:
+📧 Email: **${c.email}**
+📱 Phone / WhatsApp: **${c.phone}**
+📍 ${c.location} (${profile.timezone})
+🔗 LinkedIn: [linkedin.com/in/archie-ph-sinaga](${social('linkedin')})
+💻 GitHub: [github.com/archiesinaga](${social('github')})
+📄 CV: [View resume](${social('resume')})
+He is open to ${(profile.target_roles || []).join(', ')} roles.`;
     }
 
-    if (qLower.includes('octagon') || qLower.includes('digital twin') || qLower.includes('rag') || qLower.includes('gonsters')) {
-      return `**Octagon** is an agentic Digital Twin assistant engineered at **Gonsters** for industrial telemetry monitoring and predictive maintenance.
-Key accomplishments:
-• Built a Hybrid RAG (Hot/Cold path) architecture querying 120+ live telemetry streams, reducing retrieval latency by 40%.
-• Implemented proprietary 'TOON' structured formatting, achieving 95% response accuracy and zero hallucinations across 9+ industrial benchmarks (OEE, Predictive Maintenance).
-• Developed autonomous workflows triggered by machine alarms for root cause analysis and ticket routing.
-• Achieved sub-200ms latency via Redis and Nginx caching layers.`;
+    if (has('education', 'gpa', 'university', 'unsri', 'degree', 'graduat')) {
+      return `Archie graduated in **Informatics Engineering from Universitas Sriwijaya** with a **3.92 / 4.00 GPA (Cum Laude)**.
+His thesis classified microscopic bacterial images across 33 species with **ConvNeXt and ResNet-50** on the DIBaS dataset — [see the code](https://github.com/archiesinaga/bacteria-classification).`;
     }
 
-    if (qLower.includes('bacteria') || qLower.includes('thesis') || qLower.includes('education') || qLower.includes('gpa') || qLower.includes('university') || qLower.includes('unsri')) {
-      return `Archie graduated in **Informatics Engineering from Universitas Sriwijaya** with a **3.92 / 4.00 GPA (Cum Laude)**!
-His undergraduate thesis focused on **Bacterial Microscopic Image Classification** using modern deep learning architectures (ConvNeXt & ResNet-50) evaluated on the benchmark DIBaS microscopic dataset.
-He also placed **Top 3** in a Smart Farming IoT competition and built an expert system for oil palm tree diseases using Simple Additive Weighting (SAW).`;
+    if (has('experience', 'career', 'intern', 'job', 'employ')) {
+      return `Archie's experience:\n` + experience.map(e =>
+        `• **${e.org}** — ${e.role} (${e.period})\n  ${e.summary}`
+      ).join('\n');
     }
 
-    if (qLower.includes('alc') || qLower.includes('lms') || qLower.includes('learning center') || qLower.includes('fraud')) {
-      return `At **Alpha Omega Learning Center (ALC)**, Archie serves as **Data Analyst, Web Developer & Social Media Specialist**:
-• Engineered a scalable Learning Management System (LMS) monitoring daily grades and exercises for 600+ students.
-• Co-developed a financial cash flow audit program that uncovered IDR 19 million in fraudulent discrepancies and losses over a 9-month audit.
-• Analyzed social media engagement to drive a marketing strategy that increased student enrollments by 120 within 3 months.`;
+    const project = this.matchProject(qLower, projects);
+    if (project) {
+      const lines = [`**${project.title}**`, project.summary, `• Stack: ${(project.tech || []).join(', ')}`];
+      if (project.repo) lines.push(`• Code: [${project.repo.replace('https://', '')}](${project.repo})`);
+      if (project.demo && project.demo.includes('youtu')) lines.push(`• Demo: [watch the video](${project.demo})`);
+      lines.push('Open the project card in **Portfolio & Projects** for the full write-up.');
+      return lines.join('\n');
     }
 
-    if (qLower.includes('dagangan') || qLower.includes('retail') || qLower.includes('cohort')) {
-      return `**PT. Dagangan Karya Indonesia Analysis Project**:
-A commercial retail analytics and exploratory data modeling initiative:
-• Evaluated transactional patterns, hub regional distribution, and basket sizes for PT. Dagangan Karya Indonesia.
-• Built automated Python/Pandas data cleansing workflows and interactive Tableau dashboards.
-• Co-authored the final research paper, awarded **Third Best Presentation Team** nationally at Bitlabs MSIB Batch 7!`;
+    if (has('project', 'portfolio', 'built', 'work')) {
+      return `Archie's projects:\n` + projects.filter(p => p.type === 'tech').map((p, i) =>
+        `${i + 1}. **${p.title}**${p.repo ? ` — [code](${p.repo})` : ''}`
+      ).join('\n') + `\nAsk about any of them by name for details.`;
     }
 
-    if (qLower.includes('truck') || qLower.includes('tracking') || qLower.includes('logistics')) {
-      return `**Real-Time Truck Tracking System**:
-Developed during Archie's IT Internship at **PT Sumatera Prima Fiberboard**:
-• Built real-time dispatch and route monitoring tracking 10-20 transport trucks daily across 4 industrial checkpoints.
-• Unified PostgreSQL, REST APIs, and Leaflet mapping to give logistics managers full gate visibility and eliminate bottleneck delays.`;
+    if (has('tech stack', 'skill', 'stack', 'tool', 'technolog')) {
+      return `Archie's core stack:
+• **Data & Analytics**: Python, SQL (PostgreSQL), Pandas, Tableau, Power BI, Excel
+• **Machine Learning**: scikit-learn, XGBoost, SHAP, TensorFlow, ConvNeXt, ResNet-50
+• **Web**: JavaScript, TypeScript, Next.js, Express.js, Prisma, Supabase, MongoDB
+• **Design**: Adobe Illustrator (certified), Figma, Canva`;
     }
 
-    if (qLower.includes('project') || qLower.includes('portfolio') || qLower.includes('work')) {
-      return `Archie's featured projects are:
-1. **Real-Time Truck Tracking System** (PT Sumatera Prima Fiberboard — Live dispatch monitoring for 10-20 trucks across 4 checkpoints)
-2. **ALC Learning — Learning Management System** (Alpha Omega Learning Center — Production LMS for 600+ students & financial cash flow auditing)
-3. **PT. Dagangan Karya Indonesia Analysis Project** (Commercial business analytics & Tableau dashboarding — Top 3 National Presentation Award)
-Explore the **Portfolio & Projects** section above to view all technical details and stack breakdowns!`;
-    }
+    return `Archie P. H. Sinaga is an Informatics Engineering graduate from Universitas Sriwijaya (GPA 3.92/4.00) working across data analytics, machine learning and web development.
+Try asking about his **credit risk model**, **thesis**, **LMS**, **experience**, or **contact details**.`;
+  }
 
-    if (qLower.includes('experience') || qLower.includes('career') || qLower.includes('intern') || qLower.includes('job')) {
-      return `Archie's professional track record includes:
-• **Gonsters**: Generative AI Engineer (Octagon Digital Twin, Hybrid RAG, Agentic AI)
-• **Alpha Omega Learning Center (ALC)**: Data Analyst, Web Developer & Social Media Specialist (LMS architecture, fraud forensics, growth analytics)
-• **PT Sumatera Prima Fiberboard**: IT Intern (Real-time truck dispatch tracking, digital memo approval workflow across 8 divisions)
-• **Bitlabs Academy (MSIB Batch 7)**: Data Analytics for Business Cohort Participant (Awarded 3rd Best Presentation Team nationally)`;
+  matchProject(qLower, projects) {
+    // Aliases cover the words a visitor would actually type for each project
+    const aliases = {
+      'credit-risk': ['credit', 'risk', 'xgboost', 'shap', 'default', 'loan', 'scorecard'],
+      'bacteria-classification': ['bacteri', 'thesis', 'convnext', 'resnet', 'dibas', 'microscop'],
+      'ceksawit': ['sawit', 'palm', 'expert system', 'plant disease'],
+      'vehicle-tracker': ['truck', 'vehicle', 'tracking', 'tracker', 'logistic', 'route'],
+      'document-approval': ['document', 'approval', 'dms', 'memo'],
+      'alc-lms': ['lms', 'alc', 'learning management', 'classroom', 'grade'],
+      'dagangan-analysis': ['dagangan', 'bitlabs', 'sales', 'retail', 'msib'],
+      'iot-smart-farming': ['iot', 'farming', 'esp32', 'arduino'],
+      'uiux-euphoria': ['ui/ux', 'figma', 'euphoria', 'design competition'],
+      'fasilkom-games': ['isport', 'sport', 'fasilkom games']
+    };
+    let best = null;
+    let bestScore = 0;
+    for (const p of projects) {
+      let score = (aliases[p.id] || []).filter(a => qLower.includes(a)).length;
+      if (qLower.includes(p.title.toLowerCase())) score += 5;
+      if (score > bestScore) { best = p; bestScore = score; }
     }
-
-    if (qLower.includes('contact') || qLower.includes('hire') || qLower.includes('email') || qLower.includes('phone') || qLower.includes('reach')) {
-      return `You can connect with Archie directly:
-📧 Email: **archiesinaga9@gmail.com**
-📱 Phone / WhatsApp: **+6281250233529**
-📍 Location: Palembang, South Sumatra, Indonesia (WIB / UTC+7)
-🔗 LinkedIn: [linkedin.com/in/archie-ph-sinaga/](https://linkedin.com/in/archie-ph-sinaga/)
-💻 GitHub: [github.com/archiesinaga](https://github.com/archiesinaga)
-📄 CV: [View resume](https://drive.google.com/file/d/1w1jTxrX_CD_UAV4-eJioiVN-UIDiBswk/view?usp=drive_link)
-⚡ Response time: Under 24 hours.
-He is open for AI Engineer, Machine Learning, Data Analyst, Web Developer, and Banking/Finance ODP opportunities!`;
-    }
-
-    // Default response
-    return `Thank you for asking! Archie P. H. Sinaga is an Informatics Engineering graduate from Sriwijaya University (GPA 3.92/4.00) specializing in AI/ML, Generative AI (RAG & Agentic Systems), Data Analytics, and Web Development.
-Feel free to ask about his **Octagon Digital Twin**, **LMS Platform**, **Deep Learning Thesis**, or **Contact details**!`;
+    return best;
   }
 
   async callExternalLLM(prompt, apiKey) {
@@ -305,7 +307,7 @@ Feel free to ask about his **Octagon Digital Twin**, **LMS Platform**, **Deep Le
           messages: [
             {
               role: 'system',
-              content: `You are the AI portfolio assistant for Archie P. H. Sinaga, an Informatics Engineering graduate from Universitas Sriwijaya (GPA 3.92/4.00) specializing in AI/ML, Generative AI, Data Analytics, and Web Development based in Palembang, Indonesia. Answer politely and accurately in ${this.currentLang}. Keep answers concise and helpful.`
+              content: `You are the AI portfolio assistant for Archie P. H. Sinaga, an Informatics Engineering graduate from Universitas Sriwijaya (GPA 3.92/4.00) based in Palembang, Indonesia, working in data analytics, machine learning and web development. Answer only from these facts and say you don't know otherwise. Projects: ${JSON.stringify((this.context.projects || []).map(p => ({ title: p.title, summary: p.summary, repo: p.repo })))}. Experience: ${JSON.stringify((this.context.experience || []).map(e => ({ org: e.org, role: e.role, period: e.period })))}. Answer politely in ${this.currentLang}. Keep answers concise.`
             },
             { role: 'user', content: prompt }
           ]
@@ -316,7 +318,7 @@ Feel free to ask about his **Octagon Digital Twin**, **LMS Platform**, **Deep Le
       const data = await response.json();
       return data.choices[0].message.content;
     } catch (e) {
-      return "Unable to reach the AI cloud endpoint. Falling back: Archie P. H. Sinaga is available for AI/ML, Data Analytics, and Web Developer roles. Reach him directly at archiesinaga9@gmail.com!";
+      return "Unable to reach the AI cloud endpoint. Archie is available for Data Analyst, Machine Learning and Web Developer roles — reach him directly at archiesinaga9@gmail.com.";
     }
   }
 }

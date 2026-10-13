@@ -732,6 +732,9 @@
   position: relative;
   max-width: 950px;
   margin: 0 auto;
+  /* Off-screen slides must be clipped here, or they widen the whole page */
+  overflow: hidden;
+  border-radius: var(--radius-xl);
 }
 
 .carousel-track {
@@ -1258,5 +1261,354 @@
   .hero-avatar-frame {
     width: 260px;
     height: 260px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Education & Certifications
+   -------------------------------------------------------------------------- */
+.credentials-section {
+  padding: 5rem 0;
+  background: var(--bg-secondary);
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.edu-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.edu-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.edu-institution {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.edu-degree {
+  color: var(--text-secondary);
+  font-size: 0.925rem;
+}
+
+.edu-period {
+  font-size: 0.825rem;
+  white-space: nowrap;
+}
+
+.edu-grade {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 1.25rem;
+}
+
+.edu-thesis {
+  background: var(--bg-main);
+  border: 1px solid var(--surface-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.edu-thesis-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.edu-thesis p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0.35rem 0 0.6rem;
+}
+
+.edu-thesis-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.edu-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+}
+
+.edu-highlights li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.edu-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+}
+
+.cert-group + .cert-group {
+  margin-top: 1.5rem;
+}
+
+.cert-group-title {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cert-group-count {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-full);
+  padding: 0.05rem 0.5rem;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1rem;
+  color: inherit;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.cert-card-link:hover,
+.cert-card-link:focus-visible {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.cert-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+
+.cert-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.cert-id {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.cert-card .tag-list {
+  margin-top: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Project cards: repo flag, footer, modal actions
+   -------------------------------------------------------------------------- */
+.project-repo-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-success);
+}
+
+.project-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--surface-border-subtle);
+  min-height: 44px;
+}
+
+.project-card-more {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.project-card:focus-visible,
+.expertise-card:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--surface-border);
+}
+
+.modal-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* --------------------------------------------------------------------------
+   Contact form feedback
+   -------------------------------------------------------------------------- */
+.form-feedback {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+}
+
+.form-feedback[hidden] {
+  display: none;
+}
+
+.form-feedback-success {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--accent-success);
+}
+
+.form-feedback-info {
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+  color: var(--text-primary);
+}
+
+.form-feedback-error {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: var(--accent-danger);
+}
+
+/* --------------------------------------------------------------------------
+   Touch targets: dots keep their look but get a 24px+ hit area
+   -------------------------------------------------------------------------- */
+.active-slider-dot,
+.carousel-dot {
+  position: relative;
+  padding: 0;
+}
+
+.active-slider-dot::before,
+.carousel-dot::before {
+  content: '';
+  position: absolute;
+  inset: -8px -4px;
+}
+
+.chatbot-close-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+.chatbot-close-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated-hover);
+}
+
+/* --------------------------------------------------------------------------
+   Arcade dropdown: open on keyboard focus and on tap, not hover only
+   -------------------------------------------------------------------------- */
+.nav-item-dropdown:focus-within .dropdown-menu,
+.nav-item-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* The navbar holds 8 links plus Arcade; social icons already live in the
+   footer, so drop them from the bar before the links start to collide. */
+@media (max-width: 1240px) {
+  #nav-socials {
+    display: none !important;
+  }
+  .nav-menu {
+    gap: 1.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+  /* Single-column hero: keep the moon and bubble above the greeting text */
+  .hero-section {
+    padding-top: 8.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu.mobile-open .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin-top: 0.5rem;
+    box-shadow: none;
+  }
+  .nav-menu.mobile-open .nav-link,
+  .nav-menu.mobile-open .dropdown-item {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .edu-card-head {
+    flex-direction: column;
+    gap: 0.25rem;
   }
 }

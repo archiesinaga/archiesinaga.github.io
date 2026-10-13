@@ -197,8 +197,12 @@
 
 .code-lang {
   color: var(--text-muted);
+  font-family: var(--font-mono);
   font-size: 0.75rem;
-  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .code-body {

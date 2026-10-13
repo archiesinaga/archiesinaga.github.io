@@ -33,9 +33,11 @@ export class ProjectFilterManager {
   }
 
   buildFilterControls() {
-    // Extract unique domains & topics
+    // Extract unique domains, and the most-shared topics so the row stays short
     const domains = Array.from(new Set(this.projects.map(p => p.domain))).filter(Boolean);
-    const topics = Array.from(new Set(this.projects.flatMap(p => p.topics || []))).filter(Boolean);
+    const topicCounts = {};
+    this.projects.flatMap(p => p.topics || []).forEach(t => { topicCounts[t] = (topicCounts[t] || 0) + 1; });
+    const topics = Object.keys(topicCounts).sort((a, b) => topicCounts[b] - topicCounts[a]);
 
     this.filterBar.innerHTML = `
       <div class="filter-group">
@@ -50,7 +52,7 @@ export class ProjectFilterManager {
         <button class="filter-btn active" data-filter="domain" data-value="all">All Domains</button>
         ${domains.map(d => `
           <button class="filter-btn" data-filter="domain" data-value="${d}">
-            ${d.replace('-', ' ').toUpperCase()}
+            ${formatDomain(d)}
           </button>
         `).join('')}
       </div>
@@ -100,15 +102,25 @@ export class ProjectFilterManager {
 
   setupCardEvents() {
     if (!this.container) return;
-    // Project card click -> open preview modal
+    const openFromCard = (card) => {
+      const project = this.projects.find(p => p.id === card.dataset.projectId);
+      if (project) this.openProjectModal(project);
+    };
+
+    // Project card click -> open preview modal (links inside the card navigate instead)
     this.container.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
       const card = e.target.closest('.project-card');
-      if (card) {
-        const projId = card.dataset.projectId;
-        const project = this.projects.find(p => p.id === projId);
-        if (project) {
-          this.openProjectModal(project);
-        }
+      if (card) openFromCard(card);
+    });
+
+    // Cards are role="button", so they must also respond to Enter and Space
+    this.container.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.project-card');
+      if (card && e.target === card) {
+        e.preventDefault();
+        openFromCard(card);
       }
     });
   }
@@ -159,22 +171,23 @@ export class ProjectFilterManager {
     this.container.innerHTML = items.map(p => `
       <div class="project-card" data-project-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.title}">
         <div class="project-card-top">
-          <span class="badge ${p.type === 'tech' ? 'badge-accent' : 'badge-live'}">${p.domain.toUpperCase()}</span>
-          <span class="text-muted" style="font-size: 0.775rem;">${p.type.toUpperCase()}</span>
+          <span class="badge ${p.type === 'tech' ? 'badge-accent' : 'badge-live'}">${formatDomain(p.domain)}</span>
+          ${p.repo ? `<span class="project-repo-flag" title="Source code on GitHub">${GITHUB_SVG} Open source</span>` : `<span class="text-muted" style="font-size: 0.775rem;">${p.type === 'tech' ? 'TECH' : 'NON-TECH'}</span>`}
         </div>
         <h3 class="project-card-title">${p.title}</h3>
         <p class="project-card-summary">${p.summary}</p>
         <div class="tag-list mt-auto mb-3">
           ${(p.tech || []).slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('')}
         </div>
-        <div class="d-flex justify-content-between align-items-center pt-2" style="border-top: 1px solid var(--surface-border-subtle);">
-          <span style="font-size: 0.825rem; font-weight: 600; color: var(--accent-primary); display: flex; align-items: center; gap: 0.35rem;">
+        <div class="project-card-footer">
+          <span class="project-card-more">
             View Details
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </span>
-          <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn btn-icon btn-sm" onclick="event.stopPropagation()" aria-label="Open project repository">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+          ${p.repo ? `
+          <a href="${p.repo}" target="_blank" rel="noopener noreferrer" class="btn btn-icon btn-sm" aria-label="View ${p.title} source code on GitHub" title="View source on GitHub">
+            ${GITHUB_SVG}
+          </a>` : ''}
         </div>
       </div>
     `).join('');
@@ -184,8 +197,8 @@ export class ProjectFilterManager {
     const content = `
       <div style="margin-bottom: 1.5rem;">
         <div class="d-flex gap-2 mb-2">
-          <span class="badge badge-accent">${p.type.toUpperCase()}</span>
-          <span class="badge badge-live">${p.domain.toUpperCase()}</span>
+          <span class="badge badge-accent">${p.type === 'tech' ? 'TECH' : 'NON-TECH'}</span>
+          <span class="badge badge-live">${formatDomain(p.domain)}</span>
         </div>
         <h3 style="margin-top: 0.5rem; margin-bottom: 0.75rem;">${p.title}</h3>
         <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.25rem;">${p.summary}</p>
@@ -206,13 +219,48 @@ export class ProjectFilterManager {
         </div>
       </div>
 
-      <div class="d-flex justify-content-end gap-2 pt-3" style="border-top: 1px solid var(--surface-border);">
-        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Visit Repository / Source
-        </a>
-      </div>
+      ${p.note ? `<p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1.25rem;"><strong>Note:</strong> ${p.note}</p>` : ''}
+
+      ${projectActions(p)}
     `;
     modal.open(p.title, content);
   }
+}
+
+const GITHUB_SVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>`;
+
+const EXTERNAL_SVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+
+const DOMAIN_LABELS = {
+  'ai-ml': 'AI / ML',
+  'data-science': 'Data Science',
+  'full-stack': 'Full-Stack',
+  'iot': 'IoT',
+  'design': 'Design',
+  'leadership': 'Leadership'
+};
+
+function formatDomain(d) {
+  return DOMAIN_LABELS[d] || d.replace(/-/g, ' ');
+}
+
+// Each button is labelled by where it actually goes, never a generic "Visit Repository"
+function demoLabel(url) {
+  if (url.includes('youtu')) return 'Watch Demo Video';
+  if (url.includes('linkedin.com')) return 'View on LinkedIn';
+  return 'Live Demo';
+}
+
+export function projectActions(p) {
+  const buttons = [];
+  if (p.repo) {
+    buttons.push(`<a href="${p.repo}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">${GITHUB_SVG} View Source on GitHub</a>`);
+  }
+  if (p.demo) {
+    buttons.push(`<a href="${p.demo}" target="_blank" rel="noopener noreferrer" class="btn ${p.repo ? 'btn-outline' : 'btn-primary'} btn-sm">${EXTERNAL_SVG} ${demoLabel(p.demo)}</a>`);
+  }
+  if (!buttons.length) {
+    return `<p class="text-muted pt-3" style="border-top: 1px solid var(--surface-border); font-size: 0.85rem; margin: 0;">No public repository — source belongs to the organisation or the work is non-code.</p>`;
+  }
+  return `<div class="modal-actions">${buttons.join('')}</div>`;
 }

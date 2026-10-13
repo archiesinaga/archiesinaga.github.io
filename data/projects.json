@@ -1,35 +1,115 @@
 [
   {
-    "id": "proj-1",
-    "title": "Real-Time Truck Tracking System",
-    "summary": "Real-time dispatch and truck route tracking platform monitoring 10-20 transport units daily across 4 industrial checkpoints.",
-    "type": "tech",
-    "domain": "full-stack",
-    "topics": ["logistics", "tracking", "enterprise"],
-    "tech": ["JavaScript", "REST APIs", "PostgreSQL", "Leaflet", "Node.js"],
-    "url": "https://linkedin.com/in/archie-ph-sinaga/",
-    "details": "Engineered at PT Sumatera Prima Fiberboard with a 2-3 person team to enhance physical logistics visibility across factory gates, track 10-20 trucks daily across 4 checkpoints, and eliminate transport haulage bottlenecks."
-  },
-  {
-    "id": "proj-2",
-    "title": "ALC Learning — Learning Management System",
-    "summary": "Full-stack Learning Management System supporting academic assessments, daily exercises, and grade tracking for 600+ active students.",
-    "type": "tech",
-    "domain": "full-stack",
-    "topics": ["web-app", "lms", "education"],
-    "tech": ["JavaScript", "Express.js", "PostgreSQL", "Node.js", "MySQL"],
-    "url": "https://linkedin.com/in/archie-ph-sinaga/",
-    "details": "Deployed in production at Alpha Omega Learning Center with role-based access control, grade book analytics, and modular exercise distribution for over 600 students. Accompanied by a financial cash flow program detecting IDR 19M in audit discrepancies."
-  },
-  {
-    "id": "proj-3",
-    "title": "PT. Dagangan Karya Indonesia Analysis Project",
-    "summary": "Commercial retail data analytics, customer cohort modeling, and business intelligence reporting for PT. Dagangan Karya Indonesia.",
+    "id": "credit-risk",
+    "title": "Credit Risk Model & Early Warning Dashboard",
+    "summary": "End-to-end credit scoring model that tells a lender whether to approve, review or reject a borrower, and flags existing borrowers before they default.",
     "type": "tech",
     "domain": "data-science",
-    "topics": ["data-analytics", "business-intelligence", "eda"],
-    "tech": ["Python", "Pandas", "SQL", "Tableau", "EDA"],
-    "url": "https://linkedin.com/in/archie-ph-sinaga/",
-    "details": "Conducted end-to-end commercial transactional analytics, exploratory data cleansing, and Tableau KPI dashboards evaluating rural retail distribution for PT. Dagangan Karya Indonesia; co-authored research paper awarded Third Best Presentation Team at Bitlabs MSIB Batch 7."
+    "topics": ["machine-learning", "finance", "model-calibration", "dashboard"],
+    "tech": ["Python", "scikit-learn", "XGBoost", "SHAP", "Streamlit", "Pandas"],
+    "repo": "https://github.com/archiesinaga/credit-risk-model",
+    "details": "Trained on the public Kaggle <em>Give Me Some Credit</em> dataset: 150,000 borrowers, 6.68% default rate. Logistic regression (scorecard-style) reached 0.854 test AUC against 0.861 for XGBoost, so a bank can trade a little accuracy for a fully transparent model. Probabilities were calibrated with isotonic regression (6.6% mean predicted vs 6.68% actual). The cut-off is chosen by business cost rather than accuracy — treating a missed defaulter as 5x more expensive, the model flags 10.8% of borrowers and cuts expected cost by 36.2% against approving everyone. Risk grades A–E separate cleanly: 1.1% actual default in grade A rising to 36.8% in grade E, where 10% of borrowers account for roughly 55% of all defaults. SHAP explains every individual score, with credit utilisation the strongest driver.",
+    "note": "Public, anonymised, non-Indonesian data. The method transfers to a bank's own portfolio; the data does not."
+  },
+  {
+    "id": "bacteria-classification",
+    "title": "Bacterial Image Classification (Undergraduate Thesis)",
+    "summary": "Deep learning system that classifies microscopic bacterial images by morphology, structure and staining, comparing ConvNeXt against ResNet-50.",
+    "type": "tech",
+    "domain": "ai-ml",
+    "topics": ["computer-vision", "deep-learning", "research", "transfer-learning"],
+    "tech": ["Python", "TensorFlow", "ConvNeXt", "ResNet-50", "Transfer Learning"],
+    "repo": "https://github.com/archiesinaga/bacteria-classification",
+    "details": "Final-year thesis at Universitas Sriwijaya, built on the DIBaS (Digital Image of Bacterial Species) benchmark dataset. Two convolutional architectures — ConvNeXt and ResNet-50 — were trained with transfer learning and compared on classification accuracy across bacterial species, with a backend service serving predictions to a web front end so the model is usable outside a notebook."
+  },
+  {
+    "id": "ceksawit",
+    "title": "CekSawit — Oil Palm Disease Expert System",
+    "summary": "Expert system that identifies diseases in oil palm plants from field observations and returns practical treatment advice for non-technical operators.",
+    "type": "tech",
+    "domain": "ai-ml",
+    "topics": ["expert-systems", "agriculture", "decision-support", "web-app"],
+    "tech": ["TypeScript", "Next.js", "Tailwind CSS", "Python", "RF-DETR"],
+    "repo": "https://github.com/archiesinaga/CekSawit-main",
+    "demo": "https://youtu.be/cuzw4vL1z5E",
+    "details": "Built from research and interviews with agricultural specialists, turning their diagnostic questions into a symptom questionnaire that returns a diagnosis and treatment steps. The interface is deliberately simple so a field worker, not an engineer, can reach a concrete next action. The repository also includes an RF-DETR object-detection training notebook for visual disease cues. Collaborator: Muhammad Azka."
+  },
+  {
+    "id": "vehicle-tracker",
+    "title": "Vehicle Route Tracking System",
+    "summary": "Real-time tracking application monitoring company transport across 4 checkpoints, recording departure times, trip duration and stop locations.",
+    "type": "tech",
+    "domain": "full-stack",
+    "topics": ["logistics", "tracking", "mapping", "web-app"],
+    "tech": ["TypeScript", "Next.js", "React Leaflet", "MongoDB", "Mongoose", "Geolib"],
+    "repo": "https://github.com/archiesinaga/vehicle-route",
+    "details": "Co-designed and built in a 2-person team during the Web Developer internship at PT Sumatera Prima Fibreboard. Monitors 10–20 trucks per day across 4 checkpoints, turning informal radio check-ins into structured, timestamped trip records. Trips are looked up by ticket ID, drawn on an interactive Leaflet map, and stored with start/end capture images in MongoDB, giving logistics managers real data on departure times, trip duration and stop locations."
+  },
+  {
+    "id": "document-approval",
+    "title": "Digital Document Approval System",
+    "summary": "Role-based document workflow connecting administrators and managers across 8 manufacturing divisions, cutting the approval cycle from about a week to 2–3 days.",
+    "type": "tech",
+    "domain": "full-stack",
+    "topics": ["workflow-automation", "enterprise", "web-app", "rbac"],
+    "tech": ["TypeScript", "Next.js", "Prisma", "NextAuth.js", "PostgreSQL", "Tailwind CSS"],
+    "repo": "https://github.com/archiesinaga/project-dms",
+    "details": "Built in a 2-person team at PT Sumatera Prima Fibreboard to replace paper memo routing between 8 divisions. Documents are uploaded, routed and approved through a role-gated API — only Manager and Standardization roles can act on an approval — with every decision, comment and status change written to an audit trail. Reduced the typical approval cycle from roughly one week to 2–3 days."
+  },
+  {
+    "id": "alc-lms",
+    "title": "ALC Learning — Learning Management System",
+    "summary": "Learning Management System running in production at Alpha Omega Learning Center, tracking daily grades, attendance and exercises for around 600 students.",
+    "type": "tech",
+    "domain": "full-stack",
+    "topics": ["education", "lms", "web-app", "analytics"],
+    "tech": ["JavaScript", "Express.js", "PostgreSQL", "MySQL", "Next.js", "Supabase"],
+    "repo": "https://github.com/archiesinaga/alc_classroom",
+    "details": "The production system supporting academic assessments, daily exercises and learning modules for roughly 600 students, built with Express.js and a relational database and maintained through testing, deployment and iteration. The linked repository is the open companion build — a Next.js and Supabase grade manager with teacher authentication, class grouping, quiz and bonus scoring, attendance records, a class leaderboard and row-level security so each teacher sees only their own students. Accompanied by a separate cash flow auditing tool that surfaced IDR 19M in discrepancies over 9 months."
+  },
+  {
+    "id": "dagangan-analysis",
+    "title": "PT Dagangan Karya Indonesia — Sales Route Analytics",
+    "summary": "Six months of sales, visit and customer data analysed for a rural-commerce startup to decide who sales reps should visit, how often, and on which days.",
+    "type": "tech",
+    "domain": "data-science",
+    "topics": ["data-analytics", "business-intelligence", "eda", "route-optimisation"],
+    "tech": ["Python", "SQL", "PostgreSQL", "Tableau", "Excel", "Pandas"],
+    "repo": null,
+    "demo": "https://linkedin.com/in/archie-ph-sinaga/",
+    "details": "Capstone project of the Bitlabs Academy MSIB Batch 7 cohort, analysing visit, transaction and store-location data from April to September 2024 in a team of 3. Customers visited most often generated about 13x more revenue per customer than those visited least, and a 1–7 day visit cadence produced the highest average revenue. The recommendations — prioritise high-value customers, schedule around peak days such as Friday, reinforce weak days such as Sunday, and shorten routes (up to 40% less travel distance in test cases) — were presented as a final paper and executive deck, awarded Third Best Presentation Team in the national cohort."
+  },
+  {
+    "id": "iot-smart-farming",
+    "title": "IoT Smart Farming System",
+    "summary": "Embedded sensor system for environmental monitoring and automated irrigation, placed Top 3 among 25–40 competing university teams.",
+    "type": "tech",
+    "domain": "iot",
+    "topics": ["iot", "embedded", "agriculture", "automation"],
+    "tech": ["C++", "Python", "ESP32", "Arduino", "Sensors"],
+    "repo": null,
+    "details": "University competition project combining soil moisture and environmental sensing with automated irrigation triggers, built on ESP32/Arduino microcontrollers. Placed in the top 3 of a field of 25–40 teams."
+  },
+  {
+    "id": "uiux-euphoria",
+    "title": "UI/UX Design Competition — National Finalist",
+    "summary": "User-centred product interface designed and prototyped in Figma, selected as a national finalist at Technology Euphoria 2024.",
+    "type": "non-tech",
+    "domain": "design",
+    "topics": ["ui-ux", "prototyping", "design-thinking", "competition"],
+    "tech": ["Figma", "Adobe Illustrator", "Design Thinking", "Prototyping"],
+    "repo": null,
+    "details": "Interface concept taken from user research through wireframes to an interactive Figma prototype, reaching the national finalist round of the Technology Euphoria 2024 design competition."
+  },
+  {
+    "id": "fasilkom-games",
+    "title": "FASILKOM Isport Games — Event Operations",
+    "summary": "Faculty-wide sports competition with 200+ participants across 6 sports, run as Head of Sport Division.",
+    "type": "non-tech",
+    "domain": "leadership",
+    "topics": ["event-management", "leadership", "operations"],
+    "tech": ["Event Operations", "Team Coordination", "Scheduling"],
+    "repo": null,
+    "details": "Organised and supported match operations for a faculty-wide competition spanning futsal, badminton, table tennis, chess, volleyball and basketball, coordinating schedules, officials and 200+ student participants."
   }
 ]

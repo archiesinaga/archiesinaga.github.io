@@ -1,62 +1,106 @@
 [
   {
-    "id": "truck-tracking",
-    "title": "Real-Time Truck Tracking System",
-    "subtitle": "Fleet Route Visibility & Multi-Checkpoint Logistics Automation",
-    "status": "Deployed & Operating",
+    "id": "credit-risk",
+    "title": "Credit Risk Model & Early Warning Dashboard",
+    "subtitle": "Probability of Default, Cost-Based Cut-offs & SHAP Explanations",
+    "status": "Open Source",
     "badge_type": "primary",
-    "description": "A real-time dispatch and transport tracking platform developed at PT Sumatera Prima Fiberboard. Monitors 10-20 transport trucks daily across 4 industrial checkpoints to improve operational visibility and eliminate haulage bottlenecks.",
+    "description": "An end-to-end credit scoring model that decides whether to approve, review or reject a borrower, and flags existing borrowers before they default. Built on 150,000 borrowers from the public Give Me Some Credit dataset.",
     "highlights": [
-      "Monitored 10-20 trucks daily across 4 factory checkpoints in real time, logging timestamps and gate turnaround.",
-      "Built with a 2-3 person engineering team, providing logistics managers with live dispatch dashboards."
+      "Logistic regression scored 0.854 test AUC against XGBoost's 0.861 — close enough that a bank can choose a fully transparent scorecard.",
+      "Cut-off chosen by business cost rather than accuracy: flags 10.8% of borrowers and cuts expected cost by 36.2% versus approving everyone.",
+      "Risk grades A–E separate cleanly — 1.1% actual default in grade A rising to 36.8% in grade E, where 10% of borrowers hold ~55% of defaults."
     ],
-    "tech": ["JavaScript", "REST APIs", "PostgreSQL", "Leaflet", "Node.js"],
+    "tech": ["Python", "scikit-learn", "XGBoost", "SHAP", "Streamlit", "Pandas"],
     "metrics": [
-      { "value": "10-20", "label": "Daily Trucks Monitored" },
-      { "value": "4", "label": "Logistics Checkpoints" }
+      { "value": "0.861", "label": "Test AUC (XGBoost)" },
+      { "value": "36.2%", "label": "Expected Cost Reduction" },
+      { "value": "150K", "label": "Borrowers Modelled" }
     ],
-    "code_snippet": "// Checkpoint dispatch status verification and transit logger\nexport async function logCheckpointTransit(truckId, checkpointId, driverInfo) {\n  const transitTime = new Date().toISOString();\n  const query = `\n    INSERT INTO truck_dispatch_logs (truck_id, checkpoint_id, driver_name, status, logged_at)\n    VALUES ($1, $2, $3, 'VERIFIED', $4) RETURNING log_id;\n  `;\n  const result = await db.query(query, [truckId, checkpointId, driverInfo.name, transitTime]);\n  return { success: true, logId: result.rows[0].log_id, timestamp: transitTime };\n}",
-    "demo_url": "https://linkedin.com/in/archie-ph-sinaga/",
-    "github_url": "https://github.com/archiesinaga"
+    "code_lang": "src/cleaning.py",
+    "code_snippet": "# All cleaning constants are fitted on TRAIN only, to avoid leakage\ndef fit_cleaner(train):\n    has_income = train[\"MonthlyIncome\"].notna()\n    return {\n        \"age_median\": train.loc[train[\"age\"] > 18, \"age\"].median(),\n        \"late_median\": {c: train.loc[train[c] < 96, c].median() for c in LATE_COLS},\n        \"cap_util\": train[\"RevolvingUtilizationOfUnsecuredLines\"].quantile(CAP_Q),\n    }\n\ndef apply_cleaner(df, p):\n    # Codes 96/98 default at 54.6% vs 6.6% elsewhere -> keep as a flag, not a delete\n    df[\"late_code_flag\"] = (df[LATE_COLS] >= 96).any(axis=1).astype(int)\n    for c in LATE_COLS:\n        df.loc[df[c] >= 96, c] = p[\"late_median\"][c]\n    return df",
+    "repo": "https://github.com/archiesinaga/credit-risk-model"
+  },
+  {
+    "id": "bacteria-classification",
+    "title": "Bacterial Image Classification",
+    "subtitle": "ConvNeXt vs ResNet-50 on the DIBaS Microscopy Dataset",
+    "status": "Undergraduate Thesis",
+    "badge_type": "accent",
+    "description": "A deep learning system that classifies microscopic bacterial images by morphology, structure and staining across 33 bacterial species, built as my final-year thesis at Universitas Sriwijaya.",
+    "highlights": [
+      "Two convolutional architectures — ConvNeXt and ResNet-50 — trained with transfer learning and compared on the DIBaS benchmark dataset.",
+      "Predictions are served through a web interface with a confidence floor, so a low-certainty image is refused rather than guessed.",
+      "Each species is returned with a plain-language description, making the output readable by lab staff rather than only by the model's author."
+    ],
+    "tech": ["Python", "TensorFlow", "ConvNeXt", "ResNet-50", "Streamlit", "Transfer Learning"],
+    "metrics": [
+      { "value": "33", "label": "Bacterial Species" },
+      { "value": "2", "label": "Architectures Compared" }
+    ],
+    "code_lang": "prediksi.py",
+    "code_snippet": "def predict_bacteria(self, image):\n    start_time = time.time()\n    processed_image = self.preprocess_image(image)\n    label, probability, _ = self.model_handler.predict(processed_image)\n    execution_time = time.time() - start_time\n\n    # Below the confidence floor, refuse to answer rather than guess\n    if probability < 0.5:\n        return None, None, execution_time\n\n    return label, probability, execution_time",
+    "repo": "https://github.com/archiesinaga/bacteria-classification"
+  },
+  {
+    "id": "document-approval",
+    "title": "Digital Document Approval System",
+    "subtitle": "Role-Gated Workflow Across 8 Manufacturing Divisions",
+    "status": "Deployed at PT Sumatera Prima Fibreboard",
+    "badge_type": "primary",
+    "description": "A document routing and approval platform built in a 2-person team to replace paper memo circulation between 8 manufacturing divisions, cutting the approval cycle from about a week to 2–3 days.",
+    "highlights": [
+      "Approval endpoints are role-gated — only Manager and Standardization roles can act on a document, enforced server-side rather than hidden in the UI.",
+      "Every decision, comment and status change is written to an audit trail, so a stalled document can be traced to the division holding it."
+    ],
+    "tech": ["TypeScript", "Next.js", "Prisma", "NextAuth.js", "PostgreSQL", "Tailwind CSS"],
+    "metrics": [
+      { "value": "1 wk → 2-3 d", "label": "Approval Turnaround" },
+      { "value": "8", "label": "Divisions Connected" }
+    ],
+    "code_lang": "app/api/documents/[id]/approve/route.ts",
+    "code_snippet": "export async function POST(request: Request, { params }: { params: { id: string } }) {\n  const session = await getServerSession(authOptions);\n  if (!session?.user) {\n    return NextResponse.json({ error: \"Unauthorized\" }, { status: 401 });\n  }\n\n  const userRole = session.user.role as Role;\n  if (userRole !== Role.MANAGER && userRole !== Role.STANDARDIZATION) {\n    return NextResponse.json({\n      error: \"Only Manager and Standardization roles can process documents\"\n    }, { status: 403 });\n  }\n\n  const { status, comment }: ApprovalRequest = await request.json();\n  // ... record the decision and append to the document's audit trail\n}",
+    "repo": "https://github.com/archiesinaga/project-dms"
+  },
+  {
+    "id": "vehicle-tracker",
+    "title": "Vehicle Route Tracking System",
+    "subtitle": "Checkpoint Transit Logging & Interactive Route Playback",
+    "status": "Deployed at PT Sumatera Prima Fibreboard",
+    "badge_type": "primary",
+    "description": "A tracking application monitoring 10–20 company trucks per day across 4 checkpoints, turning informal radio check-ins into structured records of departure time, trip duration and stop locations.",
+    "highlights": [
+      "Trips are looked up by ticket ID and replayed on an interactive Leaflet map, with start and end capture images stored alongside each record.",
+      "Gave logistics managers real departure and dwell-time data in place of estimates, improving visibility across the factory gates."
+    ],
+    "tech": ["TypeScript", "Next.js", "React Leaflet", "MongoDB", "Mongoose", "Geolib"],
+    "metrics": [
+      { "value": "10-20", "label": "Trucks Tracked Daily" },
+      { "value": "4", "label": "Checkpoints Covered" }
+    ],
+    "code_lang": "src/app/api/tracking/[ticketID]/route.ts",
+    "code_snippet": "export async function GET(req: NextRequest, context: { params: { ticketID: string } }) {\n  // `params` is a Promise in Next.js 15+, so await it before use\n  const { ticketID } = await context.params;\n\n  try {\n    await connectDB();\n    const trackingData = await Tracking.findOne({ ticketID });\n\n    if (!trackingData) {\n      return NextResponse.json({ error: 'Tracking data not found' }, { status: 404 });\n    }\n    return NextResponse.json(trackingData);\n  } catch (error) {\n    return NextResponse.json({ error: 'Failed to fetch tracking data' }, { status: 500 });\n  }\n}",
+    "repo": "https://github.com/archiesinaga/vehicle-route"
   },
   {
     "id": "alc-lms",
     "title": "ALC Learning — Learning Management System",
-    "subtitle": "Academic Assessment Engine & Daily Student Grade Tracking",
+    "subtitle": "Grades, Attendance & Exercises for ~600 Students",
     "status": "Live in Production",
     "badge_type": "primary",
-    "description": "A high-capacity web-based Learning Management System deployed for Alpha Omega Learning Center supporting 600+ students with academic assessments, daily exercises, and learning modules.",
+    "description": "A Learning Management System built and deployed for Alpha Omega Learning Center, supporting academic assessments, daily exercises and learning modules, and tracking daily grades for around 600 students.",
     "highlights": [
-      "Scaled to monitor daily student grades, assignments, and learning modules for 600+ enrolled students.",
-      "Co-developed accompanying cash flow auditing program that detected IDR 19M in discrepancies over 9 months."
+      "Production system built with Express.js and a relational database, maintained through testing, deployment and ongoing iteration.",
+      "The open companion build adds teacher authentication, class grouping, quiz and bonus scoring, attendance records and a class leaderboard.",
+      "Row-level security scopes every query to the signed-in teacher, so one teacher cannot read another's students."
     ],
-    "tech": ["JavaScript", "Express.js", "PostgreSQL", "MySQL", "Node.js"],
+    "tech": ["JavaScript", "Express.js", "PostgreSQL", "MySQL", "Next.js", "Supabase"],
     "metrics": [
-      { "value": "600+", "label": "Students Served" },
-      { "value": "IDR 19M", "label": "Discrepancy Found" }
+      { "value": "600+", "label": "Students Tracked" },
+      { "value": "IDR 19M", "label": "Discrepancies Surfaced" }
     ],
-    "code_snippet": "// Financial cash flow discrepancy reconciliation audit module\nexport async function auditCashFlowLedger(startDate, endDate) {\n  const transactions = await db.query(\n    'SELECT * FROM cashflow_ledger WHERE date BETWEEN $1 AND $2 ORDER BY timestamp ASC',\n    [startDate, endDate]\n  );\n  const anomalies = transactions.rows.filter(tx => {\n    const expectedHash = computeLedgerHash(tx.amount, tx.category, tx.timestamp);\n    return tx.verification_hash !== expectedHash || tx.amount <= 0;\n  });\n  return { flaggedCount: anomalies.length, auditedTotal: transactions.rowCount };\n}",
-    "demo_url": "https://linkedin.com/in/archie-ph-sinaga/",
-    "github_url": "https://github.com/archiesinaga"
-  },
-  {
-    "id": "dagangan-analysis",
-    "title": "PT. Dagangan Karya Indonesia Analysis Project",
-    "subtitle": "Commercial Retail Analytics, EDA & Transactional Storytelling",
-    "status": "Award-Winning Paper",
-    "badge_type": "accent",
-    "description": "Comprehensive commercial business analytics and exploratory data analysis project evaluating sales distribution, retail patterns, and customer purchase behaviors for PT. Dagangan Karya Indonesia.",
-    "highlights": [
-      "Collaborated in a multidisciplinary team to clean, model, and visualize commercial transaction datasets using Python and Tableau.",
-      "Co-authored final analytics paper and executive presentation deck; awarded Third Best Presentation Team in MSIB Batch 7."
-    ],
-    "tech": ["Python", "Pandas", "SQL", "Tableau", "EDA", "Data Analytics"],
-    "metrics": [
-      { "value": "Top 3", "label": "National Presentation Award" },
-      { "value": "10K+", "label": "Rows Modeled & Cleansed" }
-    ],
-    "code_snippet": "# Transactional cohort analysis and basket metric aggregation\ndef analyze_retail_cohorts(df: pd.DataFrame) -> pd.DataFrame:\n    df['transaction_date'] = pd.to_datetime(df['date'])\n    cohort_summary = df.groupby(['hub_region', 'product_category']).agg(\n        total_gmv=('amount', 'sum'),\n        active_buyers=('customer_id', 'nunique'),\n        avg_basket_size=('quantity', 'mean')\n    ).reset_index()\n    cohort_summary['growth_pct'] = cohort_summary['total_gmv'].pct_change() * 100\n    return cohort_summary",
-    "demo_url": "https://linkedin.com/in/archie-ph-sinaga/",
-    "github_url": "https://github.com/archiesinaga"
+    "code_lang": "supabase_schema.sql",
+    "code_snippet": "-- Row Level Security: a teacher can only ever reach their own students\nalter table public.students enable row level security;\nalter table public.records  enable row level security;\n\ncreate policy \"Guru dapat lihat siswa sendiri\"\n  on public.students for select\n  using (teacher_id = auth.uid());\n\n-- Grades inherit the same boundary through the student they belong to\ncreate policy \"Guru dapat lihat nilai siswa sendiri\"\n  on public.records for select\n  using (\n    student_id in (\n      select id from public.students where teacher_id = auth.uid()\n    )\n  );",
+    "repo": "https://github.com/archiesinaga/alc_classroom"
   }
 ]

@@ -6,6 +6,41 @@
 
 import { modal } from './modal.js';
 
+const KEYWORDS = 'async|await|def|return|if|else|for|in|class|import|from|export|function|const|let|new|try|catch|interface|create|policy|on|using|select|where|alter|table|enable|with|check';
+
+// Single pass: each token is escaped and wrapped exactly once. Chained regex
+// replaces would re-match the class="..." attributes they had just inserted.
+const TOKEN_RE = new RegExp(
+  '(\\/\\/[^\\n]*|#[^\\n]*|--[^\\n]*)' +                                // 1: comment
+  '|("(?:[^"\\\\\\n]|\\\\.)*"|\'(?:[^\'\\\\\\n]|\\\\.)*\'|`[^`]*`)' +   // 2: string
+  `|\\b(${KEYWORDS})\\b` +                                              // 3: keyword
+  '|\\b([A-Za-z_]\\w*)(?=\\()' +                                        // 4: function call
+  '|\\b(\\d+(?:\\.\\d+)?)\\b',                                          // 5: number
+  'g'
+);
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+export function highlightCode(raw = '') {
+  let out = '';
+  let last = 0;
+  raw.replace(TOKEN_RE, (match, comment, str, kw, fn, num, offset) => {
+    out += escapeHtml(raw.slice(last, offset));
+    const cls = comment ? 'comment' : str ? 'string' : kw ? 'keyword' : fn ? 'function' : 'number';
+    out += `<span class="${cls}">${escapeHtml(match)}</span>`;
+    last = offset + match.length;
+    return match;
+  });
+  return out + escapeHtml(raw.slice(last));
+}
+
+// Arrow keys should never move a carousel while the visitor is typing
+function isTypingTarget(el) {
+  return el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
+}
+
 /* ==========================================================================
    1. Active Systems Swiper Carousel (Featured Active Projects)
    ========================================================================== */
@@ -93,9 +128,9 @@ export class ActiveSystemsCarousel {
                 <span class="code-dot yellow"></span>
                 <span class="code-dot green"></span>
               </div>
-              <span class="code-lang">Architecture Node</span>
+              <span class="code-lang">${proj.code_lang || 'Source excerpt'}</span>
             </div>
-            <div class="code-body">${this.highlightCode(proj.code_snippet)}</div>
+            <div class="code-body" tabindex="0" aria-label="Code excerpt from ${proj.code_lang || proj.title}">${highlightCode(proj.code_snippet)}</div>
           </div>
 
           <div class="tag-list mb-3">
@@ -116,24 +151,15 @@ export class ActiveSystemsCarousel {
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               Ask AI about this
             </button>
-            <a href="${proj.github_url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-              Source Code
-            </a>
+            ${proj.repo ? `
+            <a href="${proj.repo}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View ${proj.title} source code on GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              View Source on GitHub
+            </a>` : ''}
           </div>
         </div>
       </div>
     `;
-  }
-
-  highlightCode(raw) {
-    return raw
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/(async|def|void|return|auto|if|class|import|from)/g, '<span class="keyword">$1</span>')
-      .replace(/(validate_taxonomy|processFrame|similarity_search|rerank|evaluate_taxonomic_fit|render_subsurface_strata)/g, '<span class="function">$1</span>')
-      .replace(/(".*?"|'.*?')/g, '<span class="string">$1</span>')
-      .replace(/(#.*|\/\/.*)/g, '<span class="comment">$1</span>');
   }
 
   setupEvents() {
@@ -155,6 +181,8 @@ export class ActiveSystemsCarousel {
 
     // Touch Swipe Gestures
     this.wrapper.addEventListener('touchstart', (e) => {
+      // Let the code panel scroll sideways without flipping the slide
+      if (e.target.closest('.code-body')) return;
       this.startX = e.touches[0].clientX;
       this.touchStartY = e.touches[0].clientY;
       this.currentX = this.startX;
@@ -182,7 +210,7 @@ export class ActiveSystemsCarousel {
     // Mouse Dragging Swipe Gestures
     this.wrapper.addEventListener('mousedown', (e) => {
       // Don't drag if clicking buttons, links or code selection
-      if (e.target.closest('button, a, pre, code')) return;
+      if (e.target.closest('button, a, pre, code, .code-body')) return;
       this.isDragging = true;
       this.startX = e.clientX;
       this.currentX = e.clientX;
@@ -207,6 +235,7 @@ export class ActiveSystemsCarousel {
 
     // Keyboard Arrow navigation when active systems section is visible
     document.addEventListener('keydown', (e) => {
+      if (isTypingTarget(e.target)) return;
       const rect = this.container.getBoundingClientRect();
       const inView = rect.top < window.innerHeight && rect.bottom > 0;
       if (inView && !modal.isOpen()) {
@@ -287,7 +316,7 @@ export class NewsFeedCarousel {
               </div>
               <div class="mt-auto">
                 <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width: 100%;">
-                  Read on ${item.platform.split('/')[0]}
+                  ${item.link_label || `Read on ${item.platform}`}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                 </a>
               </div>
@@ -445,6 +474,7 @@ export class ExperienceCarousel {
 
     // Keyboard support
     document.addEventListener('keydown', (e) => {
+      if (isTypingTarget(e.target)) return;
       const rect = this.container.getBoundingClientRect();
       const inView = rect.top < window.innerHeight && rect.bottom > 0;
       if (inView && !modal.isOpen()) {

@@ -8,7 +8,9 @@ import {
   renderProfile,
   renderStats,
   renderExpertise,
-  renderSkillsAndActivities
+  renderSkillsAndActivities,
+  renderEducation,
+  renderCertifications
 } from './render.js';
 import {
   ExperienceCarousel,
@@ -27,15 +29,48 @@ async function initPortfolio() {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const navMenu = document.getElementById('nav-menu');
   if (hamburgerBtn && navMenu) {
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    hamburgerBtn.setAttribute('aria-controls', 'nav-menu');
+    const setMenuOpen = (open) => {
+      navMenu.classList.toggle('mobile-open', open);
+      hamburgerBtn.setAttribute('aria-expanded', String(open));
+    };
+
     hamburgerBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('mobile-open');
+      setMenuOpen(!navMenu.classList.contains('mobile-open'));
     });
 
-    // Close mobile menu on clicking any link
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('mobile-open');
-      });
+    // Close mobile menu on clicking any real link (including the Arcade items)
+    navMenu.addEventListener('click', (e) => {
+      if (e.target.closest('a[href]')) setMenuOpen(false);
+    });
+
+    // Close on Escape so keyboard users are not trapped behind the menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('mobile-open')) {
+        setMenuOpen(false);
+        hamburgerBtn.focus();
+      }
+    });
+  }
+
+  // Arcade dropdown: hover alone fails for keyboard and touch, so toggle it explicitly
+  const dropdown = document.querySelector('.nav-item-dropdown');
+  const dropdownToggle = dropdown?.querySelector('.dropdown-toggle');
+  if (dropdown && dropdownToggle) {
+    const setDropdown = (open) => {
+      dropdown.classList.toggle('open', open);
+      dropdownToggle.setAttribute('aria-expanded', String(open));
+    };
+    dropdownToggle.addEventListener('click', () => setDropdown(!dropdown.classList.contains('open')));
+    dropdownToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setDropdown(!dropdown.classList.contains('open'));
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) setDropdown(false);
     });
   }
 
@@ -70,12 +105,14 @@ async function initPortfolio() {
     renderStats(profile.stats);
     renderExpertise(expertise);
     renderSkillsAndActivities(skills, organizations, education, certifications);
+    renderEducation(education);
+    renderCertifications(certifications);
 
     // 5. Initialize Interactive Subsystems
     new ActiveSystemsCarousel('active-projects-container', activeProjects);
     new NewsFeedCarousel('news-feed-container', news);
     new ExperienceCarousel('exp-carousel-container', experience);
-    new ProjectFilterManager('projects-grid-container', null, projects);
+    new ProjectFilterManager('projects-grid-container', 'project-filter-bar', projects);
     new PortfolioChatbot({
       profile,
       expertise,
@@ -84,7 +121,7 @@ async function initPortfolio() {
     });
 
     // 6. Contact Form Submission Handler
-    setupContactForm();
+    setupContactForm(profile.contact || {});
 
     // 7. Scroll reveal & animations
     initScrollEffects();
@@ -94,32 +131,54 @@ async function initPortfolio() {
   }
 }
 
-function setupContactForm() {
+function setupContactForm(contact) {
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('contact-form-feedback');
+  if (!form) return;
 
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+  const showFeedback = (message, kind) => {
+    if (!feedback) return;
+    feedback.textContent = message;
+    feedback.className = `form-feedback form-feedback-${kind}`;
+    feedback.hidden = false;
+  };
 
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `Sending...`;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
 
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        form.reset();
+    // No form endpoint configured yet: hand the message to the visitor's own
+    // email app, and say so plainly instead of pretending it was sent.
+    if (!contact.formEndpoint) {
+      const subject = encodeURIComponent(data.get('subject') || 'Portfolio enquiry');
+      const body = encodeURIComponent(`${data.get('message')}\n\n— ${data.get('name')} (${data.get('email')})`);
+      window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
+      showFeedback(`Your email app should now open with this message ready to send. If nothing opened, email ${contact.email} directly.`, 'info');
+      return;
+    }
 
-        if (feedback) {
-          feedback.style.display = 'block';
-          feedback.textContent = 'Thank you! Your message has been sent successfully. Archie will respond within 24 hours.';
-          setTimeout(() => { feedback.style.display = 'none'; }, 6000);
-        }
-      }, 800);
-    });
-  }
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(contact.formEndpoint, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      form.reset();
+      showFeedback(`Thank you — your message reached Archie. Expect a reply within ${contact.responseTime || '24 hours'}.`, 'success');
+    } catch (err) {
+      console.error('Contact form failed:', err);
+      showFeedback(`Sorry, the message could not be sent. Please email ${contact.email} directly.`, 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    }
+  });
 }
 
 // Bootstrap on DOM ready

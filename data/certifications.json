@@ -1,68 +1,139 @@
 [
   {
-    "id": "cert-1",
+    "id": "cert-ibm-data-fundamentals",
+    "title": "Data Fundamentals",
+    "issuer": "IBM",
+    "category": "Data & Analytics",
+    "date": "Oct 2026",
+    "skills": ["Data Build Tool (dbt)", "Data Refinement"],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-ibm-data-sustainability",
+    "title": "Data Analytics for Sustainability",
+    "issuer": "IBM",
+    "category": "Data & Analytics",
+    "date": "Oct 2026",
+    "skills": ["Data Science", "Sustainable Development"],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-ibm-genai",
+    "title": "Getting Started with Generative AI",
+    "issuer": "IBM",
+    "category": "AI & Machine Learning",
+    "date": "Oct 2026",
+    "skills": ["Generative AI", "IBM Granite"],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-ibm-ai-fundamentals",
+    "title": "Artificial Intelligence Fundamentals",
+    "issuer": "IBM",
+    "category": "AI & Machine Learning",
+    "date": "Oct 2026",
+    "skills": ["Artificial Intelligence", "AI Ethics"],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-ibm-ai-literacy",
+    "title": "AI Literacy",
+    "issuer": "IBM",
+    "category": "AI & Machine Learning",
+    "date": "Oct 2026",
+    "skills": ["Problem Solving", "Pattern Recognition"],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-ibm-cybersecurity",
+    "title": "Cybersecurity Fundamentals",
+    "issuer": "IBM",
+    "category": "Security",
+    "date": "Sep 2026",
+    "skills": ["Cybersecurity", "Cryptography"],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-forage-data-labeling",
+    "title": "Data Labeling Job Simulation",
+    "issuer": "Forage",
+    "category": "Job Simulations",
+    "date": "Oct 2026",
+    "credentialId": "6ac752b040b981ecded7dc16",
+    "skills": ["Attention to Detail", "Data Privacy"],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-forage-capital-markets",
+    "title": "Freshfields — US Capital Markets Job Simulation",
+    "issuer": "Forage",
+    "category": "Job Simulations",
+    "date": "Oct 2026",
+    "credentialId": "6ac5014f4b1a13b126db70bf",
+    "skills": ["Finance", "Capital Markets"],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-adobe-illustrator",
+    "title": "Adobe Illustrator Certification",
+    "issuer": "MyEduSolve",
+    "category": "Design & Media",
+    "date": "Oct 2025",
+    "skills": ["Adobe Illustrator", "Vector Graphics", "Branding"],
+    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
+  },
+  {
+    "id": "cert-data-analysis-course",
     "title": "Data Analysis | SQL, Tableau, Power BI & Excel",
     "issuer": "Real Projects Certification",
     "category": "Data & Analytics",
     "date": "Apr 2026",
-    "credentialId": "DA-STPE-2026",
-    "skills": ["SQL", "Tableau", "Power BI", "Excel", "Data Modeling"],
-    "summary": "Comprehensive certification across SQL relational database querying, interactive BI dashboarding, and spreadsheet financial modeling.",
-    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+    "skills": ["SQL", "Tableau", "Power BI", "Excel"],
+    "url": null
   },
   {
-    "id": "cert-2",
-    "title": "Duolingo English Test (Score: 125)",
+    "id": "cert-duolingo",
+    "title": "Duolingo English Test — Score 125",
     "issuer": "Duolingo",
-    "category": "Language Proficiency",
+    "category": "Language",
     "date": "Jul 2026",
-    "credentialId": "DET-125-PROF",
-    "skills": ["Professional Working English", "Technical Writing", "Presentation"],
-    "summary": "Scored 125 on the official Duolingo English Test, validating professional working proficiency in verbal and written communication.",
-    "url": "https://englishtest.duolingo.com"
+    "skills": ["Professional Working English"],
+    "url": null
   },
   {
-    "id": "cert-3",
-    "title": "Adobe Illustrator Certified Professional",
-    "issuer": "MyEduSolve",
-    "category": "Design & Media",
-    "date": "Oct 2025",
-    "credentialId": "MES-AI-202510",
-    "skills": ["Adobe Illustrator", "Vector Graphics", "UI Design", "Branding Assets"],
-    "summary": "Industry certification verifying proficiency in vector graphics creation, layout design, typography, and visual assets production.",
-    "url": "https://myedusolve.com"
-  },
-  {
-    "id": "cert-4",
+    "id": "cert-msib-bitlabs",
     "title": "Data Analytics for Business (MSIB Batch 7)",
-    "issuer": "Bitlabs Academy / Kemendikbudristek",
+    "issuer": "Bitlabs Academy / Kampus Merdeka",
     "category": "Data & Analytics",
     "date": "Dec 2024",
-    "credentialId": "BL-MSIB7-DAB",
-    "skills": ["Python", "SQL", "Tableau", "Business Analytics", "EDA"],
-    "summary": "Certified completion of national MSIB program with practical business data analysis, ETL pipelines, and storytelling.",
+    "skills": ["Python", "SQL", "Tableau", "Excel", "EDA"],
     "url": "https://bitlabs.id"
   },
   {
-    "id": "cert-5",
-    "title": "Third Best Presentation Team — Data Analytics Paper",
+    "id": "award-bitlabs-top3",
+    "title": "Third Best Presentation Team — Data Analytics Final Paper",
     "issuer": "Bitlabs Academy",
     "category": "Honors & Awards",
-    "date": "Jan 2025",
-    "credentialId": "AWARD-BL-TOP3",
-    "skills": ["Analytical Storytelling", "Business Modeling", "Executive Deck"],
-    "summary": "Awarded 3rd place nationally for team presentation and research paper evaluating commercial transactional analytics.",
-    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+    "date": "Dec 2024",
+    "skills": ["Analytical Storytelling", "Executive Presentation"],
+    "url": null
   },
   {
-    "id": "cert-6",
+    "id": "award-tech-euphoria",
     "title": "Finalist, UI/UX Design Competition",
     "issuer": "Technology Euphoria 2024",
     "category": "Honors & Awards",
     "date": "Nov 2024",
-    "credentialId": "TECH-EUPHORIA-2024",
-    "skills": ["Figma", "UI/UX Architecture", "Prototyping", "Design Thinking"],
-    "summary": "Selected as national finalist in the annual technology design competition for innovative user-centric product interfaces.",
-    "url": "https://linkedin.com/in/archie-ph-sinaga/"
+    "skills": ["Figma", "Prototyping", "Design Thinking"],
+    "url": null
+  },
+  {
+    "id": "award-iot-top3",
+    "title": "Top 3, IoT Smart Farming Competition",
+    "issuer": "Universitas Sriwijaya",
+    "category": "Honors & Awards",
+    "date": "",
+    "skills": ["ESP32", "Arduino", "Sensors"],
+    "url": null
   }
 ]

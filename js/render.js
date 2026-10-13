@@ -16,6 +16,8 @@ export function renderProfile(profile) {
   if (heroNameEl) heroNameEl.textContent = `I'm ${profile.name}`;
   if (heroRoleEl) heroRoleEl.textContent = profile.headline_role;
   if (heroMottoEl) heroMottoEl.textContent = profile.motto;
+  const aboutTextEl = document.getElementById('about-text');
+  if (aboutTextEl && profile.about_text) aboutTextEl.textContent = profile.about_text;
   if (brandNameEl) brandNameEl.textContent = profile.nickname || profile.name;
 
   const heroAvatarImg = document.querySelector('.hero-avatar-img');
@@ -121,13 +123,17 @@ export function renderExpertise(items) {
     </div>
   `).join('');
 
-  // Wire modal on click
+  // Wire modal on click, and on Enter/Space since the cards are role="button"
   container.querySelectorAll('.expertise-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const id = card.dataset.expertiseId;
-      const data = items.find(i => i.id === id);
-      if (data) {
-        openExpertiseModal(data);
+    const open = () => {
+      const data = items.find(i => i.id === card.dataset.expertiseId);
+      if (data) openExpertiseModal(data);
+    };
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
       }
     });
   });
@@ -193,11 +199,62 @@ export function renderSkillsAndActivities(skills, orgs, education, certs) {
     `;
   }
 
-  // Clear education & certifications container if present
-  const eduContainer = document.getElementById('education-certs-container');
-  if (eduContainer) {
-    eduContainer.innerHTML = '';
-  }
+}
+
+export function renderEducation(education) {
+  const container = document.getElementById('education-container');
+  if (!container || !education) return;
+
+  container.innerHTML = education.map(e => `
+    <article class="edu-card">
+      <div class="edu-card-head">
+        <div>
+          <h3 class="edu-institution">${e.institution}</h3>
+          <div class="edu-degree">${e.degree}${e.major ? ` · ${e.major}` : ''}</div>
+        </div>
+        <span class="text-muted edu-period">${e.period}</span>
+      </div>
+      <div class="edu-grade">${e.grade}</div>
+      ${e.thesis ? `
+      <div class="edu-thesis">
+        <span class="edu-thesis-label">Thesis</span>
+        <p>${e.thesis}</p>
+        <a href="https://github.com/archiesinaga/bacteria-classification" target="_blank" rel="noopener noreferrer" class="edu-thesis-link">View thesis code on GitHub →</a>
+      </div>` : ''}
+      <ul class="edu-highlights">
+        ${(e.highlights || []).map(h => `<li>${h}</li>`).join('')}
+      </ul>
+    </article>
+  `).join('');
+}
+
+export function renderCertifications(certs) {
+  const container = document.getElementById('certs-container');
+  if (!container || !certs) return;
+
+  // Group by category, keeping awards last so certifications lead
+  const groups = {};
+  certs.forEach(c => { (groups[c.category] = groups[c.category] || []).push(c); });
+  const order = Object.keys(groups).sort((a, b) =>
+    (a === 'Honors & Awards') - (b === 'Honors & Awards'));
+
+  container.innerHTML = order.map(cat => `
+    <div class="cert-group">
+      <h4 class="cert-group-title">${cat} <span class="cert-group-count">${groups[cat].length}</span></h4>
+      <div class="cert-grid">
+        ${groups[cat].map(c => {
+          const inner = `
+            <div class="cert-title">${c.title}</div>
+            <div class="cert-meta">${c.issuer}${c.date ? ` · ${c.date}` : ''}</div>
+            ${c.credentialId ? `<div class="cert-id">ID ${c.credentialId}</div>` : ''}
+            <div class="tag-list">${(c.skills || []).slice(0, 3).map(s => `<span class="tag">${s}</span>`).join('')}</div>`;
+          return c.url
+            ? `<a class="cert-card cert-card-link" href="${c.url}" target="_blank" rel="noopener noreferrer" aria-label="${c.title} by ${c.issuer}, view credential">${inner}</a>`
+            : `<div class="cert-card">${inner}</div>`;
+        }).join('')}
+      </div>
+    </div>
+  `).join('');
 }
 
 // Icon helper functions
@@ -258,15 +315,4 @@ function getSocialSvg(name) {
     default:
       return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`;
   }
-}
-
-function escapeAndHighlightCode(raw) {
-  return raw
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/(async|def|void|return|auto|if|class|import|from)/g, '<span class="keyword">$1</span>')
-    .replace(/(validate_taxonomy|processFrame|similarity_search|rerank|evaluate_taxonomic_fit)/g, '<span class="function">$1</span>')
-    .replace(/(".*?"|'.*?')/g, '<span class="string">$1</span>')
-    .replace(/(#.*|\/\/.*)/g, '<span class="comment">$1</span>');
 }
