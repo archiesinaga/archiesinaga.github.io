@@ -3,14 +3,20 @@
     "id": "credit-risk",
     "title": "Credit Risk & Financial Analytics",
     "icon": "bar-chart-3",
-    "summary": "Scoring borrowers, choosing cut-offs by business cost, and explaining every decision to a non-technical reviewer.",
+    "summary": "Scoring borrowers, assigning risk grades, and explaining every decision to a non-technical reviewer.",
     "capabilities": [
       "Probability-of-default models: logistic regression scorecards compared against XGBoost (0.854 vs 0.861 test AUC)",
       "Probability calibration with isotonic regression so predicted risk matches observed default rates",
-      "Cost-based cut-off selection — flags 10.8% of borrowers and cuts expected cost by 36.2% versus approve-all",
       "Per-borrower explanations with SHAP, and leakage-safe cleaning fitted on training data only"
     ],
-    "stack": ["Python", "scikit-learn", "XGBoost", "SHAP", "Streamlit", "Pandas"]
+    "stack": [
+      "Python",
+      "scikit-learn",
+      "XGBoost",
+      "SHAP",
+      "Streamlit",
+      "Pandas"
+    ]
   },
   {
     "id": "ai-ml",
@@ -23,7 +29,14 @@
       "Model evaluation, confusion matrix analysis, and hyperparameter tuning",
       "Serving predictions through a Streamlit web interface with a confidence floor"
     ],
-    "stack": ["Python", "TensorFlow", "ConvNeXt", "ResNet-50", "Scikit-Learn", "Streamlit"]
+    "stack": [
+      "Python",
+      "TensorFlow",
+      "ConvNeXt",
+      "ResNet-50",
+      "Scikit-Learn",
+      "Streamlit"
+    ]
   },
   {
     "id": "data-science",
@@ -33,10 +46,17 @@
     "capabilities": [
       "Six months of sales-visit data analysed to set visit cadence — top customers generated ~13x more revenue",
       "Route recommendations cutting travel distance by up to 40% in test cases",
-      "Cash flow auditing that surfaced IDR 19M in discrepancies over 9 months",
       "Dashboards in Tableau and Power BI backed by SQL extraction and aggregation"
     ],
-    "stack": ["SQL", "PostgreSQL", "Python", "Pandas", "Tableau", "Power BI", "Excel"]
+    "stack": [
+      "SQL",
+      "PostgreSQL",
+      "Python",
+      "Pandas",
+      "Tableau",
+      "Power BI",
+      "Excel"
+    ]
   },
   {
     "id": "fullstack",
@@ -44,63 +64,19 @@
     "icon": "code-2",
     "summary": "Building internal tools that real staff use daily, from LMS platforms to approval workflows.",
     "capabilities": [
-      "Learning Management System tracking grades and exercises for ~600 students",
+      "Learning Management System tracking grades and exercises for ~100 students",
       "REST APIs in Express.js and Next.js route handlers",
       "Relational schemas with PostgreSQL, MySQL and Prisma; document storage with MongoDB",
       "Auth and authorisation with NextAuth.js and Supabase row-level security"
     ],
-    "stack": ["JavaScript", "TypeScript", "Next.js", "Express.js", "PostgreSQL", "Prisma", "Supabase"]
-  },
-  {
-    "id": "process-automation",
-    "title": "Process Automation & Logistics",
-    "icon": "cloud",
-    "summary": "Digitising paper workflows and physical logistics in a manufacturing plant.",
-    "capabilities": [
-      "Vehicle tracking across 4 checkpoints for 10–20 trucks per day",
-      "Digital document approval connecting 8 corporate divisions",
-      "Approval turnaround cut from ~1 week to 2–3 days",
-      "Role-gated approvals with a full audit trail of every decision"
-    ],
-    "stack": ["Next.js", "MongoDB", "React Leaflet", "Prisma", "PostgreSQL", "Workflow Automation"]
-  },
-  {
-    "id": "expert-systems",
-    "title": "Expert Systems & Decision Support",
-    "icon": "message-square-text",
-    "summary": "Encoding specialist knowledge into tools a non-expert can use in the field.",
-    "capabilities": [
-      "Knowledge engineering through interviews with agricultural specialists",
-      "Symptom-based diagnostic questionnaire for oil palm plant disease",
-      "Treatment recommendations written for field operators, not engineers",
-      "Object-detection model training (RF-DETR) for visual disease cues"
-    ],
-    "stack": ["TypeScript", "Next.js", "Python", "RF-DETR", "Knowledge Engineering"]
-  },
-  {
-    "id": "iot-hardware",
-    "title": "IoT & Smart Agricultural Systems",
-    "icon": "bot",
-    "summary": "Sensor-driven environmental monitoring and automated irrigation.",
-    "capabilities": [
-      "Microcontroller programming with ESP32 & Arduino",
-      "Soil moisture, temperature, and environmental sensing",
-      "Automated irrigation triggers from sensor thresholds",
-      "Smart farming system placed Top 3 among 25–40 competing teams"
-    ],
-    "stack": ["C++", "Python", "ESP32", "Arduino", "Sensors"]
-  },
-  {
-    "id": "ui-ux-design",
-    "title": "UI/UX & Visual Graphic Design",
-    "icon": "scan-face",
-    "summary": "Interfaces, brand assets and social content that people actually respond to.",
-    "capabilities": [
-      "Adobe Illustrator certified vector composition and iconography",
-      "Interactive UI/UX prototyping in Figma (Technology Euphoria 2024 finalist)",
-      "Social media content that grew student enrolment by 120 in 3 months",
-      "Accessible design systems with dark/light mode"
-    ],
-    "stack": ["Adobe Illustrator", "Figma", "Canva", "CSS"]
+    "stack": [
+      "JavaScript",
+      "TypeScript",
+      "Next.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "Supabase"
+    ]
   }
 ]

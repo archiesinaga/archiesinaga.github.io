@@ -7,12 +7,26 @@
     "period": "Jul 2024 - Present",
     "isCurrent": true,
     "image": "image/exp-synapse.webp",
-    "summary": "Built and maintain the LMS tracking daily grades for ~600 students, co-developed a cash flow auditing tool, and used engagement data to grow enrolment through a 5–7x weekly posting schedule.",
-    "tags": ["JavaScript", "Express.js", "PostgreSQL", "Data Analytics", "LMS", "Content Strategy"],
+    "summary": "Built and maintain the LMS tracking daily grades for ~100 students and used engagement data to grow enrolment through a 5–7x weekly posting schedule.",
+    "tags": [
+      "JavaScript",
+      "Express.js",
+      "PostgreSQL",
+      "Data Analytics",
+      "LMS",
+      "Content Strategy"
+    ],
     "metrics": [
-      { "label": "Enrolment Growth", "val": "+120", "desc": "New student registrations in 3 months from analytics-backed social content, team of 2–3" },
-      { "label": "Students Tracked", "val": "600+", "desc": "Daily grades, exercises and modules in the LMS, built with Express.js" },
-      { "label": "Discrepancies Found", "val": "IDR 19M", "desc": "Surfaced by a co-developed cash flow auditing program over 9 months" }
+      {
+        "label": "Enrolment Growth",
+        "val": "+120",
+        "desc": "New student registrations in 3 months from analytics-backed social content, team of 2–3"
+      },
+      {
+        "label": "Students Tracked",
+        "val": "100",
+        "desc": "Daily grades, exercises and modules in the LMS, built with Express.js"
+      }
     ]
   },
   {
@@ -24,11 +38,30 @@
     "isCurrent": false,
     "image": "image/exp-bioscan.webp",
     "summary": "Built a Digital Document Approval System in Next.js connecting 8 manufacturing divisions, and co-built a vehicle tracking app recording departure times, trip duration and stops across 4 checkpoints.",
-    "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "MongoDB", "Leaflet"],
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma",
+      "MongoDB",
+      "Leaflet"
+    ],
     "metrics": [
-      { "label": "Approval Turnaround", "val": "2-3 Days", "desc": "Down from about 1 week, across 8 manufacturing divisions" },
-      { "label": "Trucks Monitored", "val": "10-20/Day", "desc": "Across 4 checkpoints, replacing estimates with real trip data" },
-      { "label": "Divisions Connected", "val": "8", "desc": "Administrators and managers on one approval workflow" }
+      {
+        "label": "Approval Turnaround",
+        "val": "2-3 Days",
+        "desc": "Down from about 1 week, across 8 manufacturing divisions"
+      },
+      {
+        "label": "Trucks Monitored",
+        "val": "10-20/Day",
+        "desc": "Across 4 checkpoints, replacing estimates with real trip data"
+      },
+      {
+        "label": "Divisions Connected",
+        "val": "8",
+        "desc": "Administrators and managers on one approval workflow"
+      }
     ]
   },
   {
@@ -40,11 +73,30 @@
     "isCurrent": false,
     "image": "image/exp-lab.webp",
     "summary": "Analysed 6 months of sales, visit and customer data from Dagangan, a rural-commerce startup, to decide which customers sales reps should visit, how often, and on which days.",
-    "tags": ["Python", "SQL", "PostgreSQL", "Tableau", "Excel", "EDA"],
+    "tags": [
+      "Python",
+      "SQL",
+      "PostgreSQL",
+      "Tableau",
+      "Excel",
+      "EDA"
+    ],
     "metrics": [
-      { "label": "Revenue Gap", "val": "~13x", "desc": "Revenue per customer, most-visited vs least-visited customers" },
-      { "label": "Travel Distance", "val": "-40%", "desc": "Shorter routes in test cases from the route recommendations" },
-      { "label": "Final Presentation", "val": "Top 3", "desc": "Third Best Presentation Team in the national cohort" }
+      {
+        "label": "Revenue Gap",
+        "val": "~13x",
+        "desc": "Revenue per customer, most-visited vs least-visited customers"
+      },
+      {
+        "label": "Travel Distance",
+        "val": "-40%",
+        "desc": "Shorter routes in test cases from the route recommendations"
+      },
+      {
+        "label": "Final Presentation",
+        "val": "Top 3",
+        "desc": "Third Best Presentation Team in the national cohort"
+      }
     ]
   }
 ]

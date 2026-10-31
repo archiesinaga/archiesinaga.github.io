@@ -14,8 +14,7 @@ import {
 } from './render.js';
 import {
   ExperienceCarousel,
-  ActiveSystemsCarousel,
-  NewsFeedCarousel
+  ActiveSystemsCarousel
 } from './carousel.js';
 import { ProjectFilterManager } from './filters.js';
 import { PortfolioChatbot } from './chatbot.js';
@@ -80,7 +79,6 @@ async function initPortfolio() {
       profile,
       expertise,
       activeProjects,
-      news,
       experience,
       skills,
       organizations,
@@ -91,7 +89,6 @@ async function initPortfolio() {
       fetch('data/profile.json').then(r => r.json()),
       fetch('data/expertise.json').then(r => r.json()),
       fetch('data/active-projects.json').then(r => r.json()),
-      fetch('data/news.json').then(r => r.json()),
       fetch('data/experience.json').then(r => r.json()),
       fetch('data/skills.json').then(r => r.json()),
       fetch('data/organizations.json').then(r => r.json()),
@@ -110,7 +107,6 @@ async function initPortfolio() {
 
     // 5. Initialize Interactive Subsystems
     new ActiveSystemsCarousel('active-projects-container', activeProjects);
-    new NewsFeedCarousel('news-feed-container', news);
     new ExperienceCarousel('exp-carousel-container', experience);
     new ProjectFilterManager('projects-grid-container', 'project-filter-bar', projects);
     new PortfolioChatbot({

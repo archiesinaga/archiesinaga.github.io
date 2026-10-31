@@ -12,30 +12,6 @@
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
   {
-    "id": "cert-ibm-data-sustainability",
-    "title": "Data Analytics for Sustainability",
-    "issuer": "IBM",
-    "category": "Data & Analytics",
-    "date": "Oct 2026",
-    "skills": [
-      "Data Science",
-      "Sustainable Development"
-    ],
-    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
-  },
-  {
-    "id": "cert-ibm-genai",
-    "title": "Getting Started with Generative AI",
-    "issuer": "IBM",
-    "category": "AI & Machine Learning",
-    "date": "Oct 2026",
-    "skills": [
-      "Generative AI",
-      "IBM Granite"
-    ],
-    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
-  },
-  {
     "id": "cert-ibm-ai-fundamentals",
     "title": "Artificial Intelligence Fundamentals",
     "issuer": "IBM",
@@ -44,69 +20,6 @@
     "skills": [
       "Artificial Intelligence",
       "AI Ethics"
-    ],
-    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
-  },
-  {
-    "id": "cert-ibm-ai-literacy",
-    "title": "AI Literacy",
-    "issuer": "IBM",
-    "category": "AI & Machine Learning",
-    "date": "Oct 2026",
-    "skills": [
-      "Problem Solving",
-      "Pattern Recognition"
-    ],
-    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
-  },
-  {
-    "id": "cert-ibm-cybersecurity",
-    "title": "Cybersecurity Fundamentals",
-    "issuer": "IBM",
-    "category": "Security",
-    "date": "Sep 2026",
-    "skills": [
-      "Cybersecurity",
-      "Cryptography"
-    ],
-    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
-  },
-  {
-    "id": "cert-forage-data-labeling",
-    "title": "Data Labeling Job Simulation",
-    "issuer": "Forage",
-    "category": "Job Simulations",
-    "date": "Oct 2026",
-    "credentialId": "6ac752b040b981ecded7dc16",
-    "skills": [
-      "Attention to Detail",
-      "Data Privacy"
-    ],
-    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
-  },
-  {
-    "id": "cert-forage-capital-markets",
-    "title": "Freshfields — US Capital Markets Job Simulation",
-    "issuer": "Forage",
-    "category": "Job Simulations",
-    "date": "Oct 2026",
-    "credentialId": "6ac5014f4b1a13b126db70bf",
-    "skills": [
-      "Finance",
-      "Capital Markets"
-    ],
-    "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
-  },
-  {
-    "id": "cert-adobe-illustrator",
-    "title": "Adobe Illustrator Certification",
-    "issuer": "MyEduSolve",
-    "category": "Design & Media",
-    "date": "Oct 2025",
-    "skills": [
-      "Adobe Illustrator",
-      "Vector Graphics",
-      "Branding"
     ],
     "url": "https://www.linkedin.com/in/archie-ph-sinaga/"
   },
@@ -159,19 +72,6 @@
     "skills": [
       "Analytical Storytelling",
       "Executive Presentation"
-    ],
-    "url": null
-  },
-  {
-    "id": "award-tech-euphoria",
-    "title": "Finalist, UI/UX Design Competition",
-    "issuer": "Technology Euphoria 2024",
-    "category": "Honors & Awards",
-    "date": "Nov 2024",
-    "skills": [
-      "Figma",
-      "Prototyping",
-      "Design Thinking"
     ],
     "url": null
   },

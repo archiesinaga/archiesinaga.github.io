@@ -9,7 +9,7 @@
   "region": "South Sumatra",
   "timezone": "WIB (UTC+7)",
   "status_badge": "Available for Opportunities",
-  "about_text": "Informatics Engineering graduate from Universitas Sriwijaya (GPA 3.92/4.00, Cum Laude). I build credit risk models, analyse sales and operations data, and ship internal web tools — an LMS used by ~600 students, a document approval system across 8 factory divisions, and a vehicle tracker for 10–20 trucks a day. I care about results that hold up when someone checks them: calibrated models, leakage-free pipelines, and numbers I can trace back to the data.",
+  "about_text": "Informatics Engineering graduate from Universitas Sriwijaya (GPA 3.92/4.00, Cum Laude). I build credit risk models, analyse sales and operations data, and ship internal web tools — an LMS used by ~100 students, a document approval system across 8 factory divisions, and a vehicle tracker for 10–20 trucks a day. I care about results that hold up when someone checks them: calibrated models, leakage-free pipelines, and numbers I can trace back to the data.",
   "target_roles": [
     "Data Analyst",
     "Business Analyst",
@@ -27,27 +27,21 @@
   ],
   "stats": [
     {
-      "value": "600+",
+      "value": "100",
       "label": "Students Served via LMS",
-      "target": 600,
-      "suffix": "+"
-    },
-    {
-      "value": "36%",
-      "label": "Lending Cost Cut by Credit Model",
-      "target": 36,
-      "suffix": "%"
-    },
-    {
-      "value": "19M",
-      "label": "IDR Discrepancies Surfaced",
-      "target": 19,
-      "suffix": "M"
+      "target": 100,
+      "suffix": ""
     },
     {
       "value": "8",
       "label": "Factory Divisions Digitised",
       "target": 8,
+      "suffix": ""
+    },
+    {
+      "value": "4",
+      "label": "Checkpoints Tracking 10–20 Trucks a Day",
+      "target": 4,
       "suffix": ""
     }
   ],
