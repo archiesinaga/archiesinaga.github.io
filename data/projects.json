@@ -64,8 +64,9 @@
     "domain": "full-stack",
     "topics": ["education", "lms", "web-app", "analytics"],
     "tech": ["JavaScript", "Express.js", "PostgreSQL", "MySQL", "Next.js", "Supabase"],
-    "repo": "https://github.com/archiesinaga/alc_classroom",
-    "details": "The production system supporting academic assessments, daily exercises and learning modules for roughly 600 students, built with Express.js and a relational database and maintained through testing, deployment and iteration. The linked repository is the open companion build — a Next.js and Supabase grade manager with teacher authentication, class grouping, quiz and bonus scoring, attendance records, a class leaderboard and row-level security so each teacher sees only their own students. Accompanied by a separate cash flow auditing tool that surfaced IDR 19M in discrepancies over 9 months."
+    "repo": null,
+    "details": "The production system supporting academic assessments, daily exercises and learning modules for roughly 600 students, built with Express.js and a relational database and maintained through testing, deployment and iteration. A newer Next.js and Supabase build adds teacher authentication, class grouping, quiz and bonus scoring, attendance records, a class leaderboard and row-level security so each teacher sees only their own students. Accompanied by a separate cash flow auditing tool that surfaced IDR 19M in discrepancies over 9 months.",
+    "note": "The source code is private because the system belongs to Alpha Omega Learning Center."
   },
   {
     "id": "dagangan-analysis",
@@ -76,7 +77,6 @@
     "topics": ["data-analytics", "business-intelligence", "eda", "route-optimisation"],
     "tech": ["Python", "SQL", "PostgreSQL", "Tableau", "Excel", "Pandas"],
     "repo": null,
-    "demo": "https://linkedin.com/in/archie-ph-sinaga/",
     "details": "Capstone project of the Bitlabs Academy MSIB Batch 7 cohort, analysing visit, transaction and store-location data from April to September 2024 in a team of 3. Customers visited most often generated about 13x more revenue per customer than those visited least, and a 1–7 day visit cadence produced the highest average revenue. The recommendations — prioritise high-value customers, schedule around peak days such as Friday, reinforce weak days such as Sunday, and shorten routes (up to 40% less travel distance in test cases) — were presented as a final paper and executive deck, awarded Third Best Presentation Team in the national cohort."
   },
   {

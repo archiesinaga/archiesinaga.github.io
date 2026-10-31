@@ -18,12 +18,6 @@
     "domain": "AI & Deep Learning"
   },
   {
-    "name": "Generative AI & RAG",
-    "icon": "bot",
-    "level": "Advanced",
-    "domain": "Agentic AI Systems"
-  },
-  {
     "name": "Data Analytics & Pandas",
     "icon": "bar-chart-3",
     "level": "Advanced",

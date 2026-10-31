@@ -91,7 +91,7 @@
     "description": "A Learning Management System built and deployed for Alpha Omega Learning Center, supporting academic assessments, daily exercises and learning modules, and tracking daily grades for around 600 students.",
     "highlights": [
       "Production system built with Express.js and a relational database, maintained through testing, deployment and ongoing iteration.",
-      "The open companion build adds teacher authentication, class grouping, quiz and bonus scoring, attendance records and a class leaderboard.",
+      "A newer Next.js and Supabase build (private source) adds teacher authentication, class grouping, quiz and bonus scoring, attendance records and a class leaderboard.",
       "Row-level security scopes every query to the signed-in teacher, so one teacher cannot read another's students."
     ],
     "tech": ["JavaScript", "Express.js", "PostgreSQL", "MySQL", "Next.js", "Supabase"],
@@ -101,6 +101,6 @@
     ],
     "code_lang": "supabase_schema.sql",
     "code_snippet": "-- Row Level Security: a teacher can only ever reach their own students\nalter table public.students enable row level security;\nalter table public.records  enable row level security;\n\ncreate policy \"Guru dapat lihat siswa sendiri\"\n  on public.students for select\n  using (teacher_id = auth.uid());\n\n-- Grades inherit the same boundary through the student they belong to\ncreate policy \"Guru dapat lihat nilai siswa sendiri\"\n  on public.records for select\n  using (\n    student_id in (\n      select id from public.students where teacher_id = auth.uid()\n    )\n  );",
-    "repo": "https://github.com/archiesinaga/alc_classroom"
+    "repo": null
   }
 ]
