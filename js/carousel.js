@@ -328,11 +328,12 @@ export class ExperienceCarousel {
   renderSlide(item, index) {
     return `
       <div class="carousel-slide" data-slide-index="${index}">
-        <div class="exp-card-large">
+        <div class="exp-card-large${item.image ? '' : ' no-image'}">
+          ${item.image ? `
           <div class="exp-image-box">
-            <img src="${item.image}" alt="${item.role} at ${item.org}" loading="lazy" onerror="this.src='image/exp-nexus.webp'">
+            <img src="${item.image}" alt="${item.role} at ${item.org}" loading="lazy">
             <div class="exp-image-overlay"></div>
-          </div>
+          </div>` : ''}
           <div class="exp-content">
             <div class="d-flex justify-content-between align-items-center mb-2">
               <span class="exp-period">${item.period} ${item.isCurrent ? '• <span class="badge badge-live">Present</span>' : ''}</span>

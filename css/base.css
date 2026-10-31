@@ -36,9 +36,9 @@ body {
   overflow-x: hidden;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(249, 115, 22, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 10% 20%, rgba(var(--accent-rgb), 0.03) 0%, transparent 40%),
     radial-gradient(circle at 90% 60%, rgba(56, 189, 248, 0.03) 0%, transparent 45%),
-    radial-gradient(circle at 50% 90%, rgba(249, 115, 22, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 50% 90%, rgba(var(--accent-rgb), 0.03) 0%, transparent 50%);
 }
 
 /* Subtle background fossil watermark pattern overlay */
@@ -155,11 +155,11 @@ code, pre {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent-primary);
-  background: rgba(249, 115, 22, 0.12);
+  background: rgba(var(--accent-rgb), 0.12);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   margin-bottom: 0.85rem;
-  border: 1px solid rgba(249, 115, 22, 0.2);
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
 }
 
 .section-title {

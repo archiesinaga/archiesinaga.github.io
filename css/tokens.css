@@ -23,6 +23,7 @@
 
   /* Brand Accents */
   --accent-primary: #f97316;      /* Amber / Orange */
+  --accent-rgb: 249, 115, 22;     /* same colour, for rgba() tints */
   --accent-primary-hover: #ea580c;
   --accent-glow: rgba(249, 115, 22, 0.25);
   --accent-secondary: #38bdf8;    /* Pale Cyan */
@@ -60,29 +61,32 @@
 }
 
 [data-theme="light"] {
-  --bg-main: #f8fafc;
-  --bg-secondary: #f1f5f9;
+  /* Monochrome: white surfaces, near-black type and buttons.
+     Green (--accent-success) is the only colour, reserved for status. */
+  --bg-main: #ffffff;
+  --bg-secondary: #f7f7f8;
   --bg-elevated: #ffffff;
-  --bg-elevated-hover: #f8fafc;
+  --bg-elevated-hover: #f7f7f8;
   --bg-glass: rgba(255, 255, 255, 0.85);
-  --bg-input: #f1f5f9;
+  --bg-input: #f7f7f8;
 
-  --surface-border: rgba(15, 23, 42, 0.08);
-  --surface-border-hover: rgba(234, 88, 12, 0.5);
-  --surface-border-subtle: rgba(15, 23, 42, 0.04);
+  --surface-border: #e4e4e7;
+  --surface-border-hover: #a1a1aa;
+  --surface-border-subtle: #f0f0f2;
 
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
+  --text-primary: #0a0a0b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
   --text-inverse: #ffffff;
 
-  --accent-primary: #ea580c;
-  --accent-primary-hover: #c2410c;
-  --accent-glow: rgba(234, 88, 12, 0.2);
-  --accent-secondary: #0284c7;
+  --accent-primary: #0a0a0b;
+  --accent-primary-hover: #27272a;
+  --accent-rgb: 10, 10, 11;
+  --accent-glow: rgba(10, 10, 11, 0.06);
+  --accent-secondary: #52525b;
 
-  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 16px 36px -6px rgba(15, 23, 42, 0.12);
-  --shadow-glow: 0 0 25px rgba(234, 88, 12, 0.2);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }

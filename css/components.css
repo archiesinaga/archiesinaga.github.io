@@ -53,7 +53,7 @@
 .btn-outline:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
-  background-color: rgba(249, 115, 22, 0.08);
+  background-color: rgba(var(--accent-rgb), 0.08);
 }
 
 .btn-sm {
@@ -138,9 +138,9 @@
 }
 
 .badge-accent {
-  background: rgba(249, 115, 22, 0.15);
+  background: rgba(var(--accent-rgb), 0.15);
   color: var(--accent-primary);
-  border: 1px solid rgba(249, 115, 22, 0.3);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
 }
 
 .tag {
@@ -478,7 +478,7 @@ textarea.form-control {
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-primary), #fb923c);
+  background: var(--accent-primary);
   color: #ffffff;
   border: none;
   cursor: pointer;

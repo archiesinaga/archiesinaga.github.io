@@ -6,7 +6,6 @@
     "location": "Palembang, Indonesia · Part-time",
     "period": "Jul 2024 - Present",
     "isCurrent": true,
-    "image": "image/exp-synapse.webp",
     "summary": "Built and maintain the LMS tracking daily grades for ~100 students and used engagement data to grow enrolment through a 5–7x weekly posting schedule.",
     "tags": [
       "JavaScript",
@@ -36,7 +35,6 @@
     "location": "Indralaya, Indonesia · On-site",
     "period": "Jun 2025 - Aug 2025",
     "isCurrent": false,
-    "image": "image/exp-bioscan.webp",
     "summary": "Built a Digital Document Approval System in Next.js connecting 8 manufacturing divisions, and co-built a vehicle tracking app recording departure times, trip duration and stops across 4 checkpoints.",
     "tags": [
       "Next.js",
@@ -71,7 +69,6 @@
     "location": "Online",
     "period": "Aug 2024 - Dec 2024",
     "isCurrent": false,
-    "image": "image/exp-lab.webp",
     "summary": "Analysed 6 months of sales, visit and customer data from Dagangan, a rural-commerce startup, to decide which customers sales reps should visit, how often, and on which days.",
     "tags": [
       "Python",

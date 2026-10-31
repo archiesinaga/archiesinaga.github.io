@@ -9,25 +9,18 @@ export function initTheme() {
   const toggleBtn = document.getElementById('theme-toggle-btn');
   const storedTheme = localStorage.getItem(THEME_KEY);
   
-  // Default to dark theme as required by spec, or use stored
-  const activeTheme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  // Light by default; a visitor who picked dark keeps it
+  const activeTheme = storedTheme || 'light';
   applyTheme(activeTheme);
 
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
       const nextTheme = current === 'dark' ? 'light' : 'dark';
       applyTheme(nextTheme);
       localStorage.setItem(THEME_KEY, nextTheme);
     });
   }
-
-  // Listen to OS theme changes if user hasn't explicitly set one
-  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-    if (!localStorage.getItem(THEME_KEY)) {
-      applyTheme(e.matches ? 'light' : 'dark');
-    }
-  });
 }
 
 export function applyTheme(theme) {
