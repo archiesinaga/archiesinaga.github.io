@@ -88,59 +88,6 @@
   width: 100%;
 }
 
-/* Dropdown */
-.nav-item-dropdown {
-  position: relative;
-}
-
-.dropdown-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 0.75rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius-md);
-  padding: 0.5rem;
-  min-width: 160px;
-  box-shadow: var(--shadow-md);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all var(--transition-fast);
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.nav-item-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown-item {
-  padding: 0.5rem 0.85rem;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.dropdown-item:hover {
-  background: rgba(var(--accent-rgb), 0.1);
-  color: var(--accent-primary);
-}
-
 .nav-actions {
   display: flex;
   align-items: center;
@@ -1568,17 +1515,7 @@
   background: var(--bg-elevated-hover);
 }
 
-/* --------------------------------------------------------------------------
-   Arcade dropdown: open on keyboard focus and on tap, not hover only
-   -------------------------------------------------------------------------- */
-.nav-item-dropdown:focus-within .dropdown-menu,
-.nav-item-dropdown.open .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* The navbar holds 8 links plus Arcade; social icons already live in the
+/* The navbar holds 8 links; social icons already live in the
    footer, so drop them from the bar before the links start to collide. */
 @media (max-width: 1240px) {
   #nav-socials {
@@ -1600,16 +1537,7 @@
 }
 
 @media (max-width: 768px) {
-  .nav-menu.mobile-open .dropdown-menu {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    margin-top: 0.5rem;
-    box-shadow: none;
-  }
-  .nav-menu.mobile-open .nav-link,
-  .nav-menu.mobile-open .dropdown-item {
+  .nav-menu.mobile-open .nav-link {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }

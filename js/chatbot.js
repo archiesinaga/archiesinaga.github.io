@@ -279,10 +279,7 @@ Try asking about his **credit risk model**, **thesis**, **LMS**, **experience**,
       'vehicle-tracker': ['truck', 'vehicle', 'tracking', 'tracker', 'logistic', 'route'],
       'document-approval': ['document', 'approval', 'dms', 'memo'],
       'alc-lms': ['lms', 'alc', 'learning management', 'classroom', 'grade'],
-      'dagangan-analysis': ['dagangan', 'bitlabs', 'sales', 'retail', 'msib'],
-      'iot-smart-farming': ['iot', 'farming', 'esp32', 'arduino'],
-      'uiux-euphoria': ['ui/ux', 'figma', 'euphoria', 'design competition'],
-      'fasilkom-games': ['isport', 'sport', 'fasilkom games']
+      'dagangan-analysis': ['dagangan', 'bitlabs', 'sales', 'retail', 'msib']
     };
     let best = null;
     let bestScore = 0;

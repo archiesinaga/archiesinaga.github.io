@@ -39,7 +39,7 @@ async function initPortfolio() {
       setMenuOpen(!navMenu.classList.contains('mobile-open'));
     });
 
-    // Close mobile menu on clicking any real link (including the Arcade items)
+    // Close mobile menu on clicking any real link
     navMenu.addEventListener('click', (e) => {
       if (e.target.closest('a[href]')) setMenuOpen(false);
     });
@@ -50,26 +50,6 @@ async function initPortfolio() {
         setMenuOpen(false);
         hamburgerBtn.focus();
       }
-    });
-  }
-
-  // Arcade dropdown: hover alone fails for keyboard and touch, so toggle it explicitly
-  const dropdown = document.querySelector('.nav-item-dropdown');
-  const dropdownToggle = dropdown?.querySelector('.dropdown-toggle');
-  if (dropdown && dropdownToggle) {
-    const setDropdown = (open) => {
-      dropdown.classList.toggle('open', open);
-      dropdownToggle.setAttribute('aria-expanded', String(open));
-    };
-    dropdownToggle.addEventListener('click', () => setDropdown(!dropdown.classList.contains('open')));
-    dropdownToggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        setDropdown(!dropdown.classList.contains('open'));
-      }
-    });
-    document.addEventListener('click', (e) => {
-      if (!dropdown.contains(e.target)) setDropdown(false);
     });
   }
 
