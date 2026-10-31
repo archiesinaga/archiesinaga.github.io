@@ -13,7 +13,7 @@ import {
   renderCertifications
 } from './render.js';
 import {
-  ExperienceCarousel,
+  ExperienceTimeline,
   ActiveSystemsCarousel
 } from './carousel.js';
 import { ProjectFilterManager } from './filters.js';
@@ -107,7 +107,7 @@ async function initPortfolio() {
 
     // 5. Initialize Interactive Subsystems
     new ActiveSystemsCarousel('active-projects-container', activeProjects);
-    new ExperienceCarousel('exp-carousel-container', experience);
+    new ExperienceTimeline('exp-carousel-container', experience);
     new ProjectFilterManager('projects-grid-container', 'project-filter-bar', projects);
     new PortfolioChatbot({
       profile,

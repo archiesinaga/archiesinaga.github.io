@@ -172,7 +172,7 @@ export class ProjectFilterManager {
       <div class="project-card" data-project-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${p.title}">
         ${projectMedia(p)}
         <div class="project-card-top">
-          <span class="badge ${p.type === 'tech' ? 'badge-accent' : 'badge-live'}">${formatDomain(p.domain)}</span>
+          <span class="project-meta">${formatDomain(p.domain)}${p.year ? ` <span aria-hidden="true">·</span> ${p.year}` : ''}</span>
           ${p.repo ? `<span class="project-repo-flag" title="Source code on GitHub">${GITHUB_SVG} Open source</span>` : `<span class="text-muted" style="font-size: 0.775rem;">${p.type === 'tech' ? 'TECH' : 'NON-TECH'}</span>`}
         </div>
         <h3 class="project-card-title">${p.title}</h3>

@@ -24,7 +24,8 @@
     "note": "Public, anonymised, non-Indonesian data. The method transfers to a bank's own portfolio; the data does not.",
     "image": "image/proj-credit-risk.webp",
     "image_alt": "SHAP summary plot showing which borrower features push default risk up or down",
-    "image_fit": "contain"
+    "image_fit": "contain",
+    "year": 2026
   },
   {
     "id": "bacteria-classification",
@@ -46,7 +47,8 @@
       "Transfer Learning"
     ],
     "repo": "https://github.com/archiesinaga/bacteria-classification",
-    "details": "Final-year thesis at Universitas Sriwijaya, built on the DIBaS (Digital Image of Bacterial Species) benchmark dataset. Two convolutional architectures — ConvNeXt and ResNet-50 — were trained with transfer learning and compared on classification accuracy across bacterial species, with a backend service serving predictions to a web front end so the model is usable outside a notebook."
+    "details": "Final-year thesis at Universitas Sriwijaya, built on the DIBaS (Digital Image of Bacterial Species) benchmark dataset. Two convolutional architectures — ConvNeXt and ResNet-50 — were trained with transfer learning and compared on classification accuracy across bacterial species, with a backend service serving predictions to a web front end so the model is usable outside a notebook.",
+    "year": 2026
   },
   {
     "id": "ceksawit",
@@ -76,7 +78,7 @@
   {
     "id": "vehicle-tracker",
     "title": "Vehicle Route Tracking System",
-    "summary": "Real-time tracking application monitoring company transport across 4 checkpoints, recording departure times, trip duration and stop locations.",
+    "summary": "Route tracking application reviewing company transport across 4 checkpoints, recording departure times, trip duration and stop locations.",
     "type": "tech",
     "domain": "full-stack",
     "topics": [
@@ -94,7 +96,8 @@
       "Geolib"
     ],
     "repo": "https://github.com/archiesinaga/vehicle-route",
-    "details": "Co-designed and built in a 2-person team during the Web Developer internship at PT Sumatera Prima Fibreboard. Monitors 10–20 trucks per day across 4 checkpoints, turning informal radio check-ins into structured, timestamped trip records. Trips are looked up by ticket ID, drawn on an interactive Leaflet map, and stored with start/end capture images in MongoDB, giving logistics managers real data on departure times, trip duration and stop locations."
+    "details": "Co-designed and built in a 2-person team during the Web Developer internship at PT Sumatera Prima Fibreboard. Monitors 10–20 trucks per day across 4 checkpoints, turning informal radio check-ins into structured, timestamped trip records. Trips are looked up by ticket ID, drawn on an interactive Leaflet map, and stored with start/end capture images in MongoDB, giving logistics managers real data on departure times, trip duration and stop locations.",
+    "year": 2025
   },
   {
     "id": "document-approval",
@@ -117,7 +120,8 @@
       "Tailwind CSS"
     ],
     "repo": "https://github.com/archiesinaga/project-dms",
-    "details": "Built in a 2-person team at PT Sumatera Prima Fibreboard to replace paper memo routing between 8 divisions. Documents are uploaded, routed and approved through a role-gated API — only Manager and Standardization roles can act on an approval — with every decision, comment and status change written to an audit trail. Reduced the typical approval cycle from roughly one week to 2–3 days."
+    "details": "Built in a 2-person team at PT Sumatera Prima Fibreboard to replace paper memo routing between 8 divisions. Documents are uploaded, routed and approved through a role-gated API — only Manager and Standardization roles can act on an approval — with every decision, comment and status change written to an audit trail. Reduced the typical approval cycle from roughly one week to 2–3 days.",
+    "year": 2025
   },
   {
     "id": "alc-lms",
@@ -141,7 +145,8 @@
     ],
     "repo": null,
     "details": "The production system supporting academic assessments, daily exercises and learning modules for roughly 100 students, built with Express.js and a relational database and maintained through testing, deployment and iteration. A newer Next.js and Supabase build adds teacher authentication, class grouping, quiz and bonus scoring, attendance records, a class leaderboard and row-level security so each teacher sees only their own students.",
-    "note": "The source code is private because the system belongs to Alpha Omega Learning Center."
+    "note": "The source code is private because the system belongs to Alpha Omega Learning Center.",
+    "year": 2024
   },
   {
     "id": "dagangan-analysis",
@@ -164,6 +169,7 @@
       "Pandas"
     ],
     "repo": null,
-    "details": "Capstone project of the Bitlabs Academy MSIB Batch 7 cohort, analysing visit, transaction and store-location data from April to September 2024 in a team of 3. Customers visited most often generated about 13x more revenue per customer than those visited least, and a 1–7 day visit cadence produced the highest average revenue. The recommendations — prioritise high-value customers, schedule around peak days such as Friday, reinforce weak days such as Sunday, and shorten routes (up to 40% less travel distance in test cases) — were presented as a final paper and executive deck, awarded Third Best Presentation Team in the national cohort."
+    "details": "Capstone project of the Bitlabs Academy MSIB Batch 7 cohort, analysing visit, transaction and store-location data from April to September 2024 in a team of 3. Customers visited most often generated about 13x more revenue per customer than those visited least, and a 1–7 day visit cadence produced the highest average revenue. The recommendations — prioritise high-value customers, schedule around peak days such as Friday, reinforce weak days such as Sunday, and shorten routes (up to 40% less travel distance in test cases) — were presented as a final paper and executive deck, awarded Third Best Presentation Team in the national cohort.",
+    "year": 2024
   }
 ]

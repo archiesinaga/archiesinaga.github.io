@@ -1618,3 +1618,82 @@
     gap: 0.25rem;
   }
 }
+
+/* Experience timeline */
+.exp-timeline {
+  list-style: none;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 0 0 2rem;
+  position: relative;
+}
+
+.exp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: var(--surface-border);
+}
+
+.exp-item {
+  position: relative;
+  padding-bottom: 2.75rem;
+}
+
+.exp-item:last-child {
+  padding-bottom: 0;
+}
+
+.exp-dot {
+  position: absolute;
+  left: -2rem;
+  top: 0.3rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-main);
+  border: 2px solid var(--text-muted);
+}
+
+.exp-item.is-current .exp-dot {
+  background: var(--accent-success);
+  border-color: var(--accent-success);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+}
+
+.exp-metrics-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  margin: 0 0 1rem;
+}
+
+.exp-metric {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.exp-metric-val {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.exp-metric-lbl {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+}
+
+/* Project card label: DOMAIN · YEAR */
+.project-meta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
