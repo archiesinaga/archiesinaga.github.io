@@ -90,12 +90,12 @@
       <nav>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
           <li><a href="#news" class="nav-link">Featured</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#credentials" class="nav-link">Education</a></li>
-          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
 
           <!-- More Dropdown (Mini-Games) -->
@@ -142,16 +142,9 @@
   <main>
     <!-- 1. Hero Section -->
     <section id="home" class="hero-section">
-      <!-- Decorative Moon and Ambient Elements -->
-      <div class="hero-backdrop-moon"></div>
-      <div class="hero-speech-bubble">Explore My Portfolio! 🚀</div>
 
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="hero-greeting">
-            <span class="badge badge-accent">Hello World</span>
-            <span>👋 Welcome to my portfolio</span>
-          </div>
           <h1 class="hero-name" id="hero-name">I'm Archie P. H. Sinaga</h1>
           <div class="hero-role" id="hero-role">Data Analyst | Machine Learning & Web Development</div>
           <p class="hero-motto" id="hero-motto">
@@ -213,23 +206,58 @@
         <!-- Infinite Logo / Tech Marquee -->
         <div class="marquee-container" aria-hidden="true">
           <div class="marquee-track">
-            <span class="marquee-item">⚡ ConvNeXt & ResNet-50 Microscopic AI</span>
-            <span class="marquee-item">💳 Credit Risk Scoring & SHAP Explanations</span>
-            <span class="marquee-item">📊 Tableau, Power BI & SQL</span>
-            <span class="marquee-item">🌐 Next.js, Express.js & Supabase</span>
-            <span class="marquee-item">🎓 Sriwijaya University (GPA 3.92)</span>
+            <span class="marquee-item">ConvNeXt & ResNet-50 Microscopic AI</span>
+            <span class="marquee-item">Credit Risk Scoring & SHAP Explanations</span>
+            <span class="marquee-item">Tableau, Power BI & SQL</span>
+            <span class="marquee-item">Next.js, Express.js & Supabase</span>
+            <span class="marquee-item">Sriwijaya University (GPA 3.92)</span>
             <!-- Repeat once for smooth loop -->
-            <span class="marquee-item">⚡ ConvNeXt & ResNet-50 Microscopic AI</span>
-            <span class="marquee-item">💳 Credit Risk Scoring & SHAP Explanations</span>
-            <span class="marquee-item">📊 Tableau, Power BI & SQL</span>
-            <span class="marquee-item">🌐 Next.js, Express.js & Supabase</span>
-            <span class="marquee-item">🎓 Sriwijaya University (GPA 3.92)</span>
+            <span class="marquee-item">ConvNeXt & ResNet-50 Microscopic AI</span>
+            <span class="marquee-item">Credit Risk Scoring & SHAP Explanations</span>
+            <span class="marquee-item">Tableau, Power BI & SQL</span>
+            <span class="marquee-item">Next.js, Express.js & Supabase</span>
+            <span class="marquee-item">Sriwijaya University (GPA 3.92)</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. About Me & Areas of Expertise -->
+    <!-- 3. Portfolio & Projects -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Showcase</span>
+          <h2 class="section-title">Portfolio & Projects</h2>
+          <p class="section-desc">Filter by type, domain or topic. Projects marked <strong>Open source</strong> link straight to their GitHub repository.</p>
+        </div>
+
+        <!-- 3-level filter, built by filters.js -->
+        <div class="portfolio-filters-wrap" id="project-filter-bar" role="group" aria-label="Filter projects"></div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid" id="projects-grid-container">
+          <!-- Populated by filters.js from projects.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Featured Work -->
+    <section id="news" class="news-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Featured</span>
+          <h2 class="section-title">Featured Work</h2>
+          <p class="section-desc">Selected projects with real source excerpts.</p>
+        </div>
+
+        <!-- Featured Active Projects Swiper Carousel -->
+        <div id="active-projects-container">
+          <!-- Populated by ActiveSystemsCarousel -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. About Me & Areas of Expertise -->
     <section id="about" class="about-section">
       <div class="container">
         <div class="section-header">
@@ -256,21 +284,6 @@
       </div>
     </section>
 
-    <!-- 4. Latest News & Activities -->
-    <section id="news" class="news-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Featured</span>
-          <h2 class="section-title">Featured Work</h2>
-          <p class="section-desc">Selected projects with real source excerpts.</p>
-        </div>
-
-        <!-- Featured Active Projects Swiper Carousel -->
-        <div id="active-projects-container">
-          <!-- Populated by ActiveSystemsCarousel -->
-        </div>
-      </div>
-    </section>
 
     <!-- 5. Professional Experience -->
     <section id="experience" class="experience-section">
@@ -353,24 +366,6 @@
       </div>
     </section>
 
-    <!-- 8. Portfolio & Projects -->
-    <section id="portfolio" class="portfolio-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Showcase</span>
-          <h2 class="section-title">Portfolio & Projects</h2>
-          <p class="section-desc">Filter by type, domain or topic. Projects marked <strong>Open source</strong> link straight to their GitHub repository.</p>
-        </div>
-
-        <!-- 3-level filter, built by filters.js -->
-        <div class="portfolio-filters-wrap" id="project-filter-bar" role="group" aria-label="Filter projects"></div>
-
-        <!-- Project Cards Grid -->
-        <div class="projects-grid" id="projects-grid-container">
-          <!-- Populated by filters.js from projects.json -->
-        </div>
-      </div>
-    </section>
 
     <!-- 8. Contact Section ("LET'S WORK TOGETHER") -->
     <section id="contact" class="contact-section">
@@ -441,12 +436,12 @@
 
       <nav class="footer-nav" aria-label="Footer Navigation">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#news">Featured</a>
+        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#credentials">Education</a>
-        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
         <a href="2048/">2048 Game</a>
         <a href="Snake/">Snake Game</a>
@@ -465,11 +460,14 @@
     <a href="#home" class="nav-dot active" data-target="home" aria-label="Go to Home section">
       <span class="nav-dot-tooltip">Home</span>
     </a>
-    <a href="#about" class="nav-dot" data-target="about" aria-label="Go to About section">
-      <span class="nav-dot-tooltip">About</span>
+    <a href="#portfolio" class="nav-dot" data-target="portfolio" aria-label="Go to Portfolio section">
+      <span class="nav-dot-tooltip">Portfolio</span>
     </a>
     <a href="#news" class="nav-dot" data-target="news" aria-label="Go to Featured section">
       <span class="nav-dot-tooltip">Featured</span>
+    </a>
+    <a href="#about" class="nav-dot" data-target="about" aria-label="Go to About section">
+      <span class="nav-dot-tooltip">About</span>
     </a>
     <a href="#experience" class="nav-dot" data-target="experience" aria-label="Go to Experience section">
       <span class="nav-dot-tooltip">Experience</span>
@@ -479,9 +477,6 @@
     </a>
     <a href="#credentials" class="nav-dot" data-target="credentials" aria-label="Go to Education section">
       <span class="nav-dot-tooltip">Education</span>
-    </a>
-    <a href="#portfolio" class="nav-dot" data-target="portfolio" aria-label="Go to Portfolio section">
-      <span class="nav-dot-tooltip">Portfolio</span>
     </a>
     <a href="#contact" class="nav-dot" data-target="contact" aria-label="Go to Contact section">
       <span class="nav-dot-tooltip">Contact</span>

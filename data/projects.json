@@ -21,7 +21,10 @@
     ],
     "repo": "https://github.com/archiesinaga/credit-risk-model",
     "details": "Trained on the public Kaggle <em>Give Me Some Credit</em> dataset: 150,000 borrowers, 6.68% default rate. Logistic regression (scorecard-style) reached 0.854 test AUC against 0.861 for XGBoost, so a bank can trade a little accuracy for a fully transparent model. Probabilities were calibrated with isotonic regression (6.6% mean predicted vs 6.68% actual). Risk grades A–E separate cleanly: 1.1% actual default in grade A rising to 36.8% in grade E, where 10% of borrowers account for roughly 55% of all defaults. SHAP explains every individual score, with credit utilisation the strongest driver.",
-    "note": "Public, anonymised, non-Indonesian data. The method transfers to a bank's own portfolio; the data does not."
+    "note": "Public, anonymised, non-Indonesian data. The method transfers to a bank's own portfolio; the data does not.",
+    "image": "image/proj-credit-risk.webp",
+    "image_alt": "SHAP summary plot showing which borrower features push default risk up or down",
+    "image_fit": "contain"
   },
   {
     "id": "bacteria-classification",
@@ -66,7 +69,9 @@
     ],
     "repo": "https://github.com/archiesinaga/CekSawit-main",
     "demo": "https://youtu.be/cuzw4vL1z5E",
-    "details": "Built from research and interviews with agricultural specialists, turning their diagnostic questions into a symptom questionnaire that returns a diagnosis and treatment steps. The interface is deliberately simple so a field worker, not an engineer, can reach a concrete next action. The repository also includes an RF-DETR object-detection training notebook for visual disease cues. Collaborator: Muhammad Azka."
+    "details": "Built from research and interviews with agricultural specialists, turning their diagnostic questions into a symptom questionnaire that returns a diagnosis and treatment steps. The interface is deliberately simple so a field worker, not an engineer, can reach a concrete next action. The repository also includes an RF-DETR object-detection training notebook for visual disease cues. Collaborator: Muhammad Azka.",
+    "image": "image/proj-ceksawit.webp",
+    "image_alt": "CekSawit diagnosis form and result screen"
   },
   {
     "id": "vehicle-tracker",
