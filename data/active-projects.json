@@ -68,10 +68,10 @@
   {
     "id": "alc-lms",
     "title": "ALC Learning — Learning Management System",
-    "subtitle": "Grades, Attendance & Exercises for ~100 Students",
+    "subtitle": "Grades, Attendance & Exercises for 600+ Students",
     "status": "Live in Production",
     "badge_type": "primary",
-    "description": "A Learning Management System built and deployed for Alpha Omega Learning Center, supporting academic assessments, daily exercises and learning modules, and tracking daily grades for around 100 students.",
+    "description": "A Learning Management System built and deployed for Alpha Omega Learning Center, supporting academic assessments, daily exercises and learning modules, and tracking daily grades for 600+ students.",
     "highlights": [
       "Production system built with Express.js and a relational database, maintained through testing, deployment and ongoing iteration.",
       "A newer Next.js and Supabase build (private source) adds teacher authentication, class grouping, quiz and bonus scoring, attendance records and a class leaderboard.",

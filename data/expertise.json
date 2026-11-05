@@ -64,7 +64,7 @@
     "icon": "code-2",
     "summary": "Building internal tools that real staff use daily, from LMS platforms to approval workflows.",
     "capabilities": [
-      "Learning Management System tracking grades and exercises for ~100 students",
+      "Learning Management System tracking grades and exercises for 600+ students",
       "REST APIs in Express.js and Next.js route handlers",
       "Relational schemas with PostgreSQL, MySQL and Prisma; document storage with MongoDB",
       "Auth and authorisation with NextAuth.js and Supabase row-level security"
