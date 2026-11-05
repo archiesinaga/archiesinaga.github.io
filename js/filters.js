@@ -256,6 +256,7 @@ function formatDomain(d) {
 function demoLabel(url) {
   if (url.includes('youtu')) return 'Watch Demo Video';
   if (url.includes('linkedin.com')) return 'View on LinkedIn';
+  if (url.includes('datastudio.google.com') || url.includes('lookerstudio.google.com')) return 'Open Dashboard';
   return 'Live Demo';
 }
 

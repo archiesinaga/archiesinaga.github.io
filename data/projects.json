@@ -1,5 +1,33 @@
 [
   {
+    "id": "mnc-media-analytics",
+    "title": "MNC Media Cross-Platform Analytics",
+    "summary": "End-to-end analysis of how MNC Media's YouTube channels perform against competitors, and what users complain about in the RCTI+ and Vision+ streaming apps.",
+    "type": "tech",
+    "domain": "data-science",
+    "topics": [
+      "data-analytics",
+      "business-intelligence",
+      "dashboard",
+      "media"
+    ],
+    "tech": [
+      "Python",
+      "Pandas",
+      "MySQL",
+      "Looker Studio",
+      "YouTube Data API"
+    ],
+    "repo": "https://github.com/archiesinaga/mnc-media-cross-platform-analytics",
+    "demo": "https://datastudio.google.com/reporting/2eb8f5a8-02de-43b1-8d1a-ad65ceffbcd4",
+    "details": "Collected 106,303 YouTube videos from 8 Indonesian TV channels and 46,649 Google Play reviews of 3 streaming apps, cleaned them in Python and labeled genres and complaint topics with rules validated at 81–82% accuracy. Tested 9 hypotheses in Colab and MySQL (window functions, CTEs) and built a 5-page Looker Studio dashboard. MNC posted 62.2% of the videos but earned only 25.5% of the views, and \"paid but can't watch\" drove 45.2% of Vision+ negative reviews, rising to 55% when the review mentions sports.",
+    "note": "Independent portfolio project using public data. Not affiliated with MNC Media.",
+    "image": "image/proj-mnc.webp",
+    "image_alt": "Chart comparing each channel's share of videos with its share of views",
+    "image_fit": "contain",
+    "year": 2026
+  },
+  {
     "id": "credit-risk",
     "title": "Credit Risk Model & Early Warning Dashboard",
     "summary": "End-to-end credit scoring model that tells a lender whether to approve, review or reject a borrower, and flags existing borrowers before they default.",
