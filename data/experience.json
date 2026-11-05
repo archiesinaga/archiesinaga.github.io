@@ -1,30 +1,30 @@
 [
   {
     "id": "exp-alc",
-    "role": "Data Analyst, Web Developer & Social Media Specialist",
+    "role": "Data Analyst",
     "org": "Alpha Omega Learning Center (ALC)",
-    "location": "Palembang, Indonesia · Part-time",
-    "period": "Jul 2024 - Present",
+    "location": "Palembang, Indonesia · Full-time",
+    "period": "Sep 2025 - Present",
     "isCurrent": true,
-    "summary": "Built and maintain the LMS tracking daily grades for 600+ students and used engagement data to grow enrolment through a 5–7x weekly posting schedule.",
+    "summary": "Tracked sign-up sources for 120 new students (Nov 2025), designed a referral program that brought in 10 more, and built and maintain the LMS tracking daily grades for 600+ students (launched Sep 2026).",
     "tags": [
+      "Data Analytics",
       "JavaScript",
       "Express.js",
+      "Supabase",
       "PostgreSQL",
-      "Data Analytics",
-      "LMS",
-      "Content Strategy"
+      "LMS"
     ],
     "metrics": [
       {
-        "label": "Enrolment Growth",
+        "label": "New Students",
         "val": "+120",
-        "desc": "New student registrations in 3 months from analytics-backed social content, team of 2–3"
+        "desc": "Sign-ups in Nov 2025, with each source tracked; inbound Instagram inquiries converted at 50%+"
       },
       {
         "label": "Students Tracked",
-        "val": "100",
-        "desc": "Daily grades, exercises and modules in the LMS, built with Express.js"
+        "val": "600+",
+        "desc": "Daily grades in the LMS, built in 1 month on Express.js and Supabase"
       }
     ]
   },

@@ -174,7 +174,7 @@
     "repo": null,
     "details": "The production system supporting academic assessments, daily exercises and learning modules for 600+ students, built with Express.js and a relational database and maintained through testing, deployment and iteration. A newer Next.js and Supabase build adds teacher authentication, class grouping, quiz and bonus scoring, attendance records, a class leaderboard and row-level security so each teacher sees only their own students.",
     "note": "The source code is private because the system belongs to Alpha Omega Learning Center.",
-    "year": 2024
+    "year": 2026
   },
   {
     "id": "dagangan-analysis",
